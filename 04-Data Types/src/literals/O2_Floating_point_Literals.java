@@ -4,7 +4,7 @@
  * Consta de las siguientes partes:
  * <p>
  * ParteEntera PuntoDecimal ParteFraccionaria Exponente Sufijo
- * Digitos      .        Digitos          e E p P   f F d D
+ * Digitos      .        Dígitos          e E p P   f F d D
  * <p>
  * Se puede expresar en decimal (base 10) o en hexadecimal (base 16)
  * <p>

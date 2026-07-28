@@ -1,15 +1,15 @@
 /**
  * Tipo de datos booleano (lógicos)
  *
- * - Conjunto de valores: Verdadero, Falso (solamente 2 valores)
+ * - Conjunto de valores: Verdadero (true), Falso (false) (solamente 2 valores)
  * - Conjunto de operaciones:
- * - operaciones lógicas AND OR NOT XOR
- * - comparación igualdad, desigualdad
+ *      - operaciones lógicas AND OR NOT XOR
+ *      - comparación igualdad, desigualdad
  * - Representación en memoria:
  * - desde el punto de vista del programador nos podemos abstraer!!!
- * - En Java no se especifica y depende de la implementación de la JVM
- * - (típicamente se suele mapear un valor boolean en un int por el compilador)
- * - (y un array de booleans en un byte array)
+ *      - En Java no se especifica y depende de la implementación de la JVM
+ *      - (típicamente se suele mapear un valor boolean en un int por el compilador)
+ *      - (y un array de booleans en un byte array)
  *
  * El tipo boolean solamente cuenta con dos posibles valores: Verdadero y falso
  *
@@ -17,6 +17,8 @@
  * 2 literales, cada uno asociado con cada uno de los valores:
  * - Verdadero: true
  * - False: false
+ *
+ * No se puede hacer un casting de un valor boolean a otro tipo de datos y viceversa.
  */
 
 boolean isRaining = true;
@@ -151,4 +153,22 @@ void operatorRelationalsNotDefined() {
     //IO.println(isClean < isEmpty); // Error
     //IO.println(isClean == isEmpty);
     IO.println(isClean != isEmpty);
+}
+
+void cannotBeCast() {
+    boolean b = false;
+    //int i = (int) b; // No se puede convertir un boolean en un int
+    //long l = (long) true; // No se puede convertir un boolean en un long
+    //byte bNumber = (byte) b;
+    //short sNumber = (short) false;
+    //char cNumber = (char) b;
+
+    // No se puede convertir un valor de ningún otro tipo al tipo boolean
+    //b = (boolean) 1;
+    //b = (boolean) 1L;
+    //b = (boolean) '1';
+    short sNumber = 15;
+    //b = (boolean) sNumber;
+    byte bNumber = 15;
+    //b = (boolean) bNumber;
 }

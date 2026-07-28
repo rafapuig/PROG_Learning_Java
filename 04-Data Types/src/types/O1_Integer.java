@@ -14,12 +14,17 @@
 /**
  * Tipo int
  *
- * Se usa para representar numeros de 32 bits con signo
- * Se necesitan 32 bits de memoria para almacenar un valor
+ * Se usa para representar números enteros de 32 bits con signo (positivos y negativos)
  *
- * El rango es desde -2*31 (-2.147.483.648) hasta 2^31-1 (2.147.483.647)
- * La mitad de valores son negativos y la otra mitad son positivios
- * Positivos parece que tenemos uno menos, pero esto es porque hay que incluir el cero
+ * - Conjunto de valores:
+ * El rango va desde -2^31 (-2.147.483.648) hasta 2^31-1 (2.147.483.647)
+ * La mitad de valores son negativos y la otra mitad son positivos
+ * Parece que tenemos un positivo menos,
+ * pero esto es porque hay que incluir el cero (que se considera positivo)
+ *
+ * - Representación en memoria:
+ * Se necesitan 32 bits de memoria para almacenar un valor de tipo int
+ * Se usa el formato complemento a 2 (ya que tenemos que representar también números negativos)
  */
 
 void main() {
@@ -34,7 +39,6 @@ void main() {
      * La clase Integer define constantes que equivalen al máximo y mínimo valores del
      * tipo de datos int
      */
-
     int max = Integer.MAX_VALUE; // 0x7F_FF_FF_FF
     int min = Integer.MIN_VALUE; // 0x80_00_00_00
 }

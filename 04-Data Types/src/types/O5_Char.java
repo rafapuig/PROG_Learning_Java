@@ -102,7 +102,7 @@ void overflow() {
     byte bNumber = 15;
     short sNumber = 15;
     int iNumber = 15;
-    long lNumber = 15;
+
 
     /**
      * Error, no podemos asignar el valor de una variable (aunque este dentro del rango, no se sabe en tipo de compilación)
@@ -155,16 +155,20 @@ void overflow() {
     //cNumber = notAllowedShort; // Error que detecta el compilador al ser una constante
     //sNumber = cNumber; // Error, no coinciden los rangos
 
-    /* También sirve para literales y variables long */
-    long lNumber = 25L;
-    sNumber = (short)25L;
-    sNumber = (short)lNumber;
+    // long y char
+    long lNumber = 15L;
+    final long allowedLongValue = 65535L;
+    final long notAllowedLongValue = -65535L;
+    lNumber = cNumber; // OK, todo valor del tipo Char existe en el rango del tipo long
+    //cNumber = lNumber; // Error, los valores mayores de 65535 y los negativos no se pueden usar como valor Char
 
-    /**
-     * La asignación de un valor de una variable de tipo byte al ser menos bits 8 que un short 16
-     * se puede realizar de forma automática
-     * Es una conversion de extensión / ampliación
-     * Añadirá 8 bits más con ceros y respetará el signo
-     */
-    sNumber = bNumber;
+    // cNumber = 15L; // Aunque el literal sea de valor en el rango de char, por ser de tipo long no se puede
+    //cNumber = allowedLongValue; // ERROR!!! aunque sea un valor válido y constante por ser de tipo long no se puede
+
+    // Solamente podemos usar el casting
+
+    cNumber = (char) 15L;
+    cNumber = (char) lNumber;
+    cNumber = (char) allowedLongValue;
+    cNumber = (char) notAllowedLongValue;
 }

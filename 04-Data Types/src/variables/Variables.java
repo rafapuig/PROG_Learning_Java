@@ -55,6 +55,27 @@ void f2() {
     IO.println(total); // total existe en todas las funciones
 }
 
+/**
+ * Intercambio del valor entre dos variables
+ * (Es un problema similar a intercambiar el contenido de dos vasos, se necesita un tercer recipiente)
+ * Hace falta una tercera variable
+ */
+
+void swap() {
+    int x = 5;
+    int y = 3;
+    IO.println("x = " + x);
+    IO.println("y = " + y);
+
+    // Intercambio del valor entre las variables x e y
+    int temp = x; // Copiamos el valor de x en una tercera variable temp porque el valor de x lo vamos a cambiar
+    x = y; // Ahora copiamos el valor de y en x
+    y = temp; // Ahora el valor de x que habíamos copiado en temp lo asignamos a la variable y
+
+    IO.println("x = " + x);
+    IO.println("y = " + y);
+}
+
 
 void f3() {
     int x = 9;

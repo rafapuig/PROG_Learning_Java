@@ -7,7 +7,7 @@
  * A una constante solamente se le puede asignar un valor inicial
  * que permanece durante toda la vida de la variable.
  *
- * Para indicar que el valor con el que se inicializa es su valor
+ * Para indicar que el valor con el que se inicializa se trata de su valor
  * final se usa precisamente la keyword final.
  *
  *
@@ -58,6 +58,7 @@ void compileConstantVsValue() {
 
     int numWeeks = 4; // Es una variable no final
     // Esto es un valor final no una constante de compilación
+    // Por eso usamos convención camelCase y le llamamos daysInNumWeeks
     final int daysInNumWeeks = numWeeks * DAYS_IN_WEEK; // Es un valor final, no se puede cambiar
 
     //daysInNumWeeks = daysInNumWeeks + 3; // Error, no se puede reasignar una constante de valor final

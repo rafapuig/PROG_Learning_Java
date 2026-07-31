@@ -9,8 +9,8 @@ Las **variables** son espacios de memoria que permiten almacenar información du
 Según el lugar donde se declaran, las variables se clasifican en:
 
 1. Variables locales
-2. Variables de instancia
-3. Variables de clase (estáticas)
+2. Variables de instancia (campos de instancia)
+3. Variables de clase (campos estáticos)
 4. Parámetros de métodos
 
 ---
@@ -33,13 +33,13 @@ Su ámbito se limita únicamente al bloque donde han sido declaradas.
 ```java
 public class Example {
 
-    public static void main(String[] args) {
+    void main() {
 
         int age = 20;
         double average = 8.5;
 
-        System.out.println(age);
-        System.out.println(average);
+        IO.println(age);
+        IO.println(average);
 
     }
 
@@ -53,11 +53,11 @@ public class Example {
 ```java
 public class Example {
 
-    public static void main(String[] args) {
+    void main() {
 
         int age;
 
-        System.out.println(age);
+        IO.println(age);
 
     }
 
@@ -68,7 +68,7 @@ El compilador produce un error porque la variable **no ha sido inicializada**.
 
 ---
 
-# 2. Variables de instancia
+# 2. Variables (campos) de instancia
 
 Las **variables de instancia** pertenecen a cada objeto creado a partir de una clase.
 
@@ -116,7 +116,7 @@ Cada objeto mantiene sus propios datos.
 
 ---
 
-# 3. Variables de clase (static)
+# 3. Variables (campos) de clase (static)
 
 Las **variables estáticas** pertenecen a la clase y no a los objetos.
 
@@ -173,7 +173,8 @@ public class Student {
 
 # 4. Parámetros
 
-Los parámetros son variables que reciben información cuando se invoca un método.
+Los parámetros son variables que reciben información (una copia del valor de los argumentos) 
+cuando se invoca un método.
 
 ## Ejemplo
 
@@ -344,7 +345,7 @@ calculateArea(double r)
 ```java
 int age;
 
-System.out.println(age);
+IO.println(age);
 ```
 
 ❌ Error de compilación.

@@ -61,6 +61,9 @@ void main() {
 
     byte max = Byte.MAX_VALUE; // 0x7F 127
     byte min = Byte.MIN_VALUE; // -0x80 -128
+
+    IO.println(Byte.SIZE); // 8
+    IO.println(Byte.BYTES); // 1
 }
 
 void overflow() {

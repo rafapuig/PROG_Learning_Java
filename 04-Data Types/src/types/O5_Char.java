@@ -56,6 +56,9 @@ void main() {
      */
     char max = Character.MAX_VALUE; // 0xFFFF 65535 '\uffff'
     char min = Character.MIN_VALUE; // 0x0000 0 '\u0000'
+
+    IO.println(Character.SIZE); // 16
+    IO.println(Character.BYTES); // 2
 }
 
 void charLiterals() {

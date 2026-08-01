@@ -27,6 +27,8 @@
  * Se usa el formato complemento a 2 (ya que tenemos que representar también números negativos)
  */
 
+import static util.Utils.printBinaryRepresentation;
+
 void main() {
 
     /** Podemos asignar un literal de tipo entero a una variable de tipo int */
@@ -41,4 +43,33 @@ void main() {
      */
     int max = Integer.MAX_VALUE; // 0x7F_FF_FF_FF
     int min = Integer.MIN_VALUE; // 0x80_00_00_00
+
+
+    /**
+     * Podemos saber cuantos bits son necesarios para un valor de tipo int
+     */
+    IO.println(Integer.SIZE); // 32
+
+    /**
+     * Y también el número de bytes
+     */
+    IO.println(Integer.BYTES); // 4
+
+    memoryRepresentation();
+
 }
+
+void memoryRepresentation() {
+    printBinaryRepresentation(-1000);
+    printBinaryRepresentation(1000);
+    printBinaryRepresentation(Integer.MAX_VALUE);
+    printBinaryRepresentation(Integer.MIN_VALUE);
+    printBinaryRepresentation(0);
+    printBinaryRepresentation(1);
+    printBinaryRepresentation(-1);
+    printBinaryRepresentation(2);
+    printBinaryRepresentation(-2);
+    printBinaryRepresentation(3);
+    printBinaryRepresentation(-3);
+}
+

@@ -56,6 +56,9 @@ void main() {
      */
     short max = Short.MAX_VALUE; // 0x7FFF 32.767
     short min = Short.MIN_VALUE; // -0x8000 -32.768
+
+    IO.println(Short.SIZE); // 16
+    IO.println(Short.BYTES); // 2
 }
 
 void overflow() {

@@ -56,8 +56,8 @@ void main() {
     IO.println(maxLong);
     IO.println(minLong);
 
-    // uno más que el valor más grande de tipo long
-    //long beyondMaxLong = 9_223_372_036_854_775_808L; // Error de compilación, valor fuera del rango long
+    /* uno más que el valor más grande de tipo long */
+    // long beyondMaxLong = 9_223_372_036_854_775_808L; // Error de compilación, valor fuera del rango long
 
     /**
      * La clase Long define constantes que equivalen al máximo y mínimo valores del
@@ -66,7 +66,14 @@ void main() {
 
     long max = Long.MAX_VALUE; // 0x7FFFFFFF_FFFFFFFFL
     long min = Long.MIN_VALUE; // 0x80000000_00000000L
+
+    /**
+     * El tamaño de un valor de tipo long en bits y en bytes
+     */
+    IO.println(Long.SIZE); // 64
+    IO.println(Long.BYTES); // 8  (Long.SIZE / Byte.SIZE)
 }
+
 
 void overflow() {
     /**

@@ -7,8 +7,8 @@
  * A una constante solamente se le puede asignar un valor inicial
  * que permanece durante toda la vida de la variable.
  *
- * Para indicar que el valor con el que se inicializa se trata de su valor
- * final se usa precisamente la keyword final.
+ * Para indicar que el valor con el cual se inicializa se trata de su valor final
+ * se usa precisamente la keyword final.
  *
  *
  * Constantes de compilación vs. valores finales

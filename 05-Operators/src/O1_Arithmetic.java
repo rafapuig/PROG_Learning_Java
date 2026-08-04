@@ -127,7 +127,92 @@ void divideByZero() {
 }
 
 
+/**
+ * El operador  resto, módulo, modulus (remainder) %
+ * <p>
+ * op1 % op2
+ * <p>
+ * Realiza la division de op1 entre op2 y devuelve el resto 12 % 5 se evalúa como 2
+ * <p>
+ * Regla 1:
+ * - Se producirá un error en tiempo de ejecución si el operando derecho vale 0
+ * <p>
+ * Regla 2:
+ * - Si el operando de la derecha es distinto de cero, el signo del resultado es el mismo que el del operando izquierdo
+ * <p>
+ * Si además, algún operando es un valor de punto flotante se aplican ademas estas reglas:
+ * Regla 3:
+ * - No es un error si el operador derecho es 0 entero o 0.0 en punto flotante. Se evalua como NaN
+ * <p>
+ * Regla 4:
+ * - El resultado es NaN si alguno de los operandos es NaN
+ * <p>
+ * Regla 5:
+ * -Si el operando de la derecha es cero el resultado es NaN
+ * <p>
+ * Regla 6:
+ * - Si el operando de la izquierda es infinito, el resultado es NaN
+ * <p>
+ * Regla 7:
+ * -Si no se han podido aplicar las anteriores se evalúa como el resto
+ */
+void modulus() {
+    //IO.println(15 % 0); // Error en tiempo de ejecución
+    IO.println(15 % 4); // 3
+    IO.println(-15 % 4); // -3 porque -15 es negativo
+    IO.println(15 % -4); // 3
+    IO.println(-15 % -4); // -3 porque -15 es negativo
+    IO.println(0 % 5); // 0
+    IO.println(5 % 9); // 5
+
+    // Con valores en punto flotante nunca se producirá un error en tiempo de ejecución
+    IO.println(-5.0 % 0);
+    IO.println(-5 % 0.0f);
+    IO.println(Float.NaN % 0); // NaN
+    IO.println(-15 % 4.0f); // 3.0f
+    IO.println(15 % 4.0); // 3.0
+    IO.println(-15.0 % 4.0f); // -3.0f
+    IO.println(Float.POSITIVE_INFINITY % -4.0f); // NaN por regla 6
+    IO.println(15.0f % Float.NEGATIVE_INFINITY); // 15.0f
+    IO.println(-15.0f % Float.NEGATIVE_INFINITY); // -15.0f
+    IO.println(15.0f % Float.POSITIVE_INFINITY); // 15.0f
+    IO.println(-15.0f % Float.POSITIVE_INFINITY); // -15.0f
+}
+
+/**
+ * Operador unario +
+ * <p>
+ * + operando (de tipo numérico)
+ * <p>
+ * Si el operando es de tipo byte, short o char el operador promociona el valor a int.
+ * (Como hemos visto los tipos byte, short y char no tienen sus propios operadores aritméticos)
+ */
+
+void unaryPlus() {
+    byte b1 = 1, b2 = 2;
+    b1 = b2; // OK
+    //b1 = +b2; // Error de compilación, el operador + ha promocionado el valor del operando a tipo int como resultado
+    b1 = (byte) +b2;
+}
+
+/**
+ * Operador unario -
+ *
+ * - operando (numérico)
+ *
+ * Niega el valor del operando y además lo promociona a int
+ */
+void unaryMinus() {
+    byte b1 = 1, b2 = 2;
+    b1 = b2;
+    // b1 = -b2; // Error de compilación, el operador - ha promocionado el valor del operando a tipo int como resultado
+    b1 = (byte) -b2;
+}
+
+
+
 void main() {
     division();
     divideByZero();
+    modulus();
 }

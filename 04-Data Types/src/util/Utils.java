@@ -5,7 +5,7 @@ import java.math.BigInteger;
 
 public class Utils {
 
-    public static String representation(int number) {
+    public static String bits(int number) {
         var binaryString = Integer.toBinaryString(number);
         var leadingZeros = Integer.numberOfLeadingZeros(number) - (number == 0 ? 1 : 0);
         return "0".repeat(leadingZeros) + binaryString;
@@ -29,9 +29,15 @@ public class Utils {
                 .replace(' ', '0');
     }
 
-    public static String representation(float number) {
+    public static String bits(long l) {
+        return String
+                .format("%64s", Long.toBinaryString(l))
+                .replace(' ', '0');
+    }
+
+    public static String bits(float number) {
         var rawBits = Float.floatToRawIntBits(number);
-        return representation(rawBits);
+        return bits(rawBits);
     }
 
     public static String binRepresentation(float number) {
@@ -66,10 +72,10 @@ public class Utils {
     public static void printBinaryRepresentation(Object number) {
         switch (number.getClass().getSimpleName()) {
             case "Integer":
-                IO.println(Utils.representation((int) number));
+                IO.println(Utils.bits((int) number));
                 break;
             case "Float":
-                IO.println(Utils.representation((float) number));
+                IO.println(Utils.bits((float) number));
                 break;
         }
     }

@@ -1,12 +1,14 @@
 /**
- * Modifica el programa 3 para que obtenga el mismo resultado con solo una llamada a IO.println:
+ * Modifica el programa del círculo 4:
+ * Vamos a hacer que el radio del círculo y las coordenadas del centro sean variables.
  * <svg height="400" width="400">
  *     <circle cx="100" cy="100" r="50" />
  * </svg>
  *
- * Pista:
- * De nuevo, al igual que introducimos tabulaciones podemos introducir saltos de línea
- * mediante secuencias de escape, en entre caso \n
+ * - Declara 2 variables enteras `x` e `y` y una double `r`
+ * - Asigna valores a las variables
+ * - Usa las variables en la generación del resultado
+
  */
 
 void main() {

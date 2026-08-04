@@ -11,8 +11,10 @@
  * - char <--
  */
 
+import util.Utils;
+
 import static util.Utils.bits;
-import static util.Utils.representation;
+import static util.Utils.bits;
 
 /**
  * Tipo char
@@ -195,7 +197,7 @@ void memoryRepresentation() {
 
 
     int n = 65590;
-    IO.println(representation(n));
+    IO.println(Utils.bits(n));
 
     char overflowed = (char) n;
     IO.println(String.format("%32s", bits(overflowed)));

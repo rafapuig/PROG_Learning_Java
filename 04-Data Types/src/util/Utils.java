@@ -11,6 +11,24 @@ public class Utils {
         return "0".repeat(leadingZeros) + binaryString;
     }
 
+    public static String bits(byte b) {
+        return String
+                .format("%8s", Integer.toBinaryString(b & 0xFF))
+                .replace(' ', '0');
+    }
+
+    public static String bits(char c) {
+        return String
+                .format("%16s", Integer.toBinaryString(c))
+                .replace(' ', '0');
+    }
+
+    public static String bits(short s) {
+        return String
+                .format("%16s", Integer.toBinaryString(s & 0xFFFF))
+                .replace(' ', '0');
+    }
+
     public static String representation(float number) {
         var rawBits = Float.floatToRawIntBits(number);
         return representation(rawBits);

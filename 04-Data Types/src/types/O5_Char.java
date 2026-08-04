@@ -1,8 +1,8 @@
 /**
  * Tipos de datos integrales
- *
+ * <p>
  * Es un tipo de datos numérico cuyos valores son números enteros
- *
+ * <p>
  * En Java tenemos 5 tipos de datos integrales / enteros:
  * - byte
  * - short
@@ -11,19 +11,22 @@
  * - char <--
  */
 
+import static util.Utils.bits;
+import static util.Utils.representation;
+
 /**
  * Tipo char
- *
+ * <p>
  * Se usa para representar números de 16 bits SIN signo (a diferencia del short que es con signo)
  * Se necesitan 16 bits de memoria para almacenar un valor
- *
+ * <p>
  * El rango es desde 0 hasta 2^16-1 (65535) Es decir, 65.536 posibles valores
- *
+ * <p>
  * TODOS positivos!!! Una variable de tipo char no puede contener valores negativos
- *
+ * <p>
  * Se usa cuando:
  * - necesitamos almacenar el código de un caracter Unicode desde el 0000 al FFFF
- *
+ * <p>
  * Exiten literales de tipo character
  *
  */
@@ -59,6 +62,8 @@ void main() {
 
     IO.println(Character.SIZE); // 16
     IO.println(Character.BYTES); // 2
+
+    memoryRepresentation();
 }
 
 void charLiterals() {
@@ -174,4 +179,32 @@ void overflow() {
     cNumber = (char) lNumber;
     cNumber = (char) allowedLongValue;
     cNumber = (char) notAllowedLongValue;
+}
+
+void memoryRepresentation() {
+    char c1 = 'A';
+    char c2 = '\u0041';
+    char c3 = 65;
+    char c4 = '\uCAFE';
+    IO.println(bits((char) 0));
+    IO.println(bits(c1));
+    IO.println(bits(c2));
+    IO.println(bits(c3));
+    IO.println(bits(c4));
+    IO.println(bits((char) 0xFFFF));
+
+
+    int n = 65590;
+    IO.println(representation(n));
+
+    char overflowed = (char) n;
+    IO.println(String.format("%32s", bits(overflowed)));
+
+    short s = -32000;
+    IO.println(s);
+    IO.println(bits(s));
+    IO.println((char)s);
+    IO.println(bits((char) s));
+
+
 }

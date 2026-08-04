@@ -46,9 +46,6 @@
  * El rango va desde tan pequeño TODO: como 1.4 x 10^-45 hasta tan grande como 3.4 x 10^38
  * tanto en positivo como en negativo.
  *
- * - Representación en memoria:
- * Se necesitan 64 bits de memoria para almacenar un valor de tipo float
- * Se usa el formato estandar IEEE 754 con single-precision
  *
  * Para que un literal se considere de tipo float debe llevar el sufijo f o F
  *
@@ -64,6 +61,17 @@
  * El valor indeterminado está incluido en el conjunto de valores del tipo float,
  * tiene representación en binario
  * y se denomina NaN (Not a Number)
+ *
+ * - Representación en memoria:
+ * Se necesitan 64 bits de memoria para almacenar un valor de tipo float
+ * Se usa el formato estandar IEEE 754 con doble-precision:
+ *  Signo: 1 bit
+ *  Exponente: 11 bits
+ *  Mantisa: 52 bits
+ *
+ *  Máximo Exponente: 1023
+ *  Mínimo Exponente: -1022     bias = 1023 (sesgo)
+ *
  *
  */
 

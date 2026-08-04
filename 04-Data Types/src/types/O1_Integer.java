@@ -72,4 +72,3 @@ void memoryRepresentation() {
     printBinaryRepresentation(3);
     printBinaryRepresentation(-3);
 }
-

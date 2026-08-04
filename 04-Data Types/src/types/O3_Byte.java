@@ -1,8 +1,8 @@
 /**
  * Tipos de datos integrales
- *
+ * <p>
  * Es un tipo de datos numérico cuyos valores son números enteros
- *
+ * <p>
  * En Java tenemos 5 tipos de datos integrales / enteros:
  * - byte <--
  * - short
@@ -10,6 +10,8 @@
  * - long
  * - char
  */
+
+import static util.Utils.bits;
 
 /**
  * Tipo byte
@@ -33,7 +35,7 @@
 
 void main() {
 
-    /** Podemos asignar un literal de tipo entero a una variable de tipo byte simpre que este entre -128 y 127 */
+    /** Podemos asignar un literal de tipo entero a una variable de tipo byte simple que esté entre -128 y 127 */
     byte number = 15; // 15 es un literal de tipo int
     byte decimal = 10;
     byte hex = 0xA;
@@ -64,6 +66,8 @@ void main() {
 
     IO.println(Byte.SIZE); // 8
     IO.println(Byte.BYTES); // 1
+
+    memoryRepresentation();
 }
 
 void overflow() {
@@ -92,20 +96,36 @@ void overflow() {
     bNumber = allowedValue; // Permitido, el compilador si puede saber el valor de una constante
     //bNumber = notAllowedValue; // Aquí el compilador comprueba que el valor de notAllowedValue que es 150 y excede el rango
 
-   /**
+    /**
      * Otra caso que podemos hacer,
-    * convertir un valor de tipo int en uno de tipo byte de manera manual usando un molde (cast)
+     * convertir un valor de tipo int en uno de tipo byte de manera manual usando un molde (cast)
      * En este caso el casting se hace mediante el operador de casting (tipo) donde tipo es byte --> (byte)
      * Y Java que se quedara solamente con los 8 bits menos significativos de los 32 que tiene el valor int
      * en el momento de ejecutar el casting en tiempo de ejecución.
      */
     int i = 25;
-    bNumber = (byte)25;
-    bNumber = (byte)iNumber;
-    bNumber = (byte)notAllowedValue;
+    bNumber = (byte) 25;
+    bNumber = (byte) iNumber;
+    bNumber = (byte) notAllowedValue;
 
     /* También sirve para literales y variables long */
     long lNumber = 25L;
-    bNumber = (byte)25L;
-    bNumber = (byte)lNumber;
+    bNumber = (byte) 25L;
+    bNumber = (byte) lNumber;
+}
+
+void memoryRepresentation() {
+    IO.println("-128 - " + bits((byte) -128));
+    IO.println("-127 - " +bits((byte) -127));
+    IO.println("-2   - " +bits((byte) -2));
+    IO.println("-1   - " +bits((byte) -1));
+    IO.println(" 0   - " +bits((byte) 0));
+    IO.println(" 1   - " +bits((byte) 1));
+    IO.println(" 2   - " +bits((byte) 2));
+    IO.println(" 127 - " +bits((byte) 127));
+    IO.println(" 128 - " +bits((byte) 128));
+
+    for (int i = Byte.MIN_VALUE; i <= Byte.MAX_VALUE; i++) {
+        IO.println(String.format("%3s",i) + " - " + bits((byte) i));
+    }
 }

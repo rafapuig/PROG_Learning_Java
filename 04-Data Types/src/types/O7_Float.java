@@ -79,7 +79,7 @@
  * base 10
  * exponente 0
  * <p>
- * Existen inifinitas formas de representar la misma cantidad
+ * Existen infinitas formas de representar la misma cantidad
  * 19.25e0, 1.925e1, 0.1925e2, 192.5e-1, 1925e-2
  * <p>
  * La forma normalizada en base 10 es la que cumple que:
@@ -102,8 +102,8 @@
  * <p>
  * 1.001101 x 2^4 es la forma normalizada (empieza por un uno seguido del punto binario y varios digitos binarios)
  * <p>
- * NOTA: No todos los numeros se pueden representar de forma normalizada.
- * - Numeros que no tienen ningún 1. Ejemplo, el 0.0
+ * NOTA: No todos los números se pueden representar de forma normalizada.
+ * - Números que no tienen ningún 1. Ejemplo, el 0.0
  * - Hay un número determinado de bits para el exponente
  * (si el exponente de un número es el mínimo permitido por el formato y la mantisa es <1 no se puede normalizar)
  * Por ejemplo, -126 sea mínimo exponente y el número es el 0.01101 x 2^-126 porque normalizado
@@ -111,15 +111,15 @@
  * <p>
  * Ventajas de la normalización:
  * - Es única
- * - El punto binario siempre se situa después del primer 1, no es necesario almacenar la posicion del punto
- * - 2 numeros normalizados son faciles de comparar, mediante sus signos, mantisas y exponentes.
- * - Siempre se almacenan los digitos más interesantes de la mantisa
- * (si tenemos 5 bits para mantisa, con 0.0010110x2^10 solo alamacenamos 0.00101 y perdemos el 10 final,
+ * - El punto binario siempre se sitúa después del primer 1, no es necesario almacenar la posición del punto
+ * - 2 números normalizados son fáciles de comparar, mediante sus signos, mantisas y exponentes.
+ * - Siempre se almacenan los dígitos más interesantes de la mantisa
+ * (si tenemos 5 bits para mantisa, con 0.0010110x2^10 solo almacenamos 0.00101 y perdemos el 10 final,
  * pero si normalizamos a 1.00110x2^7 podemos almacenar sus 5 bits a 1
  * - En la forma normalizada la mantisa siempre empieza por 1
  * (y, por tanto, no hace falta gastar un bit para almacenarlo, el hidden bit)
  * <p>
- * Estandares del IEEE 754:
+ * Estándares del IEEE 754:
  * - 32 bit single-precision floating point format --> Java lo usa para el tipo float
  * - 64 bit double-precision floating point format --> Java lo usa para el tipo double
  * <p>
@@ -139,30 +139,31 @@
  * s eeeeeeee fffffff ffffffff ffffffff
  * <p>
  * -- Exponente
- * Los 8 bit del exponente guardan la versión desplazada o segada en 127 unidades,
+ * Los 8 bit del exponente guardan la versión desplazada o sesgada en 127 unidades,
  * es decir,
- * - el -127 se le suma 127 quedando 0 y es lo que se guarda
+ * - a -127 se le suma 127 quedando 0 y es lo que se guarda en memoria
  * - el 0 + 127 = 127
  * - el 128 + 127 = 255
  * <p>
- * Por tanto, los 255 valores que van desde el -127 hasta el 128 se desplazan 127 unidades y se convierten en
- * valores positivos desde 0 hasta 255, que son numeros que se pueden codificar en binario directamente.
+ * Por tanto, los 255 valores que van desde -127 hasta el 128 se desplazan 127 unidades y se convierten en
+ * valores positivos, desde 0 hasta 255, que son números que se pueden codificar en binario directamente.
  * <p>
- * Estos valores extremos de exponente (-127 y 128) se usan para repesentar números especiales:
+ * Estos valores extremos de exponente (-127 y 128) se usan para representar números especiales:
  * - cero
  * - infinitos
  * - NaN
+ * - no normalizados
  * Los exponentes desde -126 hasta 127 (desviados a 1 hasta 254) representan números normalizados.
  * <p>
  * -- Mantisa (23 bits)
  * Determina la precisión del número en punto flotante.
  * <p>
- * Si está normalizado será 1.fffffff_ffffffff_ffffffff (24 digitos)
+ * Si está normalizado será 1.fffffff_ffffffff_ffffffff (24 dígitos)
  * El primer uno se sobreentiende, y no hace falta almacenarlo, no consume ninguno de los 23 bits
  * <p>
- * Por tanto, la precision es 23 + 1 = 24
+ * Por tanto, la precisión es 23 + 1 = 24
  * <p>
- * Número minimo normalizado:
+ * Número mínimo normalizado:
  * - signo, 0 o 1 según sea positivo o negativo.
  * - exponente: El mínimo es -126 --> -126 + 127 = 1 luego los 8 bits quedan como 00000001
  * - mantisa: 1.0000000_00000000_00000000 --> 0000000 00000000 00000000
@@ -262,7 +263,7 @@
  * 0.0011 --> 0.00
  * <p>
  * -- Redondeo hacia el valor más cercano representable
- * -- Si has 2 igual de cerca, se escoge el par (último bit a 0)
+ * -- Si has 2 igual de cerca, se escoge el par (último bit a 0) "ties to even"
  * <p>
  * Ejemplos:
  * 1.1101 --> 1.11
@@ -315,7 +316,7 @@ void main() {
     IO.println(Float.BYTES); // 4
 
     //twoZeros();
-    //memoryRepresentation();
+    memoryRepresentation();
     //memoryRepresentation2();
     memoryRepresentation3();
     //conversion();
@@ -344,6 +345,7 @@ void memoryRepresentation() {
 
     printBinaryRepresentation(Float.MAX_VALUE);
     printBinaryRepresentation(Float.MIN_VALUE);
+    printBinaryRepresentation(-Float.MIN_NORMAL);
 
     printBinaryRepresentation(Float.NEGATIVE_INFINITY);
     printBinaryRepresentation(Float.POSITIVE_INFINITY);
@@ -370,9 +372,16 @@ void memoryRepresentation3() {
     x = Float.intBitsToFloat(0b1_01111111_1000000_00000000_00000000);
     IO.println(x);
 
-    float z = Float.intBitsToFloat(0b0_00000001_0000000_00000000_00000000);
+    x = Float.intBitsToFloat(0b0_00000001_0000000_00000000_00000000); // 1.0 x 2^-126
+    IO.println(x); // mínimo número normalizable para float
+    x = Float.MIN_NORMAL; // 0x1.0p-126f;
+    IO.println(x);
+
+    float z = Float.intBitsToFloat(0b0_00000000_0000000_00000000_00000001); // 1.0 x 2^-(126+23) = 1.0 x 2^-149
+    IO.println(z); // numero mas cercano a cero
+    z = Float.MIN_VALUE; // 0x0.000002p-126f;
     IO.println(z);
-    //z = 0.25e-100f;
+
 }
 
 void conversion() {

@@ -197,9 +197,9 @@ void unaryPlus() {
 
 /**
  * Operador unario -
- *
+ * <p>
  * - operando (numérico)
- *
+ * <p>
  * Niega el valor del operando y además lo promociona a int
  */
 void unaryMinus() {
@@ -209,10 +209,154 @@ void unaryMinus() {
     b1 = (byte) -b2;
 }
 
+/**
+ * OPERADORES ARITMÉTICOS DE ASIGNACIÓN COMPUESTOS
+ * <p>
+ * Cada uno de los 5 operadores aritméticos ( +, -, *, /, % ) tienen correspondencia con una versión
+ * que une la operación aritmética en sí junto con una operación de asignación.
+ * <p>
+ * +=, -=, *=, /=, %=
+ * <p>
+ * operando_izquierdo operador_compuesto operando_izquierdo
+ * <p>
+ * que equivale a -->
+ * op_izq = (casting_a_tipo_op_izq) (op_izq operador_aritmético op_der)
+ * <p>
+ * Se utiliza cuando alguna variable interviene a la vez en la expresión rvalue y la lvalue
+ * En otras palabras, cuando queremos hacer un cálculo que usa el valor de un variable
+ * y además, guardar el resultado en la variable.
+ */
+
+void compound() {
+    int iNum = 100;
+    byte bNum = 15;
+    /*
+    Como sumar el contenido de iNum (que es de tipo int) con el de bNum (que es de tipo byte)
+    y almacenar el resultado en bNum
+    Teniendo en cuenta los tipos de ambas variables, la instrucción quedaría así.
+    */
+    bNum = (byte) (iNum + bNum);
+
+    bNum += iNum; // Se permite un casting implicito si se usa el operador compuesto
+
+    iNum += 5; // equivale a iNum = iNum + 5
+    /**
+     * OJO con el orden += es el operador compuesto, no asi =+ (esto es asignar y el operador + unario)
+     */
+    iNum = 3;
+    iNum = +5; // iNum pasa a contener el valor 5 positivo, no 3 + 5
+    IO.println(iNum);
+    iNum += 10; // 5 + 10 --> iNum = 15
+    IO.println(iNum);
+
+
+    /*
+    El valor 5 se convierte a double para sumar a 3.4,
+    el resultado convierte a int (se elimina la parte decimal) hay un casting implícito
+     */
+    iNum = 5;
+    iNum += 3.4;
+    IO.println(iNum);
+    /* Equivalencia sin operador compuesto */
+    iNum = 5;
+    iNum = (int) (iNum + 3.4);
+    IO.println(iNum); // 5 + 3 --> 8
+}
+
+/**
+ * Operadores de incremento ++ y decremento --
+ * <p>
+ * El operador de incremento ++ incrementa en una unidad el valor almacenado en la variable.
+ * El operador de decremento -- decrementa en una unidad el valor almacenado en la variable.
+ * <p>
+ * El operando debe ser un lvalue (referencia a una variable)
+ * El resultado de la operación es un rvalue (un valor, no una variable)
+ * <p>
+ * Existen dos versiones del operador:
+ * - Postfijo --> operando++
+ * - Prefijo --> ++operando
+ * <p>
+ * La version posfija devuelve el valor previo al incremento de la variable
+ * La version prefija devuelve el valor de la variable ya incrementada
+ *
+ */
+
+
+void increment() {
+    int i, j;
+
+    // Primera forma de incrementar i: operador + y operador =
+    i = 10;
+    i = i + 1;
+
+    // Segunda forma, operador de + y = compuesto
+    i = 10;
+    i += 1;
+
+    // Tercera manera, con el operador de incremento
+    i = 10;
+    i++;
+
+    //var x = 5++; // no es un lvalue
+
+    j = 10;
+    i = 50;
+    // Se evalúa la i que vale 50 y la j que vale 10, 50 - 10 = 40 y se asigna a j
+    // la i tras evaluarla se incrementa en una unidad
+    j = i++ - j; // j = 50 - 10 = 40 y i = i + 1 = 51
+    IO.println("i = " + i); // 51
+    IO.println("j = " + j); // 40
+
+    i = 10;
+    // La primera vez que se evalúa i vale 10, la segunda vez vale 11 --> 10 + 11 = 21
+    // y la i se incrementa dos veces i = 12
+    j = i++ + i++;
+    IO.println("i = " + i); // 12
+    IO.println("j = " + j); // 21
+
+    /* Prefija */
+
+    j = 10;
+    i = 50;
+    // Se evalúa la i, que tras incrementar vale 51, y la j que vale 10, 51 - 10 = 41 y se asigna a la j
+    // la se incrementa en una unidad
+    j = ++i - j; // j = 50 - 10 = 40 y i = i + 1 = 51
+    IO.println("i = " + i); // 51
+    IO.println("j = " + j); // 41
+
+    i = 10;
+    // La primera vez que se evalúa i vale 11, la segunda vez vale 12 --> 11 + 12 = 23
+    // y la i se incrementa dos veces i = 12
+    j = ++i + ++i;
+    IO.println("i = " + i); // 12
+    IO.println("j = " + j); // 23
+
+    i = 10;
+    i = i++; // ¿i es 10 o es 11?
+    /*
+    i++ es postfijo, por tanto, para calcular el rvalue de la asignación utilizamos el valor previo al incremento: 10
+    la variable i es incrementada y pasa a valer 11,
+    pero ahora, por último tenemos que realizar la operación de asignación donde el lvalue es la variable i
+    y el rvalue calculado era 10, por tanto, tenemos que escribir el valor 10 en la variable i
+    con lo cual se pierde el valor anterior fruto de la operación de incremento
+    La variable i sufre dos operaciones de modificación!!!
+     */
+    IO.println("i = " + i); // 10
+
+    /* Esta operación tampoco tiene sentido, la variable i ya tiene incrementado el valor,
+    es redundante asignarlo de nuevo */
+    i = ++i;
+    IO.println("i = " + i);
+
+    // i++ es un rvalue, no se puede usar como operando izquierdo de una asignación
+    /*i++ = 5;
+    IO.println("i = " + i);*/
+}
 
 
 void main() {
-    division();
-    divideByZero();
-    modulus();
+    //division();
+    //divideByZero();
+    //modulus();
+    increment();
 }

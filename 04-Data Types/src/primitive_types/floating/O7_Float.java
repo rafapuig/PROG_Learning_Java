@@ -1,40 +1,4 @@
 /**
- * Tipos de datos decimales (reales)
- * <p>
- * Es un tipo de datos numérico cuyos valores son números con parte entera y parte decimal
- * <p>
- * En Java tenemos 2 tipos de datos decimales:
- * - float <--
- * - double
- * <p>
- * Se representan en la memoria en binario mediante 1s y 0s
- * Por tanto, hay que convertir el valor a su formato en binario antes de almacenarlo
- * y volver a reconvertirlo a su valor decimal real para operar, mostrarlo, etc.
- * <p>
- * También se debe conocer la posición del punto decimal.
- * Existen 2 estrategias para almacenar un número real en la memoria del ordenador.
- * 1. FIXED-POINT Asumir que el número de dígitos decimales es fijo y siempre el mismo después del punto decimal.
- * 2. FLOATING_POINT Guardar la posición del punto decimal junto con la representación en binario
- * y que el número de decimales pueda variar (flotar)
- * <p>
- * Las representaciones en punto flotante son:
- * - más lentas
- * - menos precisas
- * --> pero... a cambio,
- * pueden representar un rango más grande de números con la misma cantidad de memoria que el punto fijo.
- * <p>
- * En Java tenemos dos tipos que usan el formato de punto flotante:
- * - float
- * - double
- * <p>
- * NOTA:
- * - NO todos los números reales tienen una representación en binario exacto de su valor,
- * en ese caso, se usan aproximaciones.
- * <p>
- * Java utiliza el estándar IEEE 754 para la representación de punto flotante.
- */
-
-/**
  * Tipo float
  * <p>
  * Se usa para representar números decimales de 32 bits con signo (positivos y negativos) mediante
@@ -172,19 +136,19 @@
  * <p>
  * NO podemos aproximarnos más al número cero, queda un gap (hueco en la recta real no representable)
  * <p>
- * Esto es un problema cuando trabajamos con numeros muy pequeños. Muy proximos a cero.
+ * Esto es un problema cuando trabajamos con números muy pequeños. Muy próximos a cero.
  * <p>
- * --- Numeros de punto flotante especiales
+ * --- Números de punto flotante especiales
  * <p>
  * -- Los ceros (negativo y positivo) 0.0 y -0.0
  * <p>
- * - exponente --> -127 (el valor minimo) + 127 desvio = 0
+ * - exponente --> -127 (el valor mínimo) + 127 desvío = 0
  * - mantisa --> 0.0
  * <p>
  * +0.0 --> (0) (00000000) (0000000 00000000 00000000)
  * -0.0 --> (1) (00000000) (0000000 00000000 00000000) igual menos el bit de signo
  * <p>
- * -- Los inifinitos
+ * -- Los infinitos
  * - exponente --> 128 (el valor máximo) + 127 = 255 --> 11111111
  * - mantisa --> 0
  * <p>
@@ -196,22 +160,22 @@
  * - una que es callada (quiet)
  * - una que es señaladora (signaling)
  * <p>
- * En una operacion en la que NaN sea un operando, por ejemplo NaN + 100.0
+ * En una operación en la que NaN sea un operando, por ejemplo NaN + 100.0
  * - si es callado el resultado será nuevamente Nan
  * - si es señal se lanzará una excepción
  * <p>
- * Ambas se representan con el exponente maximo 128 --> 255 --> 11111111
- * y matisa distinta de 0
+ * Ambas se representan con el exponente máximo 128 --> 255 --> 11111111
+ * y mantisa distinta de 0
  * donde (primer bit, el de más a la izquierda, el más significativo):
- * - callada es un 1
- * - señal es un 0
+ * - callada es un 1 --> 1ffffff_ffffffff_ffffffff
+ * - señal es un 0   --> 0ffffff_ffffffff_ffffffff
  * <p>
  * En Java siempre se usa la version callada de NaN
  * <p>
  * <p>
  * -- Los números desnormalizados
- * Rellenan el vacio entre el minimo valor normalizado y el cero
- * - exponente --> valor minimo -127 --> + 127 = 0 --> 00000000
+ * Rellenan el vacío entre el mínimo valor normalizado y el cero
+ * - exponente --> valor mínimo -127 --> + 127 = 0 --> 00000000
  * - mantisa --> distinta de 0
  * <p>
  * (-1)* signo * 0.fffffff_ffffffff_ffffffff * 2^-126
@@ -263,7 +227,7 @@
  * 0.0011 --> 0.00
  * <p>
  * -- Redondeo hacia el valor más cercano representable
- * -- Si has 2 igual de cerca, se escoge el par (último bit a 0) "ties to even"
+ * -- Si las 2 igual de cerca, se escoge el par (último bit a 0) "ties to even"
  * <p>
  * Ejemplos:
  * 1.1101 --> 1.11

@@ -43,6 +43,9 @@
  * Y los tipos de punto flotante:
  *  - float
  *  - double
+ *
+ *
+ * El tipo booleano es boolean
  */
 
 /**

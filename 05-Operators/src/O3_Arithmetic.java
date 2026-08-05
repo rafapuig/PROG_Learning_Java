@@ -10,7 +10,8 @@
  * La operación pertenece al tipo int,
  * si algún operador es de tipo byte, short o char
  * estos se convierten primero a int
- * para tener ambos operadores de tipo int y luego se realiza la operación
+ * para tener ambos operadores de tipo int
+ * y luego se realiza la operación.
  * <p>
  * Operaciones:
  * + suma
@@ -18,6 +19,7 @@
  * * multiplicación
  * / división
  * % módulo
+ *
  */
 
 void integerArithmeticAppliesToInts() {

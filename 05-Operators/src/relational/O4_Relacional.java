@@ -1,7 +1,7 @@
 /**
  * Operadores relacionales
  * <p>
- * Comparan los valores de sus operandos
+ * Comparan los valores de sus operandos y dan como resultado un valor de tipo boolean
  * <p>
  * igualdad ==
  * inigualdad !=
@@ -15,6 +15,22 @@
  * <p>
  * Todos los operadores relacionales son binarios (e infijos), toman dos operandos
  * Sus operandos son expresiones (rvalue)
+ */
+
+
+/**
+ * OPERADORES de igualdad e inigualdad
+ *
+ * Comparan si una cosa es igual == a otra o es diferente !=
+ *
+ * Los operadores de igualdad se aplican con operandos de cualquier tipo, pero siempre resultan en un boolean.
+ *
+ * No es lo mismo que comparar si se refieren a la misma cosa.
+ *
+ * Equivalente (igual) vs la misma
+ *
+ * Imaginemos que me presentan dos fotos de la misma persona. Evidentemente, la misma persona es igual a si misma.
+ * Ahora me presentan dos fotos, una de una persona otra de un gemelo suyo. Ahora solo son iguales, pero no la misma persona.
  */
 
 
@@ -93,7 +109,7 @@ void main() {
     /*
     El operador == para referencias compara las referencias
     Ambas referencias s1 y s2 refieren a objetos String iguales (ambos contienen la secuencia abc)
-    pero NO se refieren al mismo objeto String (son dos objetos gemelos, iguales pero no el mismo)
+    pero NO se refieren al mismo objeto String (son dos objetos gemelos, iguales, pero no el mismo)
     s1 contiene la referencia al primer String creado
     s2 contiene la referencia al segundo String creado
      */
@@ -101,6 +117,38 @@ void main() {
 
     /** Para comparar si dos cadenas string (y en general dos objetos) son iguales en Java se usa el método equals */
     IO.println(s1.equals(s2));
+}
+
+/**
+ * El operador de inigualdad !=
+ *
+ * operando1 != operando2
+ *
+ * Da como resultado true si el operando1 y operando2 no se consideran iguales, y false en otro caso.
+ * Se aplican las mismas reglas que para el operador ==
+ */
+void inequality() {
+    IO.println(10 != 9);
+    IO.println(true != false);
+    IO.println(false != false);
+
+    /**
+     * Si alguno de los operandos es NaN el resultado es true.
+     */
+    IO.println(Float.NaN != 10); // true
+    IO.println(Float.NaN != Float.NaN); // true
+    IO.println(Float.NaN == Float.NaN); // false
+
+    /**
+     * Corolario
+     * Si f1 contiene un valor de punto flotante
+     * f1 == f1 resulta false
+     * f1 != f1 resulta true
+     * Si y solo si el valor de f1 es NaN
+     */
+    float f1 = Float.NaN;
+    IO.println(f1 == f1); // false
+    IO.println(f1 != f1); // true
 }
 
 boolean isNaN(float number) {

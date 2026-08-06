@@ -86,7 +86,7 @@ void main() {
     IO.println(isNaN(1.6f));
 
 
-    // Valores de tipo de referencia (String en este caso)
+    // Valores de tipo de referencia (String en este ejemplo)
     String s1 = new String("abc"); // Se crea un objeto String y una referencia a este que se guarda en la variable s1
     String s2 = new String("abc"); // Se crea otro objeto String y una referencia a este que se guarda en la variable s2
 
@@ -99,7 +99,7 @@ void main() {
      */
     IO.println(s1 == s2);
 
-    /** Para comparar si dos cadenas string son iguales en Java se usa el método equals */
+    /** Para comparar si dos cadenas string (y en general dos objetos) son iguales en Java se usa el método equals */
     IO.println(s1.equals(s2));
 }
 

@@ -33,7 +33,16 @@ void ejemplo1() {
     IO.println((i < j) ? i : j);
 }
 
+void ejemplo2() {
+    int age = 17;
+
+    boolean isAdult = age >= 18;
+
+    IO.println("A los " + age + " años una persona " + (isAdult ? "si" : "no") + " se considera adulta");
+}
+
 
 void main() {
     ejemplo1();
+    ejemplo2();
 }

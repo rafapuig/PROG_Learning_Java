@@ -46,6 +46,14 @@ void infiniteLoop2() {
     }
 }
 
+void countLoop() {
+    int count = 0;
+    while (count < 10) { // mientras la cuenta sea menor que el total de veces que debemos contar (repetir)
+        count++;
+        IO.println("Repetición numero " + count);
+    }
+}
+
 void whileNotTenMultiple() {
     int number = 26;
 
@@ -85,9 +93,10 @@ void exitLoop() {
 void main() {
     //infiniteLoop();
     //infiniteLoop2();
+   countLoop();
     //whileNotTenMultiple();
     //digitFrom0To9();
     //exitInfinityLoop();
-    exitLoop();
+    //exitLoop();
 
 }

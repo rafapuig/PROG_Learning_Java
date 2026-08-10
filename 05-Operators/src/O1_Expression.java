@@ -1,15 +1,17 @@
 /**
  * EXPRESIÓN
- * Es una serie de variables, operadores y llamadas a métodos
+ * Es una serie de literales, variables, operadores y llamadas a métodos
  * construidos siguiendo las reglas de la gramática del lenguaje de programación.
+ *
+ * Constituyen una de las piezas de construcción de un programa.
  *
  * Reglas más importantes:
  *
  * Expresión --> literal
  * Expresión --> variable (de la que se leerá su contenido)
  * Expresión --> llamada_a_función (de la que se usará el valor que retorne)
- * Expresión --> operador_unario_prefijo lvalue
- * Expresión --> lvalue operador_unario_postfijo
+ * Expresión --> operador_unario_prefijo <expresión>
+ * Expresión --> <expresión> operador_unario_postfijo
  * Expresión --> <expresion_izquieda> operador_binario <expresion_derecha>
  * Expresión --> ( <expresion> )
  *
@@ -17,9 +19,14 @@
  *
  * A las expresiones también se las conoce como rvalues.
  *
+ * Las expresiones cuando se evalúan (en tiempo de ejecución) pueden dan como resultado:
+ * - un valor (rvalue)
+ * - una variable (lvalue)
+ * - nada
  *
- * Las expresiones dan como resultado un valor cuando se evalúan (en tiempo de ejecución)
- * Las expresiones tienen tipo, y este se obtiene por el compilador (en tiempo de compilación)
+ * Las expresiones SIEMPRE tienen tipo, y este se obtiene por el compilador (en tiempo de compilación)
+ * (el tipo de una llamada a función que no devuelve nada es void)
+ *
  */
 
 void main() {
@@ -40,11 +47,17 @@ void main() {
 
     IO.println(name + " tiene " + age + " años"); // Expresión a base de operadores, literales variables
 
+    // Expresión a base de literales (100, 1), operadores (+, *) y llamadas a función Math.random() y Math.floor(double).
     IO.println(Math.floor(Math.random() * 100) + 1);
 
     IO.println(age++);
     IO.println(age--);
     IO.println(++age);
     IO.println(--age);
+    IO.println(~age);
+    IO.println(~5);
+
+    // La expresión IO.println() da como resultado void, por eso no se puede usar como argumento de llamada.
+    // IO.println(IO.println());
 
 }

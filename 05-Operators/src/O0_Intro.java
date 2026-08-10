@@ -9,7 +9,7 @@
  * <p>
  * Existen dos criterios para clasificar:
  * <p>
- * - Número de operandos
+ * - Número de operandos:
  * - Unario (1)
  * - Prefijo: ++n
  * - Postfijo: n++
@@ -21,6 +21,8 @@
  * - Relacional
  * - Lógico
  * - A nivel de bit
+ *
+ * Además, podemos componerlos con la operación de asignación, el operando de la izquierda guarda el resultado
  */
 
 
@@ -31,6 +33,8 @@ void main() {
     ++n;
     --n;
     n--;
+
+    var m = ~n;
 
     boolean bool = true;
     bool = !bool;
@@ -52,18 +56,23 @@ void main() {
 
     // Aritméticos
     n = 100 / 4;
+    n = 15 % 2;
     n = 25 * 2;
 
     // Relacionales
     bool = n > 100;
     bool = n == 100;
 
-    // Logicos
+    // Lógicos
     bool = false || true;
     bool = true && true;
+    bool = !true;
+    bool = true ^ true;
 
     // a nivel de bit
-    n = n >> 2;
     n = n << 2;
+    n = n >> 2;
+    n = n >>> 2;
+    n <<= 2;
     n = n ^ 255;
 }

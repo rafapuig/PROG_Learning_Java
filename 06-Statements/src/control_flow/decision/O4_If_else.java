@@ -136,13 +136,13 @@ void ejemplo8() {
 
     boolean isZero = number == 0;
 
-    // Una variable de tipo boolean es una expresión boolean y por tanto una condición
+    // Una variable de tipo boolean es una expresión boolean y, por tanto, una condición
     if (isZero) {
         IO.println("Es cero");
     }
 
     // Es totalmente innecesario hacer algo como esto
-    if(isZero == true) {
+    if (isZero == true) {
         IO.println("Es negativo");
     }
 

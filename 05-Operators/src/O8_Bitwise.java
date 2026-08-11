@@ -137,22 +137,23 @@ void bitwiseNOT() {
  * y se usan los 6 primeros bits del operador de la derecha
  */
 void bitwiseLeftShift() {
-    // Valor entero 45, representado en bits    00000000 00000000 00000000 00101101
-    int n = 45;
-    // Resultado de desplazar 4 posiciones 0000|00000000 00000000 00000010 1101[0000]
+    // Valor entero 45, representado en bits    00000000 00000000 00000000 00000101
+    int n = 5;
+    // Resultado de desplazar 4 posiciones 0000|00000000 00000000 00000000 0101[0000]
     // Los bits se desplazan a la izquierda <--
     IO.println(n);
     IO.println(n << 1);
     IO.println(n << 2);
     IO.println(n << 3);
     IO.println(n << 4);
+    IO.println(n << 5);
     IO.println(n << 25);
     IO.println(n << 30);
     IO.println(n << 31);
     IO.println(n << 32); // Equivale a n << 0, el 0 sale de 32 % 32 = 0 -- 32 es 2^5
     IO.println(n << 33); // Equivale a n << 1, el 1 sale de 33 % 32 = 1
 
-    long l = 45;
+    long l = 5;
     IO.println(l << 25);
     IO.println(l << 30);
     IO.println(l << 31);
@@ -309,9 +310,9 @@ void main() {
     //bitwiseOR();
     //bitwiseXOR();
     //bitwiseNOT();
-    //bitwiseLeftShift();
-    bitwiseRightShift();
-    unsignedBitwiseRightShift();
+    bitwiseLeftShift();
+    //bitwiseRightShift();
+    //unsignedBitwiseRightShift();
 
     short i = 10;
     var n = i & 3;

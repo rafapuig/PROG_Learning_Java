@@ -124,7 +124,93 @@ void initializationWithExpresionStatementList3() {
     for (i = 0, s = "", IO.println("Inicializando..."); ; ) ;
 }
 
+/**
+ * Condición
+ * <p>
+ * Es una expresión de tipo boolean
+ * <p>
+ * Es opcional,
+ * si se omite se asume implícitamente el valor true
+ * (lo que resulta en un bucle infinito a menos que se salga mediante un break)
+ */
+
+void conditionOptional1() {
+    // La condición es opcional, se asume implícitamente que es el literal true
+    for (int i = 1; ; i++) // Implicitamente la condición es true
+        IO.println(i);
+}
+
+void conditionOptional2() {
+    // Es equivalente al anterior
+    for (int i = 1; true; i++)
+        IO.println(i);
+}
+
+
+/*
+ * NOTA: Esto no es una buena práctica de programación, siempre que se pueda, es preferible
+ * hacer uso de la condición del bucle para controlar la salida
+ */
+void conditionOptional3() {
+    // Para escapar de un bucle infinito se usa la instrucción break;
+    for (int i = 1; ; i++) {
+        IO.println(i);
+        if (i == 10) break; // Cuando i llegue a 10 saldremos del bucle mediante el break;
+    }
+}
+
+/*
+ * Mejor estilo de programación:
+ */
+void conditionOptional4() {
+    for (int i = 1; i <= 10; i++)
+        IO.println(i);
+}
+
+/**
+ * Lista de instrucciones de expresión
+ *
+ * Una lista cuyos elementos son instrucciones de expresión separados unos de otros por la coma (,)
+ */
+
+/* Reescribimos la función anterior */
+void expresionStatementList1() {
+    // Usamos una lista de dos elementos (instrucciones de expresión):
+    // 1) IO.println(i)
+    // 2) i++
+    for (int i = 1; i <= 10; IO.println(i), i++);
+}
+
+/* Aún podemos hacerla más compacta */
+void expresionStatementList2() {
+    // Al usar el operador postfijo, se usa para el println la version antes de incrementar
+    for (int i = 1; i <= 10; IO.println(i++));
+}
+
+
+/**
+ * Bucles for anidados (nested)
+ *
+ * Podemos hacer un bucle que se repita dentro de otro bucle
+ * Por ejemplo,
+ * Escribir una línea de 5 puntos tres veces
+ * Si repetimos 5 veces la escritura del punto tenemos la línea de 5 puntos (bucle 1)
+ * Si repetimos 3 veces la instrucción que escribe la línea (el bucle 1) tenemos las 3 líneas de 5 puntos (bucle 2)
+ *
+ * El bucle 1 estaría repitiéndose dentro del bucle 2 (estaría anidado en el bucle 2)
+ */
+
+void nestedForLoops() {
+    // El bucle externo se repite 3 veces, para i=0, i=1 e i=2, para i=3 no se cumple que i<3
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 5; j++) {
+            IO.print(".");
+        }
+        IO.println(); // El salto de línea
+    }
+}
 
 void main() {
-    optionalParts();
+    //optionalParts();
+    nestedForLoops();
 }

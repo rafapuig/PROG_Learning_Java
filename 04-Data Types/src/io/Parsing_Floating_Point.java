@@ -1,6 +1,20 @@
 
+void parseFloat() {
+    float f1 = Float.parseFloat("3.14159");
+    float f2 = Float.parseFloat("-1.0002E-10");
+    float f3 = Float.parseFloat("0xFFp2");
+    float f4 = Float.parseFloat("0xB.CAFEp-1");
+
+    IO.println(f1);
+    IO.println(f2);
+    IO.println(f3);
+    IO.println(f4);
+}
+
 
 void main() {
+
+    parseFloat();
 
     float fNumber = Float.parseFloat("1.00000017881393421514957253748434595763683319091796875001");
     float fNumber1 = Float.parseFloat("1.00000017881393421514957253748434595763683319091796875001f");

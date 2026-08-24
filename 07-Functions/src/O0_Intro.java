@@ -114,13 +114,16 @@
  * una expresión de tipo llamada a función.
  */
 
+
 /**
- * Función greet *
+ * Función greet (saludar)
  * No devuelve nada al llamador (tipo de retorno void) *
  * No recibe ningún argumento en la llamada, lista de parámetros vacía. ()
+ * Al no devolver nada, el unico interes en llamarla es por el efecto que produce ejecutar sus instrucciones
+ * (en este caso escribir el mensaje "Hola, ¿qué tal?", en la consola)
  */
 void greet() {
-    IO.println("Hola, que tal?"); // única instrucción del cuerpo del método
+    IO.println("Hola, ¿que tal?"); // única instrucción del cuerpo del método
 }
 
 /**
@@ -150,28 +153,31 @@ int requestNumber2() {
  * Para poder obtener el valor mediante el cual inicializar la variable result, se debe llamar a requestNumber()
  * con lo que se le cederá el control de la CPU para que ejecute sus instrucciones
  * y se esperará a que termine y retorne un valor.
- * Tras el retorno de la llamda a requestNumber la función requestNumberCaller recupera el control y asigna el
+ * Tras el retorno de la llamada a requestNumber la función requestNumberCaller recupera el control y asigna el
  * valor devuelto considerandolo como el resultado de evaluar la expresión de inicialización.
+ * Y continúa imprimiendo el valor del número.
  */
 void requestNumberCaller() {
-    IO.println("Llamando a requestNumber...");
     /* La variable result se inicializa con el valor resultante de evaluar la expresión de tipo
-    llamada a función `requestNumber()`
-     */
+    llamada a función `requestNumber()` */
     var result = requestNumber();
-    IO.println("Numero introducido: " + result);
+    IO.println("Número introducido: " + result);
+}
+
+void callGreet() {
+    IO.println("Llamando a la funcion greet()...");
+    greet(); // Llamada a la funcion greet para que imprima: 'Hola, ¿que tal?', en la consola
+    IO.println("Continuar por la siguiente instrucción, después de llamar a la funcion greet()...");
+
+    // Si llamamos a greet 2 veces más (obtendremos 2 mensajes más en la consola)
+    greet();
+    greet();
 }
 
 void main() {
-    // Llamada a la función greet (producirá un mensaje por la consola)
-    greet();
+    // Llamada a callGreet (no tiene parámetros declarados y, por tanto, no proporcionamos ningún argumento)
+    callGreet();
 
-    // Si la llamamos 2 veces más (tendremos 2 mensajes más)
-    greet();
-    greet();
-
-    // Llamada a requestNumberCaller (le cede el control, hasta que termine)
+    // Llamada a requestNumberCaller (no declara ningún parámetro de entrada, por tanto, lista de argumentos vacía)
     requestNumberCaller();
-
-    IO.println("Fin de main");
 }

@@ -1,5 +1,5 @@
 /**
- * Nada impide a un función llamarse a si misma
+ * Nada impide a una función llamarse a sí misma
  * <p>
  * Es decir, que en las instrucciones del cuerpo de la función A haya llamadas a la misma función A.
  * <p>

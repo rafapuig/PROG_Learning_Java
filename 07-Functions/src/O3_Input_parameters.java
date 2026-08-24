@@ -4,26 +4,51 @@
  *
  * Una función puede declarar una lista de parámetros de entrada.
  * La lista puede ser de 0, 1, 2, ... n parámetros.
- * Cada parámetro va separado de los demás en la lista mediante una ,
+ * Cada parámetro de entrada va separado de los demás en la lista mediante una ,
  *
  * Por cada parámetro de la lista hay que indicar su tipo de datos y su nombre identificador.
  *
- * Un parámetro de entrada es una variable local al ámbito de la función
- * que inicializará el llamador mediante un valor que se denomina ARGUMENTO de llamada.
- * Si lo declaramos como final, no se podrá modificar dentro de la función.
+ * Ejemplo:
+ *
+ *      void printInfo(String name, int age) { ... }
+ *
+ *  - printInfo es el nombre identificador de la función
+ *  - String name, int age (es la lista de parámetros de entrada)
+ *
+ *
+ * Un parámetro de entrada funciona como una variable local al ámbito de la función
+ * que se inicializará mediante una información que proporciona el llamador y que se denomina ARGUMENTO de llamada.
+ * Si declaramos un parámetro de entrada como final, su valor NO se podrá modificar dentro de la función.
+ *
  *
  * Argumento
  * -------------------------------------------------------------------------------------------------------------
  * El argumento de llamada es una EXPRESIÓN
+ *
  * El valor del argumento de llamada con el que se inicializa el parámetro correspondiente
  * se obtiene del resultado de evaluar la expresión argumento
  *
  * El llamador de la función tiene que proporcionar un argumento por cada parámetro de entrada al invocar a la función.
  *
- * Este mecanismo se denomina paso por valor (de argumentos a los parametros de entrada)
+ * Ejemplo 1:
+ *
+ *      printInfo("Perico Palotes", 45)
+ *
+ * Argumento 1: Expresión literal de cadena de caracteres "Perico Palotes"
+ * Argumento 2: Expresion literal de tipo int 45
+ *
+ * Ejemplo 2:
+ *
+ *        printInfo(name, age - 1)
+ *
+ * Argumento 1: Expresión variable name
+ * Argumento 2: Expresion age -1 (operador - con operandos la variable age y el literal 1)
+ *
+ *
+ * En Java el mecanismo para pasar el valor de los argumentos a los parametros de entrada se denomina paso por valor
  * Basicamente, si la expresión argumento de una llamada es una variable,
- * se pasa al parametro una COPIA del valor almancenado en ese momento en la variable.
- * Por tanto, podemos modificar el valor del parámetro, pero esto,
+ * se pasa al parámetro una COPIA del valor almancenado en ese momento en la variable utilizada como argumento.
+ * Por tanto, podremos modificar el valor del parámetro, pero hacer esto,
  * NUNCA supondrá un cambio en el valor de la variable utilizada como argumento de llamada.
  */
 

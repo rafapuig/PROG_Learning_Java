@@ -9,8 +9,7 @@
  * - Incremento y decremento
  * - Asignación
  * - Creación de objetos (ya se verá en POO)
- * - Llamada a función (en Java se les denomina métodos)
- *
+ * - Llamada a función (en Java a las funciones se les denomina métodos)
  */
 
 void main() {

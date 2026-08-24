@@ -9,16 +9,16 @@ void main() {
 }
 
 /*
-- void main() es la declaración de una función (en otro contexto también se le denomina método)
-- void es una keyword (palabra clave) del lenguaje que indica el vacío (porque main no retorna nada)
+- void main() es la declaración de una función de nombre `main` (en otro contexto también se le denomina método)
+- void es una keyword (palabra clave) del lenguaje que indica `el vacío` (porque main no retorna nada)
 - main es un identificador que da nombre a la función declarada
-- () parantesis que sirven para indicar que main es una función (dentro irian posibles parámetros)
+- () parantesis que sirven para indicar que main es una función (dentro irían posibles parámetros)
 - Los separadores { y } encierran (encapsulan) el contenido o cuerpo de la función
-  es decir, el conjunto de instrucciones a ejecutar por la función.
-- IO.println("Welcome to JAVA") es una instrucción (la única en este caso del cuerpo de la función main)
-  y se delimita mediante el separador ;
-- El separador ; se usa para separar una instrucción de otra
-- "Welcome to JAVA" es un valor literal de tipo String (cadena de caracteres)
+  es decir, el conjunto (bloque) de instrucciones a ejecutar por la función cuando es invocada.
+- IO.println("Welcome to JAVA") es una instrucción (la única en este caso del cuerpo de la función main),
+  en este caso concreto una llamada a una función, y se delimita mediante el separador ;
+- El separador ; se usa para separar y delimitar cierto tipo de instrucciones.
+- "Welcome to JAVA" es un valor literal de tipo String (cadena de caracteres) por eso, va encerrado entre "
 - IO agrupa una colección de métodos relacionados con la entrada y salida (I de Input y O de Output)
 - println es un método (función) de la colección IO
                    que imprime un texto

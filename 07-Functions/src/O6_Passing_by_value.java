@@ -5,14 +5,14 @@
  * el llamador tiene que evaluar la expresión usada como argumento y obtener un valor.
  * <p>
  * Ese valor se almacena en la memoria en una determinada dirección (posición)
- * (como si fuera una variable) a este almacen lo denominamos parámetro actual.
+ * (como si fuera una variable) a este almacén lo denominamos parámetro actual.
  * <p>
  * Por cada llamada a la función se crea un almacen para guardar en memoria el valor del parámetro de entrada
  * denominado parametro formal.
  * <p>
  * Cuando se utiliza el mecanismo de paso por valor,
  * se COPIA el valor que tenemos almacenado en el parámetro actual
- * en la memoria reservada para el parámetro de entrada correspodiente a la llamada invocada, parámetro formal.
+ * en la memoria reservada para el parámetro de entrada correspondiente a la llamada invocada, parámetro formal.
  */
 
 void greet(String name) {

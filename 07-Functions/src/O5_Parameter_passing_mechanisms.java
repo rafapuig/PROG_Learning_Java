@@ -44,4 +44,41 @@
  * // Como la dirección era 0x100001 se habrá leído el valor 49 para inicializar copy
  *
  * variable: copy (nombre) ---> 0x110000 (dirección) --> 49 (valor contenido)
+ *
+ *
+ *
+ * En Java solamente las variables de tipos de datos primitivos almacenan directamente el valor
+ *
+ * Las variables del resto de tipos almacenan una referencia o puntero a la dirección donde se encuentra el valor.
+ *
+ * Para pasar de valores a referencias las operaciones se denominan boxing y unboxing (ya se verán)
+ *
+ * // se reserva una zona de memoria en una direccion, alli se copia el valor de age y en refToAge se guarda la dirección
+ * Integer refToAge = age
+ *
+ * // automaticamente (sin desrefenciar manualmente) se obtiene el contenido en la direccion apuntada por refToAge y se COPIA
+ * int copy = refToAge
+ *
+ *
  */
+
+
+void main() {
+
+    int x = 15;
+
+    Integer refToX = x; // Boxing
+
+    int copy = refToX; // Unboxing
+
+    IO.println(refToX);
+    IO.println(copy);
+
+    x = 20;
+
+    IO.println(x); // 20
+    IO.println(refToX); // 15 (referencia a una copia del valor de x y no directamente a x)
+    IO.println(copy);
+}
+
+

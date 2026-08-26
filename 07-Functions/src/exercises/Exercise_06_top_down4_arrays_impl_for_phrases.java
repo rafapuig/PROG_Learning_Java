@@ -25,13 +25,17 @@ int matchesInWord(String word, char letter) {
 
 
 String askSecretWord() {
-    return IO.readln("Dime la palabra secreta a adivinar: ");
+    return IO.readln("Dime la frase secreta a adivinar: ");
 }
 
 
 String createInitialMaskedWord(String word) {
     char[] maskedWordChars = new char[word.length()];
     for (int i = 0; i < maskedWordChars.length; i++) {
+        if (word.charAt(i) == ' ') {
+            maskedWordChars[i] = ' ';
+            continue;
+        }
         maskedWordChars[i] = '_';
     }
     return new String(maskedWordChars);
@@ -74,7 +78,7 @@ boolean checkHasBeenAdded(String letters, char letter) {
 
 
 void printWinnerMessage() {
-    IO.println("Has descubierto la palabra secreta!!!");
+    IO.println("Has descubierto la frase secreta!!!");
 }
 
 void printLooseMessage() {
@@ -113,9 +117,18 @@ void main() {
             // y restar una vida
             looseALife();
         } else { // Si no, actualizar la palabra enmascarada
-            IO.println("Se ha" + (matchCount > 1 ? "n" : "") + " encontrado " + matchCount + " " + letter + (matchCount > 1 ? "'s" : ""));
+            String previousMaskedWord = maskedWord;
             updateMaskedWord(letter);
+            if (previousMaskedWord.equals(maskedWord)) {
+                IO.println("Ya habías dicho la letra " + letter);
+                looseALife();
+            } else {
+                IO.println("Se ha" + (matchCount > 1 ? "n" : "") + " encontrado " + matchCount + " " + letter + (matchCount > 1 ? "'s" : ""));
+            }
+
         }
+
+
 
         // Imprimir la palabra de juego
         printMaskedWord();

@@ -2,15 +2,10 @@
  * El ahorcado
  * <p>
  * Usando la función charAt de los String
- *
- * En esta versión
- * mantenemos una máscara que indica si el carácter ha sido desvelado (clear) o todavía no (masked)
  */
 
 void main() {
 
-    final char MASKED_CHAR = '#';
-    final char CLEAR_CHAR = ' ';
     final char SUBSTITUTION_CHAR = '_';
 
     // Iniciar numero de vidas
@@ -28,18 +23,16 @@ void main() {
     // Pedir palabra secreta al administrador
     final String word = IO.readln("Dime la palabra secreta a adivinar: ");
 
-    // Inicializar la máscara
-    String mask = "";
+    // Inicializar la palabra enmascarada
+    String maskedWord = "";
     for (int i = 0; i < word.length(); i++) {
-        mask += MASKED_CHAR;
+        maskedWord += SUBSTITUTION_CHAR;
     }
 
     // Imprimir la palabra enmascarada
-    for (int i = 0; i < word.length(); i++) {
-        if (i != 0) IO.print(" ");
-        if (mask.charAt(i) == MASKED_CHAR) IO.print(SUBSTITUTION_CHAR);
-        else IO.print(word.charAt(i));
-        //IO.print(maskedWord.charAt(i));
+    for (int i = 0; i < maskedWord.length(); i++) {
+        if (i > 0) IO.print(" ");
+        IO.print(maskedWord.charAt(i));
     }
     IO.println();
 
@@ -113,34 +106,42 @@ void main() {
                 //Imprimir cuantas veces se ha encontrado la letra
                 IO.println("Se ha" + (matchCount > 1 ? "n" : "") + " encontrado " + matchCount + " " + letter + (matchCount > 1 ? "'s" : ""));
 
-                // Actualizar la máscara
-                String newMask = "";
+                // Actualizar la palabra enmascarada
                 for (int i = 0; i < word.length(); i++) {
-                    // Descubrir la letra en la máscara
-                    // Sustituir el '*' por el ' ' si la letra se encuentra en esa posición en la palabra
-                    if (word.charAt(i) == letter) newMask += CLEAR_CHAR;
-                    else newMask += mask.charAt(i);
+                    // Si la letra i-ésima de la palabra
+                    // no es la letra que dijo el jugador,
+                    // seguir y probar con la siguiente i
+                    if (word.charAt(i) != letter) continue;
+
+                    // Descubrir la letra en la maskedWord
+                    // Sustituir la letra de la palabra enmascarada en la posición i (_)
+                    // por la letra que dijo el jugador
+                    String newMaskedWord = "";
+                    for (int j = 0; j < maskedWord.length(); j++) {
+                        if (j != i) newMaskedWord += maskedWord.charAt(j);
+                        else newMaskedWord += letter;
+                    }
+                    maskedWord = newMaskedWord;
                 }
-                mask = newMask;
 
-            }
-
-            // Comprobar si ha adivinado la palabra completa y actualizar
-            boolean maskCleared = true;
-            for (int i = 0; i < mask.length(); i++) {
-                if (mask.charAt(i) == MASKED_CHAR) {
-                    maskCleared = false;
+                // Comprobar si ha adivinado la palabra completa y actualizar
+                isSecretWordGuessed = true;
+                for (int i = 0; i < maskedWord.length(); i++) {
+                    // Si no es el carácter de sustitución, seguimos con el siguiente
+                    if (maskedWord.charAt(i) != SUBSTITUTION_CHAR) continue;
+                    // Se ha encontrado el caracter de sustitución, luego la palabra no esta del todo descubierta aún.
+                    isSecretWordGuessed = false;
                     break;
                 }
+
             }
-            isSecretWordGuessed = maskCleared; //  false; //word.equals(maskedWord);
+
         }
 
         // Imprimir la palabra enmascarada
-        for (int i = 0; i < word.length(); i++) {
+        for (int i = 0; i < maskedWord.length(); i++) {
             if (i != 0) IO.print(" ");
-            if (mask.charAt(i) == MASKED_CHAR) IO.print(SUBSTITUTION_CHAR);
-            else IO.print(word.charAt(i));
+            IO.print(maskedWord.charAt(i));
         }
         IO.println();
 

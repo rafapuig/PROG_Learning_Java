@@ -1,3 +1,5 @@
+import static exercises.exercise_06.helpers.Helpers.*;
+
 /**
  * El ahorcado
  * <p>
@@ -6,27 +8,32 @@
  * Diseño top-down
  */
 
+final char SUBSTITUTION_CHAR = '_';
+String word;
+String maskedWord;
+String notInSecretWordLetters;
+String usedLetters;
+int lives;
+
 void main() {
 
-    final char SUBSTITUTION_CHAR = '_';
-
     // Iniciar numero de vidas
-    int lives = 5;
+    lives = 5;
 
     // Inicializar letras no encontradas
-    String notInSecretWordLetters = "";
+    notInSecretWordLetters = "";
 
     // Inicializar letras usadas
-    String usedLetters = "";
+    usedLetters = "";
 
     // Inicializar si la palabra secreta ha sido adivinada
     boolean isSecretWordGuessed = false;
 
     // Pedir palabra secreta al administrador
-    final String word = askSecretWord();
+    word = askSecretWord();
 
     // Inicializar la palabra enmascarada
-    String maskedWord = createInitialMaskedWord(word, SUBSTITUTION_CHAR);
+    maskedWord = createInitialMaskedWord(word, SUBSTITUTION_CHAR);
 
     // Imprimir la palabra enmascarada
     printMaskedWord(maskedWord);
@@ -41,13 +48,13 @@ void main() {
         // Si la letra ya ha sido usada
         if (hasBeenUsedLetter) {
             // Imprimir que ya ha sido usada anteriormente y que el jugador pierde una vida
-            printUsedLetter(letter);
+            printAlreadyUsedLetter(letter);
 
             // Restar una vida al jugador
             lives--;
 
             // Imprimir que el jugador ha pedido una vida
-            printLooseLife();
+            printLostLife();
 
             // Sí se han acabado las vidas del jugador terminar el juego
             if(lives == 0) continue;
@@ -58,10 +65,7 @@ void main() {
 
             // Buscar la letra en la palabra
             // contar cuantas coincidencias
-            int matchCount = 0;
-            for (int i = 0; i < word.length(); i++) {
-                if (word.charAt(i) == letter) matchCount++;
-            }
+            int matchCount = matchesCountInSecretWord(word, letter);
 
             // Si no se ha encontrado la letra en la palabra secreta ni una vez
             if (matchCount == 0) {
@@ -79,7 +83,7 @@ void main() {
                 lives--;
 
                 // Imprimir que el jugador ha pedido una vida
-                printLooseLife();
+                printLostLife();
 
                 // Sí se han acabado las vidas del jugador terminar el juego
                 if(lives == 0) continue;
@@ -90,15 +94,12 @@ void main() {
                 printTimesLetterFound(matchCount, letter);
 
                 // Actualizar la palabra enmascarada
-                for (int i = 0; i < word.length(); i++) {
-                    if (word.charAt(i) != letter) continue;
-                    // Descubrir la letra en la maskedWord
-                    maskedWord = uncoverLetter(maskedWord, letter, i);
-                }
+                maskedWord = uncoverMaskedLetter(maskedWord, word, letter);
+
+                // Comprobar que se ha adivinado la palabra completa y actualizar
+                isSecretWordGuessed = checkSecretWordGuessed(maskedWord, SUBSTITUTION_CHAR);
             }
 
-            // Comprobar que se ha adivinado la palabra completa y actualizar
-            isSecretWordGuessed = checkWordFullyGuessed(word, maskedWord);
         }
 
         // Imprimir la palabra enmascarada
@@ -128,9 +129,10 @@ void main() {
 }
 
 
+
 /* Mensajes que imprime el programa  */
 
-void printUsedLetter(char letter) {
+void printAlreadyUsedLetter(char letter) {
     IO.println("La letra '" + letter + "' ya ha sido usada!");
 }
 
@@ -146,7 +148,7 @@ void printSecretWordGuessed() {
     IO.println("Has descubierto la palabra secreta!!!");
 }
 
-void printLooseLife() {
+void printLostLife() {
     IO.println("Pierdes una vida!");
 }
 
@@ -156,6 +158,15 @@ void printRemainingLives(int lives) {
 
 void printNoLivesLeft() {
     IO.println("Se te acabaron las vidas");
+}
+
+void printNotInSecretWordLetters(String notInSecretWordLetters) {
+    IO.print("Letras que no están: ");
+    printCharacters(notInSecretWordLetters, ", ");
+}
+
+void printMaskedWord(String maskedWord) {
+    printCharacters(maskedWord, " ");
 }
 
 
@@ -171,75 +182,29 @@ char askLetter() {
 
 
 String createInitialMaskedWord(String word, char substitutionChar) {
-    String masked = "";
-    for (int i = 0; i < word.length(); i++) {
-        masked += substitutionChar;
-    }
-    return masked;
+    return replace(word, substitutionChar, true);
 }
 
 boolean checkHasBeenUsed(String usedLetters, char letter) {
-    boolean found = false;
-    for (int i = 0; i < usedLetters.length(); i++) {
-        if (letter != usedLetters.charAt(i)) continue;
-        found = true;
-        break;
-    }
-    return found;
+    return contains(usedLetters, letter);
 }
 
 boolean checkHasBeenAdded(String notInWordLetters, char letter) {
-    boolean found = false;
-    for (int i = 0; i < notInWordLetters.length(); i++) {
-        if (letter != notInWordLetters.charAt(i)) continue;
-        found = true;
-        break;
-    }
-    return found;
+    return contains(notInWordLetters, letter);
 }
 
-boolean checkWordFullyGuessed(String word, String maskedWord) {
-    return word.equals(maskedWord);
+
+int matchesCountInSecretWord(String word, char letter) {
+    return matchesCount(word, letter);
 }
+
+
+String uncoverMaskedLetter(String maskedWord, String word, char letter) {
+    return unmaskLetter(maskedWord, word, letter);
+}
+
 
 boolean checkSecretWordGuessed(String maskedWord, char maskedLetter) {
-    boolean isSecretWordGuessed = true;
-    for (int i = 0; i < maskedWord.length(); i++) {
-        // Si no es el carácter de sustitución, seguimos con el siguiente
-        if (maskedWord.charAt(i) != maskedLetter) continue;
-        // Se ha encontrado el caracter de sustitución, luego la palabra no esta del todo descubierta aún.
-        isSecretWordGuessed = false;
-        break;
-    }
-    return isSecretWordGuessed;
+    return !contains(maskedWord, maskedLetter);
 }
 
-String uncoverLetter(String maskedWord, char letter, int position) {
-    String newMasked = "";
-    for (int i = 0; i < maskedWord.length(); i++) {
-        if (i != position) newMasked += maskedWord.charAt(i);
-        else newMasked += letter;
-    }
-    return newMasked;
-}
-
-
-
-
-void printNotInSecretWordLetters(String notInSecretWordLetters) {
-    IO.print("Letras que no están: ");
-    for (int i = 0; i < notInSecretWordLetters.length(); i++) {
-        if (i != 0) IO.print(", ");
-        IO.print(notInSecretWordLetters.charAt(i));
-    }
-    IO.println();
-}
-
-
-void printMaskedWord(String maskedWord) {
-    for (int i = 0; i < maskedWord.length(); i++) {
-        if (i > 0) IO.print(" ");
-        IO.print(maskedWord.charAt(i));
-    }
-    IO.println();
-}

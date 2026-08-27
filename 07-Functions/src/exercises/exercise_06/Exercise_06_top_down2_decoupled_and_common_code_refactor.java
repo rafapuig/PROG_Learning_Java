@@ -47,7 +47,7 @@ void main() {
             lives--;
 
             // Imprimir que el jugador ha pedido una vida
-            printLooseLife();
+            printLostLife();
 
             // Sí se han acabado las vidas del jugador terminar el juego
             if(lives == 0) continue;
@@ -76,7 +76,7 @@ void main() {
                 lives--;
 
                 // Imprimir que el jugador ha pedido una vida
-                printLooseLife();
+                printLostLife();
 
                 // Sí se han acabado las vidas del jugador terminar el juego
                 if(lives == 0) continue;
@@ -88,10 +88,11 @@ void main() {
 
                 // Actualizar la palabra enmascarada
                 maskedWord = uncoverMaskedLetter(maskedWord, word, letter);
+
+                // Comprobar que se ha adivinado la palabra completa y actualizar
+                isSecretWordGuessed = checkSecretWordGuessed(maskedWord, SUBSTITUTION_CHAR);
             }
 
-            // Comprobar que se ha adivinado la palabra completa y actualizar
-            isSecretWordGuessed = checkSecretWordGuessed(maskedWord, SUBSTITUTION_CHAR);
         }
 
         // Imprimir la palabra enmascarada
@@ -140,7 +141,7 @@ void printSecretWordGuessed() {
     IO.println("Has descubierto la palabra secreta!!!");
 }
 
-void printLooseLife() {
+void printLostLife() {
     IO.println("Pierdes una vida!");
 }
 
@@ -370,11 +371,11 @@ boolean checkWordFullyGuessed(String word, String maskedWord) {
     //return contains(maskedWord, '_');
 }
 
+
 /**
- * Otra forma de comprobar que la palabra ha sido descubierta
- * es no encontrando el carácter que enmascara letras en la palabra enmascarada
- * es decir, si la palabra enmascarada no contiene el carácter que sustituye la letra real
- * cuando todavia no ha sido descubierta en ninguno de sus caracteres.
+ * Ahora usamos la función conntains
+ * pasándole el carácter maskedLetter
+ * Si lo no contiene querrá decir que la palabra ha sido completamente descubierta
  * @param maskedWord
  * @param maskedLetter
  * @return

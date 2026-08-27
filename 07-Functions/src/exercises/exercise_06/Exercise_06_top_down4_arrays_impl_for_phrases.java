@@ -115,13 +115,13 @@ void main() {
             updateNotInWordLetters(letter);
 
             // y restar una vida
-            looseALife();
+            loseALife();
         } else { // Si no, actualizar la palabra enmascarada
             String previousMaskedWord = maskedWord;
             updateMaskedWord(letter);
             if (previousMaskedWord.equals(maskedWord)) {
                 IO.println("Ya habías dicho la letra " + letter);
-                looseALife();
+                loseALife();
             } else {
                 IO.println("Se ha" + (matchCount > 1 ? "n" : "") + " encontrado " + matchCount + " " + letter + (matchCount > 1 ? "'s" : ""));
             }
@@ -201,7 +201,7 @@ void updateMaskedWord(char letter) {
 }
 
 
-void looseALife() {
+void loseALife() {
     lives--;
 }
 

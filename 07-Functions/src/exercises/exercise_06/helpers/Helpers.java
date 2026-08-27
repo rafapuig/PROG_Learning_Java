@@ -24,6 +24,14 @@ public class Helpers {
         return result.toString();
     }
 
+    private static String replaceAtStringArrayImpl(String text, char character, int index) {
+        char[] result = new char[text.length()];
+        for (int i = 0; i < result.length; i++) {
+            if (i != index) result[i] = (text.charAt(i));
+            else result[i] = character;
+        }
+        return new  String(result);
+    }
 
 
     public static String replace(String text, char character) {
@@ -71,11 +79,11 @@ public class Helpers {
         return result;
     }
 
-    private static String replaceStringBuilderImpl(String text, char character, boolean replaceSpaces) {
+    private static String replaceStringBuilderImpl(String text, char character, boolean ignoreSpaces) {
         final char space = ' ';
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < text.length(); i++) {
-            if (replaceSpaces && text.charAt(i) == space) result.append(space);
+            if (ignoreSpaces && text.charAt(i) == space) result.append(space);
             else result.append(character);
         }
         return result.toString();

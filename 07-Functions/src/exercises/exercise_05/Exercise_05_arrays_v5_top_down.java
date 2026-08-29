@@ -1,4 +1,5 @@
-import static exercises.helpers.Helpers.*;
+import static exercises.exercise_05.helpers.Helpers.findMaxBy;
+import static exercises.exercise_05.helpers.Helpers.random;
 
 /**
  * En un videojuego, los jugadores lanzan un dado. El jugador que consigue la tirada más alta suma un punto.

@@ -1,4 +1,4 @@
-package exercises.helpers;
+package exercises.exercise_05.helpers;
 
 public class Helpers {
 

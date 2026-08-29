@@ -1,6 +1,37 @@
-/*
+/**
  * Mecanismos para el paso de parámetros
  * -----------------------------------------------------------------------------------------
+ *
+ * Existen diferentes técnicas para realizar el paso de información (datos) a una función
+ * desde el llamador durante la llamada a la función.
+ *
+ * Esa información o datos se conoce como parámetros o argumentos.
+ *
+ * Antes de explorar los distintos mecanismos vamos a aclarar los terminos utilizados:
+ *
+ * - Parametros formales:
+ *      Variables utilizadas en la lista de parametros de una función como marcadores de posición.
+ *      También llamados simplemente parámetros.
+ *
+ * - Parametros reales (actual parameters):
+ *      Expresiones o valores pasados durante la llamada a la función.
+ *      También llamados simplemente argumentos.
+ *
+ * Cada lenguaje implementa algunos (no siempre todos los mecanismos de paso de parametros)
+ *
+ * Cada mecanismo tiene sus ventajas e inconvenientes, como veremos.
+ *
+ * Si se usa como argumento un almacén (variable)
+ * y se hace una copia del valor de tal argumento en la variable que da soporte al parámetro
+ * se tiene la ventaja de que los cambios en el valor del parámetro no afectan a la variable usada como argumento.
+ *
+ * No obstante, cuando esto implica copiar un dato de un tamaño considerable (mucha cantidad de memoria)
+ * hacer la copia no será lo más conveniente. Habrá que hacer uso de algún otro mecanismo que no implice la copia
+ * de un dato de gran tamaño en memoria.
+ *
+ *
+ *
+ *
  *
  * Existen varios mecanismos para el paso de valores a los parámetros de entrada (y para el valor de retorno)
  *
@@ -60,7 +91,40 @@
  * int copy = refToAge
  *
  *
+ * La
+ *
+ * int[] age = new int[0];
+ *
+ * age[0] = 49;
+ *
+ * int[] pointerToAge = age;
+ *
+ * int copy = pointerToAge[0]; // 49
+ *
+ * pointerToAge[0] = 50;  // age[0] es 50 tambien
+ *
+ *
+ *
+ *
  */
+
+
+void PointerInJavaSimulatedByArrays() {
+
+    int age = 49;
+
+    int[] ageArray = new int[1];
+    ageArray[0] = age;
+
+    int[] pointerToAge = ageArray;
+
+    int copy = pointerToAge[0]; // 49
+
+    pointerToAge[0] = 50;
+
+    IO.println(ageArray[0]); // 50
+
+}
 
 
 void main() {

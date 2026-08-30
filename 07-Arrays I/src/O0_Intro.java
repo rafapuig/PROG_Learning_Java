@@ -341,11 +341,26 @@ void solutionWithArrays() {
         numbers[i] = temp;
     }
 
+
+
     for (int i = 0; i < numbers.length; i++) {
         if (i != 0) IO.print(" ");
         IO.print(numbers[i]);
     }
     IO.println();
+
+    // Obtener la suma de todos los números
+    int sum = 0;
+    for (int number : numbers) {
+        sum += number;
+    }
+
+    // Obtener la media
+    float avg = (float) sum / numbers.length;
+
+
+    IO.println("Suma = " + sum);
+    IO.println("Media = " + avg);
 }
 
 

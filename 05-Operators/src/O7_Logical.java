@@ -4,14 +4,14 @@
  * Se aplican solamente a operandos (valores, expresiones) de tipo boolean y dan como resultado otro boolean.
  * (Existen otros operadores que usan los mismos simbolos, pero cuyos operandos son numéricos)
  * <p>
- * Una expresión de tipo boolean también recibe el nombre de CONDICION.
+ * Una expresión de tipo boolean también recibe el nombre de CONDICIÓN.
  * <p>
  * Operadores:
  * !    NOT (Unario prefijo)
  * &&   AND lógico de cortocircuito
  * &    AND lógico
- * ||   OR logico de cortocricuito
- * |    OR logico
+ * ||   OR lógico de cortocircuito
+ * |    OR lógico
  * ^    XOR
  * &=   AND compuesto con asignación
  * !=   OR compuesto con asignación

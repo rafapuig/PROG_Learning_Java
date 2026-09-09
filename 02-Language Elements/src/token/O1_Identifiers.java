@@ -11,7 +11,7 @@
  * - Se define (se definen y describen sus características)
  *
  * El elemento (entidad) se puede usar posteriormente varias veces
- * - Se usa haciendo referencia al este mediante su nombre identificador
+ * - Se usa haciendo referencia a este mediante su nombre identificador
  * - Por eso es importante identificarlo mediante un nombre (identificador)
  *
  *
@@ -25,8 +25,8 @@
  * - Si identificamos una cosa usar sustantivos: User, name, day, year, etc.
  * - Si nombramos una action usar verbos: get, print, compute, add, remove, etc.
  *
- * NOTA: Quizá lo más importante de programar sea escoger un buen nombre
- * para identificar un elemento del programa.
+ * NOTA: Quizá la tarea más importante cuando estamos escribiendo un programa
+ * sea la de escoger un buen nombre para identificar un elemento del programa.
  *
  */
 

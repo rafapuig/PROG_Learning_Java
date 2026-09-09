@@ -17,5 +17,9 @@
  */
 
 void main() {
-    
+    var record  = ""; // la keyword record aquí no tiene consideración especial de keyword
+
+    record Point(int x, int y) {} // Aquí record si es actúa como keyword
+
+    var var = "var"; // var como keyword, como identificador y como literal de texto según el contexto
 }

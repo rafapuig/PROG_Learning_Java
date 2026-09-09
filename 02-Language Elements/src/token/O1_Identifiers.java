@@ -8,15 +8,15 @@
  *
  * El elemento (entidad) se declara y define (una vez)
  * - Se declara (se indica que va a existir algo y que se llamará así)
- * - Se define (se definen y describen sus caracteristicas)
+ * - Se define (se definen y describen sus características)
  *
  * El elemento (entidad) se puede usar posteriormente varias veces
- * - Se usa haciendo referencia al este mediante su nombre idenficador
+ * - Se usa haciendo referencia al este mediante su nombre identificador
  * - Por eso es importante identificarlo mediante un nombre (identificador)
  *
  *
  * ¿De qué elementos (entidades) estamos hablando?
- * Variables, funciones, clases, tipos, interfaces, parametros, módulos, etc.
+ * Variables, funciones, clases, tipos, interfaces, parámetros, módulos, etc.
  *
  *
  * Buenas prácticas de la industria
@@ -54,7 +54,7 @@
  *  - No puede empezar por DIGITO
  *
  *  OJO: Algunas combinaciones tampoco se consideran válidas:
- *  - Si coinidice con una palabra reservada del lenguaje --> https://docs.oracle.com/en/java/javase/26/docs/specs/jls/jls-3.html#jls-ReservedKeyword
+ *  - Si coincide con una palabra reservada del lenguaje --> https://docs.oracle.com/en/java/javase/26/docs/specs/jls/jls-3.html#jls-ReservedKeyword
  *  - Valor literal de tipo booleano (lógico): true o false --> https://docs.oracle.com/en/java/javase/26/docs/specs/jls/jls-3.html#jls-BooleanLiteral
  *  - Valor literal del tipo nulo: null --> https://docs.oracle.com/en/java/javase/26/docs/specs/jls/jls-3.html#jls-NullLiteral
  *
@@ -97,6 +97,7 @@ void main() {
     IO.println(Character.isJavaIdentifierPart(':'));
     IO.println(Character.isJavaIdentifierPart('-'));
     IO.println(Character.isJavaIdentifierPart('%'));
+    IO.println(Character.isJavaIdentifierPart('@'));
 
     // Un identificador puede empezar por el $?
     IO.println(Character.isJavaIdentifierPart('$')); // true

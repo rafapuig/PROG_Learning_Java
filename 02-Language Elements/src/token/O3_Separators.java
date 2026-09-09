@@ -6,7 +6,7 @@
  * - `[ ]` → Declaran y acceden al array
  * - `;` → Finalizan las instrucciones
  * - `,` → Separa los elementos del array
- * - `.` → Accede `println`
+ * - `.` → Accede a `println`
  */
 
 

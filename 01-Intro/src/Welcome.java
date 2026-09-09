@@ -12,7 +12,7 @@ void main() {
 - void main() es la declaración de una función de nombre `main` (en otro contexto también se le denomina método)
 - void es una keyword (palabra clave) del lenguaje que indica `el vacío` (porque main no retorna nada)
 - main es un identificador que da nombre a la función declarada
-- () parantesis que sirven para indicar que main es una función (dentro irían posibles parámetros)
+- () paréntesis que sirven para indicar que main es una función (dentro irían posibles parámetros)
 - Los separadores { y } encierran (encapsulan) el contenido o cuerpo de la función
   es decir, el conjunto (bloque) de instrucciones a ejecutar por la función cuando es invocada.
 - IO.println("Welcome to JAVA") es una instrucción (la única en este caso del cuerpo de la función main),

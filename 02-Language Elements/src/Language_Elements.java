@@ -22,7 +22,7 @@
  * var x --> Son dos tokens: la keyword contextual var y el identificador x
  * int y=10 --> son 4 tokens: int, y, =, 10 (a veces no es necesario espacio para delimitar tokens)
  *
- * Se considera un espacio en blanco no solo el caracter espacio, además de este:
+ * Se considera un espacio en blanco no solo el carácter espacio, además de este:
  * - el tabulador
  * - el final de línea (salto de línea)
  */

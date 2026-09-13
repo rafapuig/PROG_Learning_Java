@@ -7,6 +7,9 @@
  * - `;` → Finalizan las instrucciones
  * - `,` → Separa los elementos del array
  * - `.` → Accede a `println`
+ *
+ * Algunos separadores actúan en pareja, de manera que abren y cierran contextos.
+ * NOTA: Todo lo que se abre se tiene que cerrar!!!
  */
 
 

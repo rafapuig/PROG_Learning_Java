@@ -29,9 +29,9 @@ Hello, World!
 Muestra el siguiente texto utilizando varias llamadas a `IO.println()`.
 
 ```text
-My name is Alice.
-I am learning Java.
-Welcome!
+Me llamo Pepito.
+Estoy aprendiendo Java.
+Bienvenido!
 ```
 
 ---
@@ -41,7 +41,7 @@ Welcome!
 Escribe un programa que utilice únicamente `IO.print()` para mostrar el siguiente resultado:
 
 ```text
-Java Programming
+Programacion en Java
 ```
 
 ---
@@ -51,7 +51,7 @@ Java Programming
 Muestra el siguiente resultado utilizando `IO.println()`.
 
 ```text
-Programming
+Programación
 
 Java
 ```
@@ -63,7 +63,7 @@ Java
 Solicita al usuario su nombre utilizando:
 
 ```java
-IO.readln("Name: ")
+IO.readln("Nombre: ")
 ```
 
 Después, muestra un saludo.
@@ -71,9 +71,9 @@ Después, muestra un saludo.
 Ejemplo:
 
 ```text
-Name: Alice
+Name: Perico
 
-Hello Alice!
+Hello Perico!
 ```
 
 ---
@@ -85,7 +85,7 @@ Solicita el nombre de una ciudad.
 Después muestra:
 
 ```text
-You live in Valencia.
+Vives en Valencia.
 ```
 
 (Sustituye *Valencia* por el dato introducido por el usuario).
@@ -99,7 +99,7 @@ Solicita el título del videojuego favorito del usuario.
 Después muestra:
 
 ```text
-Your favourite game is Minecraft.
+Tu videojuego favorito es Minecraft.
 ```
 
 ---
@@ -119,7 +119,7 @@ Solicita:
 Muestra un mensaje como:
 
 ```text
-Your pet is called Luna.
+Tu mascota se llama Luna.
 ```
 
 ---
@@ -136,7 +136,7 @@ Después muestra el nombre completo.
 Ejemplo:
 
 ```text
-Full name: Alice Smith
+Nombre completo: Perico Palotes
 ```
 
 ---
@@ -154,9 +154,9 @@ Muestra un pequeño resumen.
 Ejemplo:
 
 ```text
-Name : Alice
-City : Valencia
-Country : Spain
+Nombre : Perica
+Ciudad : Valencia
+Pais : España
 ```
 
 ---
@@ -184,7 +184,7 @@ Después muestra un mensaje de bienvenida utilizando concatenación.
 Ejemplo:
 
 ```text
-Welcome Alice to the Java course!
+Bienvenid@ Perico al curso de Java!
 ```
 
 ---
@@ -224,11 +224,11 @@ Solicita:
 Muestra una ficha como la siguiente:
 
 ```text
-PLAYER PROFILE
+PERFIL JUGADOR
 --------------
-Nickname : PixelMaster
-Game     : Minecraft
-Platform : PC
+Nickname   : PixelMaster
+Juego      : Minecraft
+Plataforma : PC
 ```
 
 ---
@@ -295,12 +295,12 @@ Muestra el siguiente formato:
 
 ```text
 ==============================
-BUSINESS CARD
+TARJETA DE PRESENTACION
 ==============================
-Name............. Alice Smith
-Profession....... Software Developer
-Company.......... OpenAI
-Email............ alice@example.com
+Nombre........... Perico Palotes
+Profesion........ Software Developer
+Compañia......... OpenAI
+Email............ perico@palotes.com
 ==============================
 ```
 
@@ -361,11 +361,11 @@ Muestra un pequeño currículum con un formato similar al siguiente:
 ==============================
 CURRICULUM
 ==============================
-Name............... Alice Smith
-Profession......... Software Developer
-City............... Valencia
-Phone.............. 600123123
-Email.............. alice@example.com
+Nombre............. Armando Bronca Segura
+Profesion.......... Software Developer
+Ciudad............. Valencia
+Telefono........... 600123123
+Email.............. armando@example.com
 ==============================
 ```
 

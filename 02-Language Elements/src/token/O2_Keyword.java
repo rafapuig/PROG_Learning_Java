@@ -8,18 +8,23 @@
  * - Reserved Keyword (51)
  * - Contextual Keyword (17)
  *
- * Una reserved keyword no se puede usar como identificador
+ * Una reserved keyword NUNCA se puede usar como identificador
  *
- * Existen 17 secuencias de caracteres que se interpretarán como keyword o como otro tipo de token
- * dependiendo de donde aparecen, es decir, del contexto.
+ * Existen otras 17 secuencias de caracteres que se interpretarán
+ * como keyword o como otro tipo de token
+ * dependiendo del contexto donde aparecen.
  *
- * NOTA: true y false NO son keywords se consideran literales
+ * NOTA: true y false NO son keywords se consideran literales del tipo de datos boolean
  */
 
 void main() {
-    var record  = ""; // la keyword record aquí no tiene consideración especial de keyword
 
-    record Point(int x, int y) {} // Aquí record si es actúa como keyword
+    // la keyword record aquí no tiene consideración especial de keyword
+    var record  = "";
 
-    var var = "var"; // var como keyword, como identificador y como literal de texto según el contexto
+    // Aquí record sí actúa como keyword
+    record Point(int x, int y) {}
+
+    // var como keyword, como identificador y como literal de texto según el contexto
+    var var = "var";
 }

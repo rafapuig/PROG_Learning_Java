@@ -23,7 +23,7 @@
  * - En general se recomienda que los nombres de los elementos de un programa
  * sean en inglés.
  * - Si identificamos una cosa usar sustantivos: User, name, day, year, etc.
- * - Si nombramos una action usar verbos: get, print, compute, add, remove, etc.
+ * - Si nombramos una acción usar verbos: get, print, compute, add, remove, etc.
  *
  * NOTA: Quizá la tarea más importante cuando estamos escribiendo un programa
  * sea la de escoger un buen nombre para identificar un elemento del programa.
@@ -32,7 +32,8 @@
 
 /**
  * Ejemplo de uso de un identificador
- * Si vamos a guardar un valor (de un tipo)
+ * -----------------------------------------------------------------------------
+ * Si vamos a guardar un valor (de un tipo de dato)
  * Necesitamos identificar el almacén (lugar en la memoria) donde lo guardamos
  * para posteriormente poder buscar por su nombre identificador
  * donde se encuentra almacenado y proceder a leer y recuperarlo
@@ -74,10 +75,10 @@ int sealed = 10;
 /* No válidos en identificadores de tipos */
 // class var {}
 // class record {}
-//interface yield {}
-//enum sealed {}
+// interface yield {}
+// enum sealed {}
 
-/* Si le pongo el nombre yield a un método (función)
+/* Si le pongo el nombre yield a un metodo (función)
    Luego tendré problemas para llamarla (usarla) */
 void yield() { }
 
@@ -88,23 +89,29 @@ void callYieldMethod() {
 
 
 void main() {
-    // Un identificador puede empezar por el carácter dígito 1
-    IO.println(Character.isJavaIdentifierStart('1'));
-    // El digito 1 puede formar parte de un identificador en Java
-    IO.println(Character.isJavaIdentifierPart('1'));
 
-    IO.println(Character.isJavaIdentifierPart('.'));
-    IO.println(Character.isJavaIdentifierPart(':'));
-    IO.println(Character.isJavaIdentifierPart('-'));
-    IO.println(Character.isJavaIdentifierPart('%'));
-    IO.println(Character.isJavaIdentifierPart('@'));
+    // Un identificador puede empezar por el carácter dígito 1?
+    IO.println(Character.isJavaIdentifierStart('1')); // falso
+
+    // El digito 1 puede formar parte de un identificador en Java?
+    IO.println(Character.isJavaIdentifierPart('1')); // true
+
+    // Estos símbolos pueden formar parte de un nombre identificador?
+    IO.println(Character.isJavaIdentifierPart('.')); // false
+    IO.println(Character.isJavaIdentifierPart(':')); // false
+    IO.println(Character.isJavaIdentifierPart('-')); // false
+    IO.println(Character.isJavaIdentifierPart('%')); // false
+    IO.println(Character.isJavaIdentifierPart('@')); // false
 
     // Un identificador puede empezar por el $?
-    IO.println(Character.isJavaIdentifierPart('$')); // true
+    IO.println(Character.isJavaIdentifierStart('$')); // true
+
     // Un identificador puede usar el $ como carácter?
-    IO.println(Character.isJavaIdentifierPart('$'));
+    IO.println(Character.isJavaIdentifierPart('$')); // true
 
     // Un identificador puede empezar por el carácter ñ
     IO.println(Character.isJavaIdentifierStart('ñ')); // true
+
+    // Un identificador puede contener el carácter ñ (si no es el primero)
     IO.println(Character.isJavaIdentifierPart('ñ')); // true
 }

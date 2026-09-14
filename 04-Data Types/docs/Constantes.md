@@ -73,10 +73,11 @@ Las constantes también pueden declararse dentro de un método.
 ```java
 public static void main(String[] args) {
 
-    final double VAT = 0.21;
+    final double IVA = 0.21;
 
     double price = 100;
-    double total = price + price * VAT;
+    
+    double total = price + price * IVA;
 
     System.out.println(total);
 

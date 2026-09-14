@@ -27,9 +27,9 @@ import static util.Utils.bits;
  * TODOS positivos!!! Una variable de tipo char no puede contener valores negativos
  * <p>
  * Se usa cuando:
- * - necesitamos almacenar el código de un caracter Unicode desde el 0000 al FFFF
+ * - necesitamos almacenar el código de un carácter Unicode desde el 0000 al FFFF
  * <p>
- * Exiten literales de tipo character
+ * Existen literales de tipo char
  *
  */
 

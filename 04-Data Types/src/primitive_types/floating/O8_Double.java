@@ -16,7 +16,7 @@
  * Se definen dos valores cero: +0.0f y el -0.0f en el conjunto de valores,
  * aunque cuando se comparan se consideran iguales
  *
- * Se definen dos infinitos: infinto positivo e infinito negativo
+ * Se definen dos infinitos: infinito positivo e infinito negativo
  * Por ejemplo, el resultado de dividir 2.5f entre 0.0f es infinito positivo
  * y dividir 2.5f entre -0.0f es infinito negativo.
  *
@@ -50,9 +50,7 @@ void suma() {
 
 void main() {
 
-    suma(
-
-    );
+    suma();
 
     /** Podemos asignar un literal de tipo float a una variable de tipo float */
     float number = 15f;

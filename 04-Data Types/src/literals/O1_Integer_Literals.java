@@ -26,15 +26,15 @@ void tenInDifferentBasesDemo() {
 void underscoreSeparatorDemo() {
     var aMillion = 1_000_000;
     var hex = 0xFF_FF_CA_FE;
-    var binary = 0b1111_1111_1111_1111_1100_1010_1111_1110;
+    var binary = 0b1111_1111_1111_1111_1100_1010_1111_1110; // F = 1111 C = 1100 A = 1010 E = 1110
 
     IO.println(aMillion);
-    IO.println(binary);
     IO.println(hex);
+    IO.println(binary);
 }
 
 void largestPositiveIntDemo() {
-    var largestPositive = 2147483647;
+    var largestPositive = 2_147_483_647;
     //var largestPositiveWrong = 2147483648;
     var largestPositiveInHexadecimal = 0x7f_ff_ff_ff;
     var largestPositiveInOctal = 017_777_777_777;

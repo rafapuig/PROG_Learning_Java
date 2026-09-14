@@ -14,14 +14,14 @@
 /**
  * Tipo long
  *
- * Se usa para representar numeros de 64 bits con signo
+ * Se usa para representar números de 64 bits con signo
  * Se necesitan 64 bits de memoria para almacenar un valor
  *
- * Se usa cuando los calculos con números enteros exceden el rango de un valor de tipo int, dado
+ * Se usa cuando los cálculos con números enteros exceden el rango de un valor de tipo int, dado
  * que un valor de tipo long consume el doble de memoria que un valor de tipo int
  *
  * El rango es desde -2*64 (9.223.372.036.854.775.807, nueve trillones) hasta 2^64-1 (-9.223.372.036.854.775.808)
- * La mitad de valores son negativos y la otra mitad son positivios
+ * La mitad de valores son negativos y la otra mitad son positivos.
  * Positivos parece que tenemos uno menos, pero esto es porque hay que incluir el cero
  */
 

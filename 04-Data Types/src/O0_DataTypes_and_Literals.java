@@ -1,8 +1,8 @@
 /**
  * Tipo de dato (tipo)
  *
- * Se define en terminos de 3 componentes:
- * - Un cojunto de valores
+ * Se define en términos de 3 componentes:
+ * - Un conjunto de valores
  * - Un conjunto de operaciones aplicables a los valores
  * - Una representación que determina como se almacena un valor en memoria
  *
@@ -17,15 +17,16 @@
  *
  *
  * Tipos de datos definidos por el usuario (el programador)
- * Se definen en terminos de combinar tipos primitivos
- * y otros tipos de datos definidos por el usuario
+ * Se definen en términos de combinar:
+ * - tipos primitivos
+ * - y otros tipos de datos definidos por el usuario
  */
 
 /** Tipos primitivos en Java
  *
  * Java tiene 8 tipos de datos primitivos
  *
- * Se dividen en 2 categorias principales:
+ * Se dividen en 2 categorías principales:
  *  - booleanos
  *  - numéricos
  *
@@ -54,7 +55,7 @@
  * Un literal de tipo X es un valor del tipo X que puede ser representado directamente en el código fuente
  * sin que se requiera realizar ningún cálculo.
  *
- * Ejemplos;
+ * Ejemplos:
  * 10 es un literal del tipo int
  * true es un literal del tipo boolean
  *
@@ -77,6 +78,6 @@ void main() {
     IO.println(10L); // Valor de tipo long (entero largo)
     IO.println(true); // Valor booleano (lógico) V o F
     IO.println(10.5f); // Valor de tipo float
-    IO.println('1'); // Valor de tipo caracter
+    IO.println('1'); // Valor de tipo carácter
     IO.println("10"); // Valor de tipo String (cadena de caracteres)
 }

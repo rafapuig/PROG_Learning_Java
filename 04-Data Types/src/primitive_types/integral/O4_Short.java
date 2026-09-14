@@ -14,7 +14,7 @@
 /**
  * Tipo short
  *
- * Se usa para representar numeros de 16 bits CON signo
+ * Se usa para representar números de 16 bits CON signo
  * Se necesitan 16 bits de memoria para almacenar un valor
  *
  *
@@ -26,7 +26,7 @@
  * Se usa cuando:
  * - necesitamos una gran cantidad de variables cuyos valores van a estar dentro del rango -32.768 a 32.767
  *
- * No exiten literales de tipo short
+ * No existen literales de tipo short
  *
  */
 

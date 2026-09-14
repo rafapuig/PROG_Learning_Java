@@ -2,7 +2,7 @@
  * Literales de carácter
  * <p>
  * Se expresan en el código fuente mediante...
- * - un único caracter unicode
+ * - un único carácter unicode
  * - una secuencia de escape
  * ... encerradas entre comillas simples
  * <p>

@@ -42,7 +42,7 @@ void operatorNOT() {
 
     boolean b;
     b = !true; // Se asigna el valor falso (no verdadero)
-    b = !false; // Se asigna el valor verdadeo (no falso)
+    b = !false; // Se asigna el valor verdadero (no falso)
 
     var isAlive = true;
     /**

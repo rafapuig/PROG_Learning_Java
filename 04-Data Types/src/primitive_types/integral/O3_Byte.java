@@ -16,7 +16,7 @@ import static util.Utils.bits;
 /**
  * Tipo byte
  *
- * Se usa para representar numeros de 8 bits CON signo
+ * Se usa para representar números de 8 bits CON signo
  * Se necesitan 8 bits de memoria para almacenar un valor
  *
  *
@@ -29,7 +29,7 @@ import static util.Utils.bits;
  * - necesitamos una gran cantidad de variables cuyos valores no van a estar fuera del rango -128 a 127
  * - tratamos con datos binarios en un fichero o en un flujo de red.
  *
- * No exiten literales de tipo byte
+ * No existen literales de tipo byte
  *
  */
 

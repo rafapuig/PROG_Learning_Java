@@ -19,6 +19,7 @@
  * - Conjunto de valores:
  * El rango va desde -2^31 (-2.147.483.648) hasta 2^31-1 (2.147.483.647)
  * La mitad de valores son negativos y la otra mitad son positivos
+ *
  * Parece que tenemos un positivo menos,
  * pero esto es porque hay que incluir el cero (que se considera positivo)
  *

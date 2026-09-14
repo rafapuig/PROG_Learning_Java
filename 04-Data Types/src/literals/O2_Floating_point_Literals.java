@@ -27,7 +27,7 @@
  * y se corresponde con el literal 3.4028235e38f
  * y 0x1.ffffrP+127f
  * <p>
- * - El valor más pequeño positivo de tipo float es numericamente equivalente a 2^-149
+ * - El valor más pequeño positivo de tipo float es numéricamente equivalente a 2^-149
  * y se corresponde con el literal 1.4e-45f
  * y 0x0.00002P-126f o también 0x1.0P-149f
  *

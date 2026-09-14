@@ -17,7 +17,7 @@
  * - Son aquellas cuyo valor se conoce en el momento de compilar el
  * código fuente del programa.
  * - Por convención se utiliza SNAKE_CASE para el identificador
- * - Se inicializa mediante una expresión que depende unicamente
+ * - Se inicializa mediante una expresión que depende únicamente
  * de valores literales y/u otras constantes en tiempo de ejecución.
  * - Es obligatorio inicializarlas en su declaración.
  *
@@ -31,8 +31,8 @@ void main() {
     final float CENTIMETERS_PER_INCH = 2.54f;
 
     // Constante en tiempo de compilación
-    /* Se inicializa con una expresion que depende de literales y otras constantes */
-    final float MILIMETERS_PER_INCH = 10 * CENTIMETERS_PER_INCH;
+    /* Se inicializa con una expresión que depende de literales y otras constantes */
+    final float MILLIMETERS_PER_INCH = 10 * CENTIMETERS_PER_INCH;
 
     notInitializedConstant();
     compileConstantVsValue();
@@ -45,7 +45,7 @@ void compileConstantVsValue() {
     final int DAYS_IN_WEEK = 7;
 
     // Constante en tiempo de compilación (sigue siendo una constante de compilación)
-    /* Se inicializa con una expresion que depende de literales y otras constantes */
+    /* Se inicializa con una expresión que depende de literales y otras constantes */
     final int DAY_IN_FORTNIGHT = 2 * DAYS_IN_WEEK;
 
     /**

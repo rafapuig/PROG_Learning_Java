@@ -1,14 +1,14 @@
 /**
  * https://docs.oracle.com/en/java/javase/26/docs/specs/jls/jls-4.html#jls-4.2.2
  * https://docs.oracle.com/en/java/javase/26/docs/specs/jls/jls-4.html#jls-4.2.4
- * <p>
+
  * Operador
- * <p>
+
  * Es un tipo de token que realiza una determinada operación
  * a partir de uno, dos o tres operandos.
- * <p>
+
  * Existen dos criterios para clasificar:
- * <p>
+
  * - Número de operandos:
  * - Unario (1)
  * - Prefijo: ++n

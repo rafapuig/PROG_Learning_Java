@@ -1,8 +1,8 @@
 /**
  * Tipos de datos integrales
- * <p>
+ *
  * Es un tipo de datos numérico cuyos valores son números enteros
- * <p>
+ *
  * En Java tenemos 5 tipos de datos integrales / enteros:
  * - byte
  * - short
@@ -14,7 +14,6 @@
 import util.Utils;
 
 import static util.Utils.bits;
-import static util.Utils.bits;
 
 /**
  * Tipo char
@@ -23,22 +22,23 @@ import static util.Utils.bits;
  * Se necesitan 16 bits de memoria para almacenar un valor
  * <p>
  * El rango es desde 0 hasta 2^16-1 (65535) Es decir, 65.536 posibles valores
- * <p>
+ *
  * TODOS positivos!!! Una variable de tipo char no puede contener valores negativos
- * <p>
+ *
  * Se usa cuando:
  * - necesitamos almacenar el código de un carácter Unicode desde el 0000 al FFFF
- * <p>
- * Existen literales de tipo char
  *
+ * Existen literales de tipo char
  */
 
 void main() {
 
-    /** Podemos asignar un literal de tipo entero a una variable de tipo byte siempre que esté entre 0 y 65.535 */
+    /**
+     * Podemos asignar un literal de tipo entero a una variable de tipo byte siempre que esté entre 0 y 65.535
+     */
     char number = 15; // 15 es un literal de tipo int
 
-    // char negative = -15; // Error, no podemos usar literal de valor negativo
+    // char negative = -15; // Error, no podemos usar un literal de valor negativo
 
     //char beyondMaxPositive = 65536; // Error, fuera del rango
     //char beyondMinNegative = -1; // Error, fuera del rango

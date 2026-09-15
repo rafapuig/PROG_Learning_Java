@@ -1,9 +1,11 @@
 void main() {
+    printDominoTile();
+    printDominoDemo();
+}
+
+void printDominoTile() {
     String domino = new String(Character.toChars(0x1F03B)); // 🀻 (1–5)
     IO.println(domino);
-
-    printDominoDemo();
-
 }
 
 void printDominoDemo() {

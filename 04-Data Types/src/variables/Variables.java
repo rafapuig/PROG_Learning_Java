@@ -34,9 +34,9 @@ int total = 100;
 
 /**
  * Sintaxis de declaración de una variable global:
- * <p>
+ *
  * tipo identificador;
- * <p>
+ *
  * (Si solamente declaramos la variable, lo que estamos pidiendo es que se reserve una zona de la memoria
  * de tamaño (en bytes) suficiente para almacenar un valor del tipo de dato correspondiente a la variable.
  * Por eso tenemos que indicar el tipo de dato (además del identificador) cuando declaramos una variable,
@@ -52,14 +52,16 @@ int number;
  * <p>
  * Si no la inicializamos con un valor, entonces su valor correspondería con la interpretación del contenido
  * previo que hubiera en los bytes de memoria reservados para la variable.
- * Es decir, la memoria asignada para la variable, pudo haber sido usada por otras variables y haber sido liberada
- * para su uso. (La memoria se reserva y se libera, si no se agotaría)
+ * Es decir, la memoria asignada para la variable, pudo haber sido usada anteriormente por otras variables
+ * y haber sido liberada después de su uso. (La memoria se reserva y se libera, si no se agotaría)
  * <p>
  * Podemos dar el valor inicial (inicializar) a una variable al mismo tiempo que la declaramos
- * <p>
+ *
  * Sintaxis de declaración + inicialización:
- * <p>
+ *
  * tipo identificador = valor_inicial;
+ *
+ * El valor inicial es una expresión
  *
  */
 boolean isValid = false;
@@ -68,8 +70,10 @@ float health = .85f;
 
 
 /**
- * Las variables "globales" no es estrictamente necesario inicializarlas.
- * Si no se inicializan explícitamente en el código, entonces se inicializan automáticamente con un valor por defecto
+ * Las variables "globales"
+ * No es estrictamente necesario inicializarlas.
+ * Si no se inicializan explícitamente en el código,
+ * entonces se inicializan automáticamente con un valor por defecto
  * que depende de su tipo
  * (Normalmente lo que se hace es poner a 0 todos los bits de los bytes de la memoria reservada por la variable)
  */
@@ -248,8 +252,10 @@ void local2() {
     int x;
 
     {
-        // El ámbito (scope) de una variable abarca el bloque (delimitado por las { } ) en que ha sido declarada
-        int n = 5;
+        /**
+         * El ámbito (scope) de una variable abarca el bloque (delimitado por las { } ) en que ha sido declarada
+         */
+        int n = 5; // Esta n solamente se "conoce" desde aquí hasta la } que cierra el bloque donde ha sido declarada
         IO.println("n = " + n);
         x = n;
     }
@@ -289,7 +295,7 @@ void shadowing() {
 
     /**
      * La unica forma que tenemos a partir de entonces de acceder a la variable global ensombrecida
-     * es mediante la referencia this y el operador punto
+     * es mediante la referencia this y el operador punto para cualificarla
      * En este caso this.total
      */
     IO.println("total = " + this.total);

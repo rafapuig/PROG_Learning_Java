@@ -17,12 +17,12 @@
  * Supongamos que te asignan a un proyecto para resolver el problema de abuso de drogas en tu ciudad.
  * Una posible forma de abordarlo podría ser tratar de solucionarlo directamente por ti mismo.
  * (Lo cual sería muy difícil e inabordable debido a la complejidad)
- * Una mejoe solución sería didivir el problema grande en subproblemas más pequeños y abordables:
+ * Una mejor solución sería dividir el problema grande en subproblemas más pequeños y abordables:
  * - Prevención
  * - Tratamiento
  * - Rehabilitación
- * Los cuales a su vez se podrian dividir en subproblemas más sencillos.
- * - Prevencion
+ * Los cuales a su vez se podrían dividir en subproblemas más sencillos.
+ * - Prevención
  * - Seminarios para padres
  * - Seminarios para los chavales
  * - ...

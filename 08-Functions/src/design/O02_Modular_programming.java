@@ -1,6 +1,6 @@
 /**
  * Programación modular
- * <p>
+ *
  * Consiste en AGRUPAR subprogramas que tengan funcionalidad en común en un mismo módulo.
  * Creando módulos separados y de manera que
  * cada módulo contenga su propia información (conjunto de datos, estado)

@@ -1,5 +1,6 @@
 /**
  * Tipo float
+ * -------------------------------------------------------------------------------------------------------
  *
  * Se usa para representar números decimales de 32 bits con signo (positivos y negativos) mediante
  * el formato IEEE 754
@@ -9,13 +10,13 @@
  * - Conjunto de valores:
  * El rango va desde tan pequeño como 1.4 x 10^-45 hasta tan grande como 3.4 x 10^38
  * tanto en positivo como en negativo.
- * <p>
- * <p>
+ *
+ *
  * Para que un literal se considere de tipo float debe llevar el sufijo f o F
- * <p>
+ *
  * Se definen dos valores cero: +0.0f y el -0.0f en el conjunto de valores,
  * aunque cuando se comparan se consideran iguales
- * <p>
+ *
  * Se definen dos infinitos: infinito positivo e infinito negativo
  * Por ejemplo, el resultado de dividir 2.5f entre 0.0f es infinito positivo
  * y dividir 2.5f entre -0.0f es infinito negativo.
@@ -29,64 +30,9 @@
  * - Representación en memoria:
  * Se necesitan 32 bits de memoria para almacenar un valor de tipo float
  * Se usa el formato estandar IEEE 754 con single-precision
+ */
 
- * Se divide en 4 partes:
- * - signo
- * - Mantisa
- * - Base (radix)
- * - exponente
-
- * Ejemplo:
- * 19.25 --> +19.25 x 10^0 --> +19.25E0
- * signo positivo
- * significando (mantisa) 19.25
- * base 10
- * exponente 0
-
- * Existen infinitas formas de representar la misma cantidad
- * 19.25e0, 1.925e1, 0.1925e2, 192.5e-1, 1925e-2
-
- * La forma normalizada en base 10 es la que cumple que:
- * 0.1 <= mantisa < 1
-
- * Por tanto, 0.1925e2 es la forma normalizada
-
- * En base 2 (binario) el número 19.25 se representa como: 10011.01
-
- * 1001101 x 2^-2 100110.1 x 2^-1, 10011.01 x 2^0, 1001.101 x 2^1, ... 1.001101 x 2^4 ...
-
- * Cuando desplazamos el punto decimal el exponente:
- * - se decrementa si lo desplazamos hacia la derecha
- * - se incremente cuando lo desplazamos hacia la izquierda
-
- * La forma normalizada en base 2 cumple:
- * 1 <= mantisa < 2
-
- * Entonces la mantisa normalizada tiene el formato 1.bbbbbbb... donde b es un dígito binario (1 o 0)
-
- * 1.001101 x 2^4 es la forma normalizada (empieza por un uno seguido del punto binario y varios dígitos binarios)
-
- * NOTA: No todos los números se pueden representar de forma normalizada.
- * - Números que no tienen ningún 1. Ejemplo, el 0.0
- * - Hay un número determinado de bits para el exponente
- * (si el exponente de un número es el mínimo permitido por el formato y la mantisa es <1 no se puede normalizar)
- * Por ejemplo, -126 sea mínimo exponente y el número es el 0.01101 x 2^-126 porque normalizado
- * sería 1.101x2^-128, pero -128 es menor que el exponente mínimo.
-
- * Ventajas de la normalización:
- * - Es única
- * - El punto binario siempre se sitúa después del primer 1, no es necesario almacenar la posición del punto
- * - 2 números normalizados son fáciles de comparar, mediante sus signos, mantisas y exponentes.
- * - Siempre se almacenan los dígitos más interesantes de la mantisa
- * (si tenemos 5 bits para mantisa, con 0.0010110x2^10 solo almacenamos 0.00101 y perdemos el 10 final,
- * pero si normalizamos a 1.0110x2^7 podemos almacenar sus 5 bits a 1
- * - En la forma normalizada la mantisa siempre empieza por 1
- * (y, por tanto, no hace falta gastar un bit para almacenarlo, el hidden bit)
-
- * Estándares del IEEE 754:
- * - 32 bit single-precision floating point format --> Java lo usa para el tipo float
- * - 64 bit double-precision floating point format --> Java lo usa para el tipo double
-
+/**
  * 32 bit single-precision floating point format:
 
  * Signo * mantisa * 2^exponente
@@ -94,9 +40,9 @@
  * Como la base siempre es 2, no se almacena el valor de la base, se asume que es 2
 
  * Los 32 bits se distribuyen de la siguiente manera:
- * -  1 bit  -- signo (0 positivos - 1 negativo)
- * -  8 bits -- exponente [-127,128] biased por 127, biased exp = exp + 127
- * - 23 bits -- mantisa
+ * -  1 bit  -> signo (0 positivos - 1 negativo)
+ * -  8 bits -> exponente [-127,128] biased por 127, biased exp = exp + 127
+ * - 23 bits -> mantisa
 
  * 1     8              23 (16 + 7)
  * s eeeeeeee fffffff ffffffff ffffffff
@@ -180,7 +126,7 @@
  * (-1) * signo * 0.fffffff_ffffffff_ffffffff * 2^-126
 
  * Ejemplo:
- * Número 0.0001 x 2 ^ 126
+ * Número 0.0001 x 2 ^ -126
  * - signo --> 0
  * - exponente --> 00000000
  * - mantisa --> 0001000_00000000_00000000
@@ -240,8 +186,18 @@
 
 import static util.Utils.*;
 
-
 void main() {
+    //intro();
+    //twoZeros();
+    //memoryRepresentation();
+    //memoryRepresentation2();
+    //memoryRepresentation3();
+    //conversion();
+    //precision();
+    precision2();
+}
+
+void intro() {
 
     /** Podemos asignar un literal de tipo float a una variable de tipo float */
     float number = 15f;
@@ -260,7 +216,7 @@ void main() {
      * También define constantes para los valores de infinito, positivo y negativo
      */
     float negativeInfinity = Float.NEGATIVE_INFINITY; // = -1.0f / 0.0f
-    float positiveInfinity = Float.POSITIVE_INFINITY; // = -1.0f / 0.0f
+    float positiveInfinity = Float.POSITIVE_INFINITY; // =  1.0f / 0.0f
 
     /**
      * Y también para el valor indeterminado / Not a Number
@@ -277,15 +233,9 @@ void main() {
      * Y también el número de bytes
      */
     IO.println(Float.BYTES); // 4
-
-    //twoZeros();
-    memoryRepresentation();
-    //memoryRepresentation2();
-    memoryRepresentation3();
-    //conversion();
-    //precision();
-    //precision2();
 }
+
+
 
 void twoZeros() {
     float positiveZero = 0.0f; // o +0.0f
@@ -296,15 +246,16 @@ void twoZeros() {
 }
 
 void memoryRepresentation() {
-    // Zeros
-    printBinaryRepresentation(0.0f);
-    printBinaryRepresentation(-0.0f);
 
     printBinaryRepresentation(1.0f);
     printBinaryRepresentation(0.5f);
     printBinaryRepresentation(0.25f);
     printBinaryRepresentation(1000.0f);
     printBinaryRepresentation(-1000.0f);
+
+    // Zeros
+    printBinaryRepresentation(0.0f);
+    printBinaryRepresentation(-0.0f);
 
     printBinaryRepresentation(Float.MAX_VALUE);
     printBinaryRepresentation(Float.MIN_VALUE);
@@ -329,35 +280,49 @@ void memoryRepresentation2() {
 }
 
 void memoryRepresentation3() {
+    // Signo 0
+    // Exponente 01111111 -> 127 menos sesgo 127 = 0
+    // Mantisa 1000000_00000000_00000000 normalizada 1.1
+    // Número representado 1.1 x 2 ^ 0 = 1.5
     float x = Float.intBitsToFloat(0b0_01111111_1000000_00000000_00000000);
     IO.println(x);
 
+    // Igual que el anterior pero son signo 1 (negativo)
+    // Número representado el -1.5
     x = Float.intBitsToFloat(0b1_01111111_1000000_00000000_00000000);
     IO.println(x);
 
     x = Float.intBitsToFloat(0b0_00000001_0000000_00000000_00000000); // 1.0 x 2^-126
     IO.println(x); // mínimo número normalizable para float
+
     x = Float.MIN_NORMAL; // 0x1.0p-126f;
     IO.println(x);
 
     float z = Float.intBitsToFloat(0b0_00000000_0000000_00000000_00000001); // 1.0 x 2^-(126+23) = 1.0 x 2^-149
-    IO.println(z); // numero mas cercano a cero
+    IO.println(z); // número más pequeño distinto de cero (más cercano a cero)
     z = Float.MIN_VALUE; // 0x0.000002p-126f;
     IO.println(z);
-
 }
 
+
 void conversion() {
+    // Cuando el valor 1 es de tipo int
     int n = 1;
-    printBinaryRepresentation(n);
+    printBinaryRepresentation(n); // Como se representa en memoria 00000000000000000000000000000001
+
+    // El valor de la variable de tipo int `n` contiene el valor 1, pero
+    // hay que convertirlo a la representación de punto flotante de simple precision para
+    // guardarlo en una variable de tipo float
     float x = n;
-    printBinaryRepresentation(x);
+    printBinaryRepresentation(x); // Como se representa en memoria 00111111100000000000000000000000
 
+    // Operación de suma de valores en punto flotante (el literal 10 se tiene que convertir a float)
     x = x + 10;
-    printBinaryRepresentation(x);
+    printBinaryRepresentation(x); // Como se representa 01000001001100000000000000000000
 
+    // Conversion o casting del valor de tipo float a entero
     n = (int) x;
-    printBinaryRepresentation(n);
+    printBinaryRepresentation(n); // Como se representa 00000000000000000000000000001011
 }
 
 
@@ -398,6 +363,7 @@ void precision() {
 
     IO.println("Valor exacto almacenado para 0.1f: " + exactFloatStored(0.1f));
 }
+
 
 void precision2() {
 

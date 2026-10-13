@@ -17,10 +17,10 @@ import static util.Utils.bits;
 
 /**
  * Tipo char
- * <p>
+ *
  * Se usa para representar números de 16 bits SIN signo (a diferencia del short que es con signo)
  * Se necesitan 16 bits de memoria para almacenar un valor
- * <p>
+ *
  * El rango es desde 0 hasta 2^16-1 (65535) Es decir, 65.536 posibles valores
  *
  * TODOS positivos!!! Una variable de tipo char no puede contener valores negativos
@@ -34,7 +34,7 @@ import static util.Utils.bits;
 void main() {
 
     /**
-     * Podemos asignar un literal de tipo entero a una variable de tipo byte siempre que esté entre 0 y 65.535
+     * Podemos asignar un literal de tipo entero a una variable de tipo char siempre que esté entre 0 y 65.535
      */
     char number = 15; // 15 es un literal de tipo int
 

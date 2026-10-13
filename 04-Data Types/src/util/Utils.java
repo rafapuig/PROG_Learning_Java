@@ -36,9 +36,15 @@ public class Utils {
     }
 
     public static String bits(float number) {
-        var rawBits = Float.floatToRawIntBits(number);
+        int rawBits = Float.floatToRawIntBits(number);
         return bits(rawBits);
     }
+
+    public static String bits(double number) {
+        long rawBits = Double.doubleToRawLongBits(number);
+        return bits(rawBits);
+    }
+
 
     public static String binRepresentation(float number) {
         return binRepresentation(number, false);

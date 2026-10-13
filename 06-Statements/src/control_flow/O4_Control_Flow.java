@@ -1,4 +1,6 @@
 /**
+ * Instrucciones de control de flujo
+ * ---------------------------------------------------------------------------------------------
  * El orden de ejecución de la instrucción de un programa es secuencial
  * (una detrás de otra, de arriba a abajo tal como aparecen en el archivo de código fuente)
  *

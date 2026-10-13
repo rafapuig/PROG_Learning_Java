@@ -1,26 +1,24 @@
 /**
  * La instrucción do-while (bucle do-while)
- * <p>
+ * -------------------------------------------------------------------------------------------------------
  * Instrucción de repetición (bucle)
- * <p>
+ *
  * Sintaxis:
- * <p>
- * do
- * instrucción
- * while (condición);
- * <p>
+ *
+ * do instrucción while (condición);
+ *
  * NOTA:
- * - La instrucción do-while termina con un ;
+ * - La instrucción do-while SI termina con un ;
  * - La instrucción asociada puede ser una instrucción simple o un bloque.
- * <p>
+ *
  * La instrucción asociada al do-while se ejecuta al menos una vez,
- * si la condición se evalúa a false la primera vez.
- * <p>
+ * aunque la condición se evalúe con resultado false la primera vez.
+ *
  * Primero se ejecuta la instrucción y después se comprueba si hay que repetir de nuevo.
  * Se puede usar la instrucción break para salir del bucle do-while.
- * <p>
- * ¿Cuándo es recomendable usar u do-while?
- * - Cuando condición depende de valores que se calculan dentro del bucle (en la instrucción asociada)
+ *
+ * ¿Cuándo es recomendable usar un do-while?
+ * - Cuando la condición depende de valores que se calculan dentro del bucle (en la instrucción asociada)
  */
 
 void autoGuessNumber() {
@@ -76,6 +74,7 @@ void userInput() {
         }
     } while (age < 0 || age > 150);
 }
+
 
 void menu() {
     boolean exit = false;

@@ -1,16 +1,16 @@
 /**
  * Expresión Switch
- * <p>
+ * -----------------------------------------------------------------------------------------------------------
  * Existe una version de la estructura switch que funciona como una expresión que devuelve un valor cuando se evalúa
  * (y que podemos usar allí donde se pueda usar una expresión del tipo de datos esperado)
- * <p>
+ * -
  * La sintaxis cambia respecto a la instrucción switch:
  * - cada etiqueta va seguida de -> y:
  * - una expresión
- * - una instruccion throw que lanza una excepción (ya veremos las exepciones)
+ * - una instrucción throw que lanza una excepción (ya veremos las excepciones)
  * - un bloque de instrucciones {}
- * - dentro del bloque se utiliza la instruccion yield para espeficar el valor devuelto para esa etiqueta
- * <p>
+ * - dentro del bloque se utiliza la instrucción yield para especificar el valor devuelto para esa etiqueta
+ *
  * Cada case puede usar más de una etiqueta separada por comas.
  *
  * Los case, junto con el default deben cubrir todos lo valores posibles (por eso casi siempre es necesario el default)
@@ -26,15 +26,17 @@ void ejemplo1() {
     IO.println("El " + weekDay + " se considera fin de semana? " + (isWeekend ? "Si" : "No"));
 }
 
+
 void ejemplo2() {
     String weekDay = "viernes";
     boolean isWeekend = switch (weekDay) {
         case "sabado", "domingo" -> true;
-        case "lunes", "martes", "miercoles", "jueves", "viernes" -> false;
+        case "lunes", "martes", "miércoles", "jueves", "viernes" -> false;
         default -> throw new RuntimeException(weekDay + " no es un dia de la semana valido!");
     };
     IO.println("El " + weekDay + " se considera fin de semana? " + (isWeekend ? "Si" : "No"));
 }
+
 
 void ejemplo3() {
 
@@ -42,11 +44,12 @@ void ejemplo3() {
 
     boolean isWeekend = switch (weekDay) {
         case "sabado", "domingo" -> true;
-        case "lunes", "martes", "miercoles", "jueves", "viernes" -> false;
+        case "lunes", "martes", "miércoles", "jueves", "viernes" -> false;
         default -> throw new RuntimeException(weekDay + " no es un dia de la semana valido!");
     };
     IO.println("El " + weekDay + " se considera fin de semana? " + (isWeekend ? "Si" : "No"));
 }
+
 
 void ejemplo4() {
 
@@ -155,5 +158,8 @@ void main() {
     ejemplo2();
     ejemplo3();
     ejemplo4();
-
+    ejemploForecastSwitchStatement();
+    ejemploForecastSwitchStatementDRY();
+    ejemploForecastSwitchExpressionDRY();
+    ejemploForecastSwitchExpressionDRY2();
 }

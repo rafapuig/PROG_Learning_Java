@@ -1,5 +1,6 @@
 /**
  * Bloque de instrucciones (Block statement)
+ * ------------------------------------------------------------------------------------------------
  *
  * Es una secuencia
  * de cero o más instrucciones (statements)
@@ -12,16 +13,16 @@
  *     instrucciónN
  * }
  *
- * Se usa para agrupar varias instrucciones
+ * Se usa con la finalidad de agrupar varias instrucciones
  * para poder usarlas en situaciones que nada más admiten el uso de una única instrucción.
  *
- * Un bloque se considera una instrucción compuesta
- * a le que se trata como si fuera una sola instrucción.
+ * Un bloque se considera como una unica instrucción compuesta
+ * y por tanto, se la trata como si fuera una sola instrucción.
  *
- * NOTA: El bloque de instrucciones NO necesita un separador ; para completar la sintaxis.
+ * NOTA: Un bloque de instrucciones NO necesita un separador ; para completar la sintaxis.
  */
 
-void ejemplo1() { // <-- de hecho, esta llave delimita el inicio de un bloque de instrucciones
+void ejemplo1() { // <-- de hecho, esta llave delimita el inicio de un bloque de instrucciones (el cuerpo de la función)
 
     // Ejemplo
     { // <-- Comienzo del bloque de instrucciones
@@ -35,7 +36,7 @@ void ejemplo1() { // <-- de hecho, esta llave delimita el inicio de un bloque de
 } // <-- fin del bloque de instrucciones de la función
 
 /**
- * Todas las variables declaradas dentro de un bloque
+ * Las variables declaradas dentro de un bloque
  * solamente se pueden usar / acceder (leer, modificar) dentro del bloque
  * Ese es su scope (alcance, ámbito)
  *
@@ -75,4 +76,3 @@ void ejemplo3() {
 
 void main() {
 }
-

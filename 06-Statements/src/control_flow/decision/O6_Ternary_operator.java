@@ -1,8 +1,8 @@
 /**
  * Operador ternario
- * <p>
+ *
  * Uso alternativo a una instrucción if-else
- * <p>
+ *
  * Conviene usar el operador ternario cuando queremos que if-else sea una expresión
  * que nos genere un resultado para luego poder usar más adelante.
  * Para no repetirnos en lo que hacemos en ambas ramas.

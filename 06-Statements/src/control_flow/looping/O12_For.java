@@ -1,16 +1,15 @@
 /**
  * Instrucción for (bucle for)
- * <p>
+ * --------------------------------------------------------------------------------------------------
  * https://docs.oracle.com/javase/specs/jls/se26/html/jls-14.html#jls-14.14
- * <p>
+ * -
  * Es una instrucción de iteración, repetición.
- * Se usa para iterar la ejecucion de una instrucción
+ * Se usa para iterar la ejecución de una instrucción
  * un número de veces
- * en funcion de que se cumplan o no ciertas condiciones
+ * en función de que se cumplan o no ciertas condiciones
  * <p>
  * Sintaxis:
- * for(inicialización; condicion; lista_de_expresiones)
- * instrucción
+ * for(inicialización; condición; lista_de_expresiones) instrucción
  * <p>
  * Por tanto, la estructura del bucle for consta de varias partes:
  * - inicialización
@@ -20,24 +19,23 @@
  * <p>
  * Las tres primeras:
  * - van entre () y separados por ;
- * - son opcionales!!!
+ * - las 3 son opcionales!!!
  * (Al ser opcionales tenemos
- *
+ * <p>
  * <p>
  * 1º Se ejecuta la inicialización
- * 2º Se evalua la condición para ver si se cumple o no, resultado true o false
+ * 2º Se evalúa la condición para ver si se cumple o no, resultado true o false
  * 3º Si la condición se cumple
  * se ejecuta la instrucción asociada con el bucle (la que queremos iterar o repetir)
  * Si no se cumple se va al punto 6º
- * 4º Se evaluan las expresiones de la lista de expresiones
- * 5º Se vuelve atrás al punto 2
+ * 4º Se evalúan las expresiones de la lista de expresiones
+ * 5º Se vuelve atrás al punto 2º
  * 6º El flujo de ejecución continua por la siguiente instrucción al for, saliendo de esta manera del bucle
- * <p>
  */
 
 
 void ejemplo1() {
-    // 1º se declara e inicializar number a 1 (instrucción de declaración)
+    // 1º se declara e inicializa number a 1 (instrucción de declaración)
     // 2º se evalúa la condición number <= 10
     // 3º Si es true se ejecuta la instrucción IO.println(number); y al punto 4º
     //    Si es false el flujo salta a la instrucción que viene después del for IO.println("Salí del bucle");
@@ -55,12 +53,8 @@ void optionalParts() {
 }
 
 void optionalPartsPlusEmptyStatement() {
-    // La instrucción vacía consiste en nada más que un ;
-    for (
-            int x = 1,
-            n = 2
-            ; ; )
-        ;
+    for (int x = 1, n = 2; ; )
+        ; // La instrucción vacía consiste en nada más que un ;
 }
 
 void optionalPartsPlusEmptyStatement2() {
@@ -72,7 +66,7 @@ void optionalPartsPlusEmptyStatement2() {
 
 /**
  * Inicialización
- * <p>
+ *
  * Puede ser:
  * - una instrucción de declaración de variable(s) local(es)
  * - una lista de instrucciones de expresión (cuyos elementos (instrucciones de expresión) van separados por coma ,)
@@ -96,7 +90,8 @@ void initializationWithVariableDeclaration3() {
 }
 
 void initializationWithVariableDeclaration4() {
-    short i; // La variable i se declara en el scope de la función
+    // La variable i se declara en el scope de la función
+    short i;
     // No podemos declarar una variable con un nombre que ya esté en el scope
     // for (int i = 0, j , k = 2; ; ) ; // Error,
 }
@@ -126,9 +121,9 @@ void initializationWithExpresionStatementList3() {
 
 /**
  * Condición
- * <p>
+ *
  * Es una expresión de tipo boolean
- * <p>
+ *
  * Es opcional,
  * si se omite se asume implícitamente el valor true
  * (lo que resulta en un bucle infinito a menos que se salga mediante un break)
@@ -136,7 +131,7 @@ void initializationWithExpresionStatementList3() {
 
 void conditionOptional1() {
     // La condición es opcional, se asume implícitamente que es el literal true
-    for (int i = 1; ; i++) // Implicitamente la condición es true
+    for (int i = 1; ; i++) // Implícitamente la condición es true
         IO.println(i);
 }
 
@@ -178,13 +173,13 @@ void expresionStatementList1() {
     // Usamos una lista de dos elementos (instrucciones de expresión):
     // 1) IO.println(i)
     // 2) i++
-    for (int i = 1; i <= 10; IO.println(i), i++);
+    for (int i = 1; i <= 10; IO.println(i), i++) ;
 }
 
 /* Aún podemos hacerla más compacta */
 void expresionStatementList2() {
     // Al usar el operador postfijo, se usa para el println la version antes de incrementar
-    for (int i = 1; i <= 10; IO.println(i++));
+    for (int i = 1; i <= 10; IO.println(i++)) ;
 }
 
 

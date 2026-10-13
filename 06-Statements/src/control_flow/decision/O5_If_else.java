@@ -1,11 +1,12 @@
 /**
  * La instrucción de decision if-else
- * <p>
+ * ------------------------------------------------------------------------------------------------------
  * El formato es:
  * if (condición) instrucción1 else instrucción2
- * <p>
- * if y else son dos keyword del lenguaje Java para formar la instrucción.
- * <p>
+ *
+ * if y else son dos keyword del lenguaje Java para formar la estructura gramatical de la instrucción.
+ * NO termina en un ;
+ *
  * La condición
  * - es una expresión booleana (de tipo boolean)
  * - se escribe obligatoriamente dentro de unos paréntesis ( )
@@ -13,35 +14,35 @@
  * - si el resultado es:
  * - true se ejecuta la instrucción1
  * - false se ejecuta la instrucción2
- * <p>
+ *
  * Una vez ejecutada la instrucción1 o la instrucción2 según el resultado de la condición
  * el flujo de ejecución pasa a la siguiente instrucción (la situada a continuación del if-else)
- * <p>
+ *
  * La parte else instrucción2, es opcional (no es obligatoria).
- * Si no hay parte else y la condicion da como resultado false, entonces simplemente no se ejecuta instrucción1
+ * Si no hay parte else y la condición da como resultado false, entonces simplemente no se ejecuta instrucción1
  * y se continúa con la siguiente instrucción que sigue en la secuencia.
  * Se suele llamar entonces no un if-else sino un if.
- * <p>
+ *
  * Normalmente, se suele escribir las instrucciones en una nueva línea (después de la condición y en su caso del else)
  * e identadas (con espacios adicionales) para indicar visualmente que su ejecución dependerá de la condición
- * <p>
+ *
  * if (condicion)
- * instrucción1
+ *     instrucción1
  * else
- * instruccion2
- * <p>
+ *     instruccion2
+ *
  * Instruccion1 e instrucción2 pueden ser un bloque de instrucciones.
- * (recordar que un bloque de instrucciones funciona como una instrucción compuesta)
- * <p>
+ * (recordar que un bloque de instrucciones funciona como una única instrucción compuesta)
+ *
  * En este caso, las llaves se usan asi:
- * <p>
+ *
  * if (condicion) {
- * instrucciones del bloque if
+ *     instrucciones del bloque if
  * } else {
- * instrucciones del bloque else
+ *     instrucciones del bloque else
  * }
- * <p>
- * En Java se suelen usar SIEMPRE las llaves, aunque la instrucción condicionada no sea un bloque.
+ *
+ * En Java se suelen usar SIEMPRE las llaves, aunque las instrucciónes condicionadas no sean un bloque.
  */
 
 /**
@@ -61,9 +62,9 @@ void ejemplo1() {
 void ejemplo2() {
     int edad = 15;
     if (edad >= 18)
-        IO.println("Es menor de edad"); // El ; pertenece a la instrucción de expresión no a la instrucción if
+        IO.println("Es menor de edad"); // El ; pertenece a la instrucción de expresión no a la instrucción if-else
     else
-        IO.println("Es menor de edad"); // El ; pertenece a la instrucción de expresión no a la instrucción if
+        IO.println("Es menor de edad"); // El ; pertenece a la instrucción de expresión
 
 }
 
@@ -76,7 +77,7 @@ void ejemplo3() {
         IO.println("Es mayor de edad");
     } else {
         IO.println("Es menor de edad");
-    } // Noy hay ; porque un bloque no lo necesita
+    } // Noy hay ; porque un bloque no lo necesita (y porque if-else tampoco)
 }
 
 
@@ -91,7 +92,7 @@ void ejemplo4() {
 }
 
 /**
- * If-else anidado en la parte else (también se puede anidad en el if)
+ * If-else anidado en la parte else (también se puede anidar en el if)
  */
 void ejemplo5() {
     int number = 20;

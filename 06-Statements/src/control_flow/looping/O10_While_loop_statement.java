@@ -1,29 +1,28 @@
 /**
  * La instrucción while
- * <p>
+ * ----------------------------------------------------------------------------------------------------------------
  * Es una instrucción de repetición (bucle, loop)
  * basándose en el resultado de evaluar una condición
- * <p>
- * Sintaxis
- * <p>
- * while (condición)
- * instrucción
- * <p>
- * La instrucción de while se repite una y otra vez mientras se cumpla la condición
+ *
+ * Sintaxis:
+ *
+ * while (condición) instrucción
+ *
+ * La instrucción de la estructura gramatical del while se repite una y otra vez mientras se cumpla la condición
  * (el resultado de evaluarla sea true)
- * <p>
+ *
  * Primero se comprueba una condición y después se procede con la acción si se cumple
  * (pero a diferencia del if que una vez realizado o no la acción se continúa con la siguiente instrucción)
  * en el bucle while si la condición fue cierta, tras ejecutar la instrucción se vuelve atrás a evaluar
  * de nuevo la condición y si se sigue cumpliendo se volverá de nuevo a ejecutar la instrucción
  * y así hasta que la condición deje de cumplirse.
- * <p>
+ *
  * La instrucción puede ser un bloque de instrucciones (nuevamente funciona como una unica instrucción compuesta)
- * <p>
- * NOTA:
- * Si la primera vez que se evalúa la condición el resultado es false, la instrucción no llegará a ejecutarse
+ *
+ * NOTA 1:
+ * Si la primera vez que se evalúa la condición el resultado es false, la instrucción no llegará a ejecutarse NUNCA,
  * ni siquiera una sola vez.
- * <p>
+ *
  * NOTA 2:
  * Si no hacemos algo dentro de la instrucción del while que haga que la condición cambie
  * la condición se seguirá cumpliendo eternamente
@@ -33,9 +32,8 @@
  */
 
 void infiniteLoop() {
-    while (true) {
-        IO.println("Bucle infinito...");
-    }
+    while (true)
+        IO.println("Bucle infinito..."); // El ; es de la instrucción de expresión no de la estructura del while
 }
 
 void infiniteLoop2() {
@@ -98,5 +96,4 @@ void main() {
     //digitFrom0To9();
     //exitInfinityLoop();
     //exitLoop();
-
 }

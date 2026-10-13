@@ -1,5 +1,6 @@
 /**
  * Instrucción de expresión (Expression statement)
+ * ------------------------------------------------------------------------------------------------
  *
  * Se forman añadiendo el separador ; a una expresión.
  *
@@ -11,6 +12,7 @@
  * - Creación de objetos (ya se verá en POO)
  * - Llamada a función (en Java a las funciones se les denomina métodos)
  */
+
 
 void main() {
   int number = 0;

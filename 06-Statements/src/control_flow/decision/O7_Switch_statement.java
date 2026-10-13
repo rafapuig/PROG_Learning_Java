@@ -1,10 +1,10 @@
 /**
  * La instrucción switch
- * <p>
+ * ------------------------------------------------------------------------------------------------------
  * Es como un conmutador entre varias opciones.
- * <p>
+ *
  * Sintaxis:
- * <p>
+ *
  * switch (expresión) {
  * case etiqueta1:
  * instrucciones
@@ -14,15 +14,15 @@
  * default:
  * instrucciones
  * }
- * <p>
+ *
  * La expresión
  * - debe ser de tipo integral (byte, short, int, char, long), enumerado (ya se verá), o String
  *
- * <p>
+ *
  * Las etiquetas
  * - deben ser constantes de tiempo de compilación (recordar de temas anteriores).
  * - y tener un valor dentro del rango del tipo de la expresión.
- * <p>
+ *
  * En tiempo de ejecución.
  * - se evalúa la expresión obteniendo un valor.
  * - se empieza por el case de la primera etiqueta1 y se compara para ver si coincide con el valor obtenido.
@@ -30,11 +30,11 @@
  * - A partir de ahí se ejecutan TODAS las instrucciones de ese case y de todos los que quedan hacia abajo.
  * - Si ninguna etiqueta de un case coincide con el valor obtenido al evaluar la expresión se ejecutan las instrucciones
  * a partir de la instrucción que viene a continuación de la etiqueta opcional denominada default.
- * <p>
+ *
  * La etiqueta default no tiene por qué ser la última
- * <p>
+ *
  * Podemos usar la instrucción de control break dentro del bloque de instrucciones del switch
- * <p>
+ *
  * Break transfiere el control de flujo a la instrucción siguiente fuera de la propia instrucción switch.
  *
  */
@@ -54,6 +54,7 @@ void ejemplo1() {
     }
 }
 
+
 void ejemplo2() {
     char letter = 'a';
 
@@ -72,6 +73,7 @@ void ejemplo2() {
             IO.println("Una letra");
     }
 }
+
 
 void ejemplo3() {
     char letter = 'b'; // Probar con a, c, o con otra
@@ -157,7 +159,7 @@ void ejemplo6() {
  * Aquí tenemos que invocar un principio de buenas prácticas de la programación
  * que determina la calidad de un código.
  *
- * Se denomina DRY (Don't Repeat Yourself) No te repitar a ti mismo
+ * Se denomina DRY (Don't Repeat Yourself) No te repitas a ti mismo
  */
 
 

@@ -1,10 +1,13 @@
 /**
  * Tipo de datos booleano (lógicos)
+ * --------------------------------------------------------------------------------------
  *
  * - Conjunto de valores: Verdadero (true), Falso (false) (solamente 2 valores)
+ *
  * - Conjunto de operaciones:
  *      - operaciones lógicas AND OR NOT XOR
  *      - comparación igualdad, desigualdad
+ *
  * - Representación en memoria:
  * - desde el punto de vista del programador nos podemos abstraer!!!
  *      - En Java no se especifica y depende de la implementación de la JVM
@@ -85,6 +88,10 @@ void operadorANDShortcircuit() {
     IO.println(isMilk);
 }
 
+/**
+ * Función que resuelve si el alumno ha realizado todas sus actividades propuestas por el profesor
+ * Tarda 2 segundos en responder
+ */
 boolean slowComputationHasDoneTasks() {
     IO.println("Comprobando si se han realizado todas las tareas...");
     try {
@@ -95,11 +102,11 @@ boolean slowComputationHasDoneTasks() {
 }
 
 /**
- * En este ejemplo se supone que compramos que para
+ * En este ejemplo se supone que comparamos que para
  * que un alumno pase una asignatura
  * tiene que haber superado el examen
  * y tiene que haber hecho las tareas
- * <p>
+ *
  * Supongamos que corregir el examen lleva poco tiempo,
  * pero revisar la completitud de todas las tareas lleva mucho tiempo
  * ¿Si fueras profesor por donde empezarías a comprobar?
@@ -125,6 +132,7 @@ void operatorANDShortcircuit2() {
     IO.println(hasPassSubject);
 }
 
+
 void operatorANDShortcircuit3() {
     var i = 10;
     var j = 3;
@@ -137,12 +145,17 @@ void operatorANDShortcircuit3() {
 }
 
 
+void operatorORShortcircuit() {
+
+}
+
+
 /**
  * Ciertos operadores relacionales no están definidos para el tipo boolean
  * Esto quiere decir que no se pueden comparar > < >= <=
  * Solamente son aplicables == (igual) y != (distinto)
  */
-void operatorRelationalsNotDefined() {
+void relationalOperatorsNotDefined() {
 
     boolean isClean = false;
     boolean isEmpty = false;
@@ -155,6 +168,9 @@ void operatorRelationalsNotDefined() {
     IO.println(isClean != isEmpty);
 }
 
+/**
+ * Un valor de tipo Boolean no se puede convertir a ningún otro tipo mediante un casting
+ */
 void cannotBeCast() {
     boolean b = false;
     //int i = (int) b; // No se puede convertir un boolean en un int

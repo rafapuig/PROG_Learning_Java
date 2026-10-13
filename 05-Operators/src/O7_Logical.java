@@ -77,7 +77,7 @@ void shortCircuitAnd() {
 }
 
 /**
- * Operador AND son cortocircuitar &
+ * Operador AND sin cortocircuitar &
  * Da el mismo resultado que el AND de cortocircuito, salvo que siempre evalúa los dos operandos
  */
 void logicalAnd() {

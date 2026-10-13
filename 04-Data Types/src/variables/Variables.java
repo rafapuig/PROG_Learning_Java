@@ -28,7 +28,7 @@
  * Está declarada fuera del cuerpo de una función
  */
 
-// Variables "globales"
+// Variables "globales" inicializadas
 String name = "Perico Palotes";
 int total = 100;
 
@@ -46,16 +46,16 @@ int number;
 
 /**
  * Inicialización de una variable
- * <p>
- * Inicializar una variable consiste en proporcionarle el valor inicial que queremos que tenga (su primer valor) en
- * el momento de crearla (reservar la memoria)
- * <p>
+ *
+ * Inicializar una variable consiste en proporcionarle el valor inicial que queremos que tenga (su primer valor)
+ *
  * Si no la inicializamos con un valor, entonces su valor correspondería con la interpretación del contenido
  * previo que hubiera en los bytes de memoria reservados para la variable.
  * Es decir, la memoria asignada para la variable, pudo haber sido usada anteriormente por otras variables
  * y haber sido liberada después de su uso. (La memoria se reserva y se libera, si no se agotaría)
- * <p>
+ *
  * Podemos dar el valor inicial (inicializar) a una variable al mismo tiempo que la declaramos
+ * con lo cual se reservará la memoria y se asignará el valor inicial en ese espacio.
  *
  * Sintaxis de declaración + inicialización:
  *
@@ -63,6 +63,7 @@ int number;
  *
  * El valor inicial es una expresión
  *
+ * (Un valor literal se considera un tipo de expresión)
  */
 boolean isValid = false;
 int lives = 5;
@@ -77,11 +78,20 @@ float health = .85f;
  * que depende de su tipo
  * (Normalmente lo que se hace es poner a 0 todos los bits de los bytes de la memoria reservada por la variable)
  */
-int notInitializedInt; // Una variable global de tipo integral toma el valor 0
-double notInitializedDouble; // Una global de tipo double toma el valor 0.0
-float notInitializedFloat; // Una global de tipo float toma el valor 0.0
-boolean notInitializedBoolean; // Implícitamente valor false
-Object notInitializedObject; // Implícitamente valor null
+// Una variable global de tipo integral toma el valor 0
+int notInitializedInt;
+
+// Una global de tipo double toma el valor 0.0
+double notInitializedDouble;
+
+// Una global de tipo float toma el valor 0.0
+float notInitializedFloat;
+
+// Implícitamente, valor false para una variable de tipo boolean
+boolean notInitializedBoolean;
+
+// Implícitamente valor null para cualquier variable de tipo por referencia
+Object notInitializedObject;
 
 void showUninitializedGlobalVariablesValue() {
     IO.println(notInitializedInt);
@@ -93,14 +103,14 @@ void showUninitializedGlobalVariablesValue() {
 
 /**
  * Variables locales
- * <p>
+ *
  * Son locales porque se declaran dentro de un ámbito (scope) más restringido
  * (no son accesibles en cualquier parte del fichero)
- * <p>
+ *
  * Las variables locales NO tienen inicialización implícita.
  * (Por tanto, si solo se declaran y no se les proporciona un valor inicial, en tiempo de ejecución solamente se
  * hará la reserva de los bytes de memoria necesarios, pero no se borrará el contenido previo de esos bytes)
- * <p>
+ *
  * IMPORTANTE:
  * - En Java, una variable local no se puede acceder para leer su contenido hasta que no ha sido inicializada.
  *
@@ -128,7 +138,7 @@ void f1() {
     int copy;
 
     // Acceso a la variable `total` para leer su valor y copiarlo en la variable
-    // local `copy`
+    // local `copy` e inicializarla
     copy = total; // Se obtiene el valor de `total` y asigna ese mismo valor a la variable `copy`
 
     IO.println("total = " + total); // 99
@@ -141,15 +151,23 @@ void f1() {
 
 }
 
+/**
+ * Cada vez que se llama a una función se crean
+ * nuevas versiones de las variables declaradas dentro de la función
+ * cuya duración se extiende a la ejecución de la propia función
+ * Una vez la ejecución de la función ha finalizado la memoria
+ * reservada para esas variables se libera (fin de la vida de la variable)
+ */
 void f2() {
-    int x = 5; // Declaración de la variable x local a la funcion f2
+    int x = 5; // Declaración de la variable x local a la función f2
     int y = 3;
-    IO.println(x); // Se refiere a la variable x local de la funcion f2
+    IO.println(x); // Se refiere a la variable x local de la función f2
     IO.println(y);
     // IO.println(z); // z no existe en este ámbito
 
     IO.println(total); // `total` es accesible en todas las funciones del archivo
 }
+
 
 void f3() {
     /**
@@ -161,11 +179,11 @@ void f3() {
      * y termina cuando la ejecución de la función termina
      *
      * Corolarios:
-     * - La variable x local de f3 no es la misma que la variable x local de la funcion f2
-     * - Se puede reutilizar nombres identificadores (usar el mismo nombre) en ambitos diferentes
+     * - La variable x local de f3 no es la misma que la variable x local de la función f2
+     * - Se puede reutilizar nombres identificadores (usar el mismo nombre) en ámbitos diferentes
      * (en este caso funciones diferentes) dado que cada una se conoce en su propio ámbito
      */
-    int x = 9; // Declaración de la variable x local a la funcion f3
+    int x = 9; // Declaración de la variable x local a la función f3
     int z = 2;
     IO.println(x);
     //IO.println(y); // y no existe en este ámbito
@@ -257,14 +275,17 @@ void local2() {
          */
         int n = 5; // Esta n solamente se "conoce" desde aquí hasta la } que cierra el bloque donde ha sido declarada
         IO.println("n = " + n);
-        x = n;
+        x = n; // Aquí se conoce x
     }
 
-    IO.println("x = " + x);
+    IO.println("x = " + x); // Aquí se conoce x
 
     // n = -1; // Error, acceso fuera del ámbito
 
     {
+        /**
+         * Podemos reutilizar el nombre de una variable siempre que no compartan ámbito
+         */
         // Esta variable n solamente se llama igual que la n de más arriba pero se trata de otra variable
         int n = 3;
         IO.println("n = " + n);
@@ -287,6 +308,8 @@ void shadowing() {
      * y no a la global
      * Se dice que la variable local con el mismo nombre que la global ENSOMBRECE (shadows) a la global
      */
+    // Como declaramos una variable con nombre `total`, a partir de ahora
+    // si usamos el identificador `total` nos referimos a la variable local
     int total;
 
     total = 50; // Asignamos el valor 50 a la variable local
@@ -303,7 +326,8 @@ void shadowing() {
 
 
 /**
- * No podemos hacer shadowing de una variable local por otra local que solapen su ámbito
+ * No podemos hacer shadowing de una variable local
+ * por otra variable local que solape su ámbito
  */
 void shadowing2() {
 

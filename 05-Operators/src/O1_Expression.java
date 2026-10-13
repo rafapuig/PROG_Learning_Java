@@ -1,14 +1,15 @@
 /**
  * EXPRESIÓN
+ * -----------------------------------------------------------------------------------------------------------
  * Es una serie de literales, variables, operadores y llamadas a métodos
  * construidos siguiendo las reglas de la gramática del lenguaje de programación.
  *
  * Constituyen una de las piezas de construcción de un programa.
  *
- * Reglas más importantes:
+ * Reglas gramaticales más importantes:
  *
  * Expresión --> literal
- * Expresión --> variable (de la que se leerá su contenido)
+ * Expresión --> variable (de la cual que se leerá y obtendrá su contenido como valor de la expresión)
  * Expresión --> llamada_a_función (de la que se usará el valor que retorne)
  * Expresión --> operador_unario_prefijo <expresión>
  * Expresión --> <expresión> operador_unario_postfijo
@@ -17,9 +18,8 @@
  *
  * Un lvalue es un almacén de datos, un elemento donde se puede escribir información, una variable en sentido amplio.
  *
- * A las expresiones también se las conoce como rvalues.
  *
- * Las expresiones cuando se evalúan (en tiempo de ejecución) pueden dan como resultado:
+ * Las expresiones cuando se evalúan (en tiempo de ejecución) pueden dar como resultado:
  * - un valor (rvalue)
  * - una variable (lvalue)
  * - nada
@@ -40,10 +40,10 @@ void main() {
     var age = 46;
     IO.println(age); // La expresión es una variable de tipo int (la expresión es, por tanto, de tipo int)
 
-    IO.println(Math.random()); // La expresión es una llamada a la función random de Math que devuelve un double, tipo dpouble
+    IO.println(Math.random()); // La expresión es una llamada a la función random de Math que devuelve un double, tipo double
 
     IO.println("Hola, " + name); // La expresión es una operación de concatenación mediante el operador binario +
-    // Sus operandos son dos expresiones: el literal "Hola, " y la variable name
+    // Sus operandos son dos expresiones: el literal "Hola, " y la variable `name`
 
     IO.println(name + " tiene " + age + " años"); // Expresión a base de operadores, literales variables
 

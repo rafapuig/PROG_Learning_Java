@@ -15,14 +15,16 @@
  * - Postfijo: n++
  * - Binario (2) infijo --> o1 op o2
  * - Ternario (3) infijo --> o1 op(parte1) o2 op(parte2) o3
- * <p>
+ *
  * - Tipo de operación que realiza:
  * - Aritmético
  * - Relacional
  * - Lógico
  * - A nivel de bit
  *
- * Además, podemos componerlos con la operación de asignación, el operando de la izquierda guarda el resultado
+ * Además, podemos componerlos con la operación de asignación, el operando de la izquierda
+ * (que debe ser un almacén de datos)
+ * guarda el resultado
  */
 
 
@@ -34,10 +36,11 @@ void main() {
     --n;
     n--;
 
+    // ~ Operador NOT a nivel de bit (se obtiene el símbolo ~ pulsado ALTGR + 4
     var m = ~n;
 
     boolean bool = true;
-    bool = !bool;
+    bool = !bool; // Operador NOT lógico (operando de tipo boolean)
 
     // Binarios
     n = n + 2;
@@ -48,7 +51,7 @@ void main() {
 
     bool = n == 100;
 
-    // Ternario
+    // Ternario (tres operandos) op1 ? op2 : op3
     var name = "Hilario";
     var greeting = "Hola, " + name != "" ? name : "Anonimo";
 
@@ -69,7 +72,7 @@ void main() {
     bool = !true;
     bool = true ^ true;
 
-    // a nivel de bit
+    // a nivel de bit (bitwise)
     n = n << 2;
     n = n >> 2;
     n = n >>> 2;

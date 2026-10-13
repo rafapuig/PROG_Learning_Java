@@ -1,14 +1,14 @@
 /**
  * Operador de asignación =
- *
+ * ------------------------------------------------------------------------------------------------
  * Se usa para asignar (escribir) un valor a una variable.
- *
+ * <p>
  * El operador izquierdo debe ser un lvalue (una variable en sentido amplio)
- * El operador de la derecha deber ser un rvalue (una expresión)
- *
+ * El operador de la derecha deber ser un rvalue (una expresión valor)
+ * <p>
  * El valor de la derecha debe ser ASIGNABLEMENTE COMPATIBLE
- * con el tipo de datos del operador izquierdo
- *
+ * con el tipo de datos del operador izquierdo.
+ * <p>
  * El operador de asignación forma una expresión.
  * Por tanto, resultará en un valor y tiene un tipo.
  */
@@ -17,13 +17,13 @@ void main() {
     /** Declaración de la variable number */
     int number;
 
-    // number es el lvalue y debe ser una (variable en sentido amplio, es decir un almacén)
-    // 26 es un literal y, por tanto, una expresión (un valor)
+    // number es el lvalue y debe ser una (variable en sentido amplio, es decir un almacén de datos)
+    // 26 es un literal y, por tanto, una expresión valor
     number = 26; // Asignación como instrucción de la variable number
 
     /**
-     * El valor de la derecha debe ser ASIGNABLEMENTE COMPATIBLE
-     * con el tipo de datos del operador izquierdo
+     * El operando de la derecha debe ser ASIGNABLEMENTE COMPATIBLE
+     * con el tipo de datos del operando izquierdo
      */
     byte b = 10;
     char c = 'ñ';
@@ -40,10 +40,10 @@ void main() {
     //i = f; // Error
 
     /**
-     * Se puede solucionar conviertiendo el rvalue a un tipo asignablemente compatible
+     * Se puede solucionar convirtiendo el rvalue a un tipo asignablemente compatible
      */
-    i = (int)big; // Se convierte el valor de big a int, rvalue es la expresión (int)big
-    i = (int)f; // rvalue es (int)f que es una expresión de tipo int
+    i = (int) big; // Se convierte el valor de big a int, rvalue es la expresión (int)big
+    i = (int) f; // rvalue es (int)f que es una expresión de tipo int
 
     /**
      * Asignación como expresión
@@ -51,7 +51,7 @@ void main() {
     int number1, number2; // Declaración de varias variables
     /**
      * Se asigna el valor 1024 a la variable number1
-     * El resultado de la expresion number1 = 1024 es el operando derecho, 1024
+     * El resultado de la expresión number1 = 1024 es el operando derecho, 1024
      * Quedando number2 = 1024;
      * y, por tanto, se asigna el valor 1024 a number2
      */

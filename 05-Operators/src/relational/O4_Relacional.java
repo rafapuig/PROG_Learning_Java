@@ -1,18 +1,18 @@
 /**
  * Operadores relacionales
- * <p>
+ * -------------------------------------------------------------------------------------
  * Comparan los valores de sus operandos y dan como resultado un valor de tipo boolean
- * <p>
+ *
  * igualdad ==
  * inigualdad !=
  * mayor que >
  * menor que <
  * mayor o igual que >=
  * menor o igual que <=
- * <p>
+ *
  * Java soporta 7 operadores de comparación (o relacionales)
  * ( ==, !=, >, >=, <, <= y instanceof )
- * <p>
+ *
  * Todos los operadores relacionales son binarios (e infijos), toman dos operandos
  * Sus operandos son expresiones (rvalue)
  */
@@ -40,11 +40,11 @@
  * Se usa para comprobar la igualdad de los dos operandos.
  *
  * 1) Ambos operandos de tipos primitivos
- *    - Se evalua con resultado true sin ambos representan el mismo valor, si no, false.
- *    - Ambos deben ser númericos o ambos boolean (mezclar un boolean y un numerico no está permitido)
+ *    - Se evalúa con resultado true sin ambos representan el mismo valor, si no, false.
+ *    - Ambos deben ser numéricos o ambos boolean (mezclar un boolean y un numérico no está permitido)
  *
  * 2) Ambos operandos valores de tipos referencia
- *    - Se evalua como resultado true si ambos operandos hacen referencia al MISMO objeto.
+ *    - Se evalúa como resultado true si ambos operandos hacen referencia al MISMO objeto.
  *
  */
 

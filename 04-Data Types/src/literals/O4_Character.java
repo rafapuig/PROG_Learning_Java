@@ -1,20 +1,21 @@
 /**
  * Literales de carácter
- * <p>
+ *
  * Se expresan en el código fuente mediante...
  * - un único carácter unicode
  * - una secuencia de escape
- * ... encerradas entre comillas simples
- * <p>
+ * ... encerradas entre comillas simples : '
+ *
  * Los únicos caracteres que no se pueden usan dentro de las comillas simples son ' y \
- * <p>
+ *
  * Un literal de carácter SIEMPRE se considera un valor de tipo char
  */
 
 // https://docs.oracle.com/en/java/javase/26/docs/specs/jls/jls-3.html#jls-3.10.4
+
 void singleCharacterLiterals() {
 
-    /* Los valores literales de carácter se expresan encerrados entre comillas simples */
+    /** Los valores literales de carácter se expresan encerrados entre comillas simples */
 
     // En estos ejemplos el literal es un carácter único (solo uno)
     IO.println('a'); // a
@@ -31,6 +32,7 @@ void singleCharacterLiterals() {
     //char singleQuote = '''; // ❌ Error de compilación
     //char backSlash = '\'; // ❌ Error de compilación
 }
+
 
 void singleCharacterLiteralsNumberVsDigit() {
     //OJO: No es lo mismo '9' que 9, o '0' que 0, etc.
@@ -51,7 +53,7 @@ void singleCharacterSingleQuoteAndBackSlash() {
     /*
     ¿Cómo podemos hacer que el valor literal del carácter sea la comilla simple
     si la comilla simple se usa como delimitador del literal?
-    Respuesta: usando un carácter de escape especial: el \
+    Respuesta: usando un carácter especial de escape: el \
      */
 
     // Single Quote
@@ -90,7 +92,7 @@ void unicodeScapeLiterals() {
      * El UnicodeMarker es la letra u
      * Un HexDigit puede ser  0 1 2 3 4 5 6 7 8 9 A B C D D E F a b c d e f
      *
-     * Por tanto, con la forma '\ u xxxx' donde x representa un dígito hexadecimal (y hay 4 digitos)
+     * Por tanto, con la forma '\ u xxxx' donde x representa un dígito hexadecimal (y hay 4 dígitos)
      * Es decir, desde \u0000 hasta el \uffff
      */
 

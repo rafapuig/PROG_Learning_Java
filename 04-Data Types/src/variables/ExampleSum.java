@@ -16,7 +16,7 @@ void main() {
        El valor a asignar no es del tipo de la variable!!!
        Java es un lenguaje fuertemente tipado y por eso no lo permite */
     //num1 = 12.5; // Error
-    //num1 = 'X'; // Porque si permite un caracter?????
+    //num1 = 'X'; // Porque si permite un carácter?????
 
     //num1 = "ABC"; // Error, no es valor de tipo int
 

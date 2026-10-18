@@ -1,15 +1,14 @@
 /**
  * Bloques de texto
- * <p>
+ *
  * Consiste en cero o más caracteres encerrados entre los delimitadores de apertura y cierre.
- * <p>
- * Delimitador de apertura """ {Espacio|Tab} salto de línea   ({} quiere decir cero o más)
+ *
+ * Delimitador de apertura """ {Espacio|Tab} salto_de_línea   ({} quiere decir cero o más)
  * Delimitador de cierre """
- * <p>
+ *
  * Los caracteres se pueden representar mediante secuencias de escape
  * El salto de línea y la doble comilla (que deben representarse con secuencias de escape en literales de string)
  * se pueden usar directamente en un bloque de texto
- *
  */
 
 

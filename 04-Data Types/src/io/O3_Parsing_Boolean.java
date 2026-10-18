@@ -6,7 +6,7 @@
 
 void booleanParsing() {
     boolean bool1 = Boolean.parseBoolean("true");
-    boolean bool3 = Boolean.parseBoolean("True"); // Se ignora el "Case" version mayusculas o minusculas
+    boolean bool3 = Boolean.parseBoolean("True"); // Se ignora el "Case" version mayúsculas o minúsculas
 
     boolean bool2 = Boolean.parseBoolean("false");
     boolean bool4 = Boolean.parseBoolean("verdadero"); // false

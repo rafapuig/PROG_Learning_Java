@@ -1,6 +1,6 @@
 /**
  * Constantes
- *
+ * -----------------------------------------------------------------------------
  * Al contrario de las variables, donde el valor almacenado puede
  * sustituirse por otro durante la ejecución del programa...
  *

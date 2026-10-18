@@ -5,7 +5,7 @@
  *
  * null
  *
- * se considera el literal correspondiente al único valor posible del tipo de datos nulo *
+ * se considera el literal correspondiente al único valor posible del tipo de datos nulo
  */
 
 /**
@@ -19,13 +19,14 @@
  * como por ejemplo String
  */
 String nullText = null;
+Object object = null;
 
 /** NO se puede asignar a variables de tipo primitivo !!! */
 //int n = null; // ❌ Error de compilación
 
 /** NO se pueden declarar variables cuyo tipo de datos sea el tipo nulo */
 // Null aNull = null; // No existe forma de hacerlo
-// Tampoco tendría sentido dado que solamente exite un único valor posible de ese tipo (no habría variedad)
+// Tampoco tendría sentido dado que solamente exite un único valor posible de ese tipo (no habría variabilidad)
 
 void main() {
     IO.println(null);

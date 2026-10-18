@@ -12,7 +12,6 @@
  * y se denomina ARRAY
  */
 
-import java.util.Arrays;
 
 /**
  * Ejemplo:
@@ -29,9 +28,9 @@ void solutionWithoutArrays() {
     // Repetimos 3 veces el mismo procedimiento de pedir un número
     // as binándolo cada vez a una de las variables
     // (no podemos usar un bucle aunque se repita algo varias veces porque no asignamos a la misma variable)
-    num1 = Integer.parseInt(IO.readln());
-    num2 = Integer.parseInt(IO.readln());
-    num3 = Integer.parseInt(IO.readln());
+    num1 = Integer.parseInt(IO.readln("Dame el número 1"));
+    num2 = Integer.parseInt(IO.readln("Dame el número 2"));
+    num3 = Integer.parseInt(IO.readln("Dame el número 3"));
 
     if (num1 <= num2 && num2 <= num3) {
         IO.println(num1 + " " + num2 + " " + num3);
@@ -75,40 +74,40 @@ void solutionWithoutArrays2() {
 
 /**
  * ¿Qué es una array?
- * <p>
- * Es una estructura de datos que permite almacenar valores de un mismo tipo comun, sus elementos,
+ *
+ * Es una estructura de datos que permite almacenar valores de un mismo tipo común, sus elementos,
  * y que permite acceder a ellos indicando la posición que ocupa el elemento en la estructura.
  * A dicha posición también se denomina índice (index).
- * <p>
+ *
  * La característica principal y que distingue a los arrays es la de que
  * todos sus elementos se almacenan de manera compacta en bloque, es decir, de forma consecutiva en la memoria.
- * <p>
+ *
  * La forma de crear un array es mediante el operador new
- * <p>
+ *
  * new tipo_elemento[numero_elementos]
- * <p>
+ *
  *
  * ¿Y la forma de acceder a cada elemento?
- * <p>
+ *
  * Un array se considera un tipo de datos,
  * y, por tanto, podemos declarar una variable donde asignarlo, para poder hacer referencia a él más adelante.
- * <p>
+ *
  * Para poder asignarle un array el nombre de la variable debe terminar en []
- * <p>
+ *
  * Y ahora,
  * para acceder al elemento situado en la primera posición usamos como valor de posición o índice el 0
  * para acceder al último elemento usamos como valor de posición / índice el del numero_elementos - 1
- * <p>
+ *
  * Por tanto, si un array se creó con espacio para N elementos, sus elementos se acceden con índices
  * que van desde el 0 hasta el N-1.
- * <p>
+ *
  * La explicación es que el valor del índice indica cuantos elementos tienes que dejar atrás avanzando
  * si empiezas desde el principio del array hasta posicionarte justo en el elemento al que quieres acceder.
- * <p>
+ *
  * Por eso, para acceder al primer elemento se usa el índice 0, porque no tienes que avanzar ninguna posición
  * par situarte en el primer elemento.
  * Y para llegar hasta el último (n-estimo) habrás tenido que dejar a tras a los N-1 anteriores.
- * <p>
+ *
  * Mucho cuidado con esto.
  *
  * Una vez tenemos el índice para acceder al almacén donde se almacena el valor usamos el operador []
@@ -119,8 +118,8 @@ void solutionWithoutArrays2() {
  *
  * El operador [] expresa un almacén de datos (como una variable)
  * que permite acceder al valor almacenado en la posición indicado por el índice almacenado en el array referenciado.
- * Y tiene, por tanto,  toda la consideración de un almacén de datos o lvalue (como si se tratara de una variable).
- * Puedo usar  referencia_array[indice] :
+ * Y tiene, por tanto, toda la consideración de un almacén de datos o lvalue (como si se tratara de una variable).
+ * Puedo usar referencia_array[indice]:
  * - como operando izquierdo en una operación de asignación =.
  * - como operando izquierdo en una operación de asignación compuesta += , -=, *= etc.
  * - como operando de los operadores de incremento ++ y decremento --
@@ -129,13 +128,12 @@ void solutionWithoutArrays2() {
  * Por tanto, podemos verlo como si declarar un array 3 elementos de tipo entero
  * diera lugar a tres almacenes consecutivos en la memoria y el operador [] mediante el índice me permite seleccionar
  * cuál de ellos quiero usar.
- *
- *
  */
 
 void arraysDemo1() {
 
-    int numbers[] = new int[3];
+    /** Colocar el [] detrás del nombre de la variable identificadora de array se considera estilo C */
+    int numbers[] = new int[3]; // Uso del operador new para crear un array de tres elementos de tipo int
 
     numbers[0] = 1;
     numbers[1] = 2;
@@ -145,11 +143,11 @@ void arraysDemo1() {
 }
 
 /**
- * En Java los [] se suelen colocar después del tipo de los elementos
+ * En Java los [] se suelen colocar después del tipo de los elementos ( detrás del nombre de la variable)
  */
 void arraysDemo2() {
 
-    int[] numbers = new int[3];
+    int[] numbers = new int[3]; // Dentro de [] hay en 3  pero podría ser cualquier expresión de tipo int
 
     numbers[0] = 1;
     numbers[1] = 2;
@@ -161,10 +159,10 @@ void arraysDemo2() {
 /**
  * Sí conocemos explícitamente los valores de los elementos podemos crear el array
  * indicando los elementos uno por uno separados por comas y entre {}
- * <p>
+ *
  * {valor1, valor2, valor3, ...}
- * <p>
- * y no hará falta indicar entre [] el número de elementos del array,
+ *
+ * y no hará falta indicar entre [] el número de elementos del array, (de hecho hacerlo es un error),
  * ya que se deduce a partir de contar los elementos de la lista entre {}
  */
 
@@ -185,9 +183,9 @@ void arraysDemo4() {
 
 
 /**
- *  // La expresión numbers[0] es un lvalue,
- *     // puede aparecer a la izquierda de un operador de asignación (como operando izquierdo del operador de asignación)
- *     // Se considera un almacen
+ *  La expresión numbers[0] es un lvalue,
+ *  puede aparecer a la izquierda de un operador de asignación (como operando izquierdo del operador de asignación)
+ *  Se considera un almacén
  */
 
 void arraysDemo5() {
@@ -206,6 +204,11 @@ void arraysDemo5() {
     IO.println(numbers[0] + " " + numbers[1] + " " + numbers[2]);
 }
 
+
+/**
+ * El operando índice del operador [] puede ser cualquier expresión de tipo int
+ * (no necesariamente un literal o una variable)
+ */
 void arraysDemo6() {
     int[] numbers = {1, 2, 3};
 
@@ -227,9 +230,11 @@ void arraysDemo6() {
 
 void arraysDemo7() {
     int[] numbers = {1, 2, 3};
+
+    // Tamaño del array, número de elementos totales que contiene
     int size = numbers.length;
 
-    // Acceso al último elemento del array referenciado por la variable numbers
+    // Acceso al último elemento del array referenciado por la variable numbers, para duplicar su valor
     numbers[size - 1] *= 2;
 
     IO.println(numbers[0] + " " + numbers[1] + " " + numbers[2]);
@@ -239,7 +244,7 @@ void arraysDemo7() {
 /**
  * ¿Y si creo otra variable de tipo array y le asigno un array referenciado en otra variable?
  *
- * Los arrays NO se copian cuando asignamos a una variable de tipo array usando como expresión
+ * Los arrays NO se copian cuando asignamos a una variable de tipo array usando una variable de tipo array como expresión
  *
  * Al hacer la asignación lo que estamos diciendo es que
  * ambas variables van a hacer referencia al MISMO array
@@ -247,7 +252,7 @@ void arraysDemo7() {
  */
 void arraysDemo8() {
     int[] numbers = {1, 2, 3};
-    int[] copy = numbers;
+    int[] copy = numbers; // No es una copia, es el mismo array
 
     IO.println(numbers[0] + " " + numbers[1] + " " + numbers[2]);
 
@@ -264,6 +269,7 @@ void arraysDemo8() {
  */
 void arraysDemo9() {
     int[] numbers = {1, 2, 3};
+    // Bucle para iterar los elementos del array y duplicar su valor
     for (int i = 0; i < numbers.length; i++) {
         numbers[i] *= 2;
     }
@@ -286,12 +292,16 @@ void arraysDemo10() {
  * Entonces como ¿hago una copia de un array?
  *
  * Creando otro array del mismo número de elementos que el array original.
+ * Y copiando los valores posición a posición
  */
 void arraysDemo11() {
     int[] numbers = {1, 2, 3};
     IO.println(numbers[0] + " " + numbers[1] + " " + numbers[2]);
 
+    // Crear un nuevo array con el mismo número de elementos que el referenciado por la variable numbers
     int[] copy = new int[numbers.length];
+    // Ir recorriendo los elementos del array referenciado por numbers y asignar el mismo valor en el mismo índice
+    // a los elementos del array referenciado por copy
     for (int i = 0; i < numbers.length; i++) {
         copy[i] = numbers[i];
     }
@@ -328,9 +338,9 @@ void solutionWithArrays() {
         numbers[i] = Integer.parseInt(IO.readln("Dame el número " + (i + 1) + ": "));
     }
 
-    // Ordenar
+    // Ordenar los elementos de menor a mayor
     for (int i = 0; i < numbers.length; i++) {
-        var min =  i;
+        var min = i;
         for (int j = i + 1; j < numbers.length; j++) {
             if (numbers[j] < numbers[min]) {
                 min = j;
@@ -342,7 +352,7 @@ void solutionWithArrays() {
     }
 
 
-
+    // Imprimir los elementos del array separados por espacios
     for (int i = 0; i < numbers.length; i++) {
         if (i != 0) IO.print(" ");
         IO.print(numbers[i]);
@@ -365,5 +375,6 @@ void solutionWithArrays() {
 
 
 void main() {
+    solutionWithoutArrays();
     solutionWithArrays();
 }

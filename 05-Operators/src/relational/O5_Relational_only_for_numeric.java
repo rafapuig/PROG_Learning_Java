@@ -6,7 +6,7 @@
  *
  * Todos son binarios infijos (dos operandos izquierdo y derecho y operador en medio)
  *
- * Si algún operando es NaN el resultado es false *
+ * Si algún operando es NaN el resultado es false
  */
 
 /**

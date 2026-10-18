@@ -9,7 +9,7 @@
  * - carácter unicode
  * - secuencia de escape ( \ )
  *
- * Todos los literales de string son instancias / objetos de la clase String
+ * Todos los literales de string son instancias (objetos) de la clase String
  */
 
 void main() {
@@ -42,13 +42,11 @@ void main() {
     IO.println("\uD83D\uDEE9\uFE0F");
 
     /* En este caso el carácter " es el delimitador de literal string
-    y es el que no podemos usar directamente como caracter del literal puesto que confunde
+    y es el que no podemos usar directamente como carácter del literal puesto que confunde
     el análisis léxico del compilador
      */
     //IO.println("El niño "Cuco" está dormido"); // ❌ Error de compilación
     IO.println("El niño \"Cuco\" está dormido"); // Escapamos el caracter " con \"
 
     IO.println("El carácter \\ necesita escaparse mediante \\\\"); // Escape del \ mediante \\
-
-
 }

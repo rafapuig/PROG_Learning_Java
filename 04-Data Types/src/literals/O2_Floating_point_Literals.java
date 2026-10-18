@@ -25,13 +25,9 @@ import static util.Utils.bits;
  * - f (o F) para que el valor sea de tipo float
  * - d (o D) o sin sufijo el valor se considera de tipo double
  *
- * - El valor más grande positivo de tipo float es numéricamente igual a (2-2^23)*2^127
- * y se corresponde con el literal 3.4028235e38f
- * y 0x1.fffffeP+127f
+
  *
- * - El valor más pequeño positivo de tipo float es numéricamente equivalente a 2^-149
- * y se corresponde con el literal 1.4e-45f
- * y 0x0.00002P-126f o también 0x1.0P-149f
+
  *
  */
 
@@ -44,11 +40,17 @@ void main() {
 }
 
 
+/**
+ * - El valor más grande positivo de tipo float es numéricamente igual a (2-2^23) * 2^127
+ * y se corresponde con el literal decimal 3.4028235e38f
+ * y el literal hexadecimal 0x1.fffffeP+127f
+ */
 void largestPositiveFiniteFloatLiteral() {
     var mostPositive = 3.4028235e38f;
+
     // signo 0 -> positivo,
     // exponente de 8 bits 2^127 con sesgo de 127 => 127 + 127 = 254 -> 11111110
-    // 23 unos en la mantisa normalizada 1.xxxxxxx --> ff_ff_fe
+    // 23 unos en la mantisa normalizada 1.xxxxxxx...x(23) --> ff_ff_fe
     var mostPositiveHex = 0x1.ff_ff_feP+127f;
 
     /**
@@ -59,15 +61,23 @@ void largestPositiveFiniteFloatLiteral() {
 
     IO.println(mostPositive);
     IO.println(bits(mostPositive));
+
     IO.println(mostPositiveHex);
     IO.println(bits(mostPositiveHex));
 }
 
+/**
+ * - El valor más pequeño positivo de tipo float es numéricamente equivalente a 2^-149
+ * y se corresponde con el literal decimal 1.4e-45f
+ * y los literales hexadecimales 0x0.00002P-126f o también 0x1.0P-149f
+ */
 void smallestPositiveFiniteNonZeroFloatLiteral() {
     var smallestPositive = 1.4e-45f;
-    // 149 - 23 = 126 el 1 desplazado 23 posiciones en la mantisa a la derecha
+
+    // 149 - 23 = 126 el 1 desplazado 23 posiciones en la mantisa hacia la derecha
     var smallestPositiveHex =  0x1.0P-149f;
-    // Mantisa 22 ceros y un 1 (y un cero) por eso el 2
+
+    // Mantisa 22 ceros, un 1, y un cero--> por eso el 2
     // Desnormalizada, por eso exponente 0000_0000 (8 ceros)
     // signo positivo 0
     var smallestPositiveHexAlt = 0x0.00_00_02P-126f;
@@ -81,8 +91,10 @@ void smallestPositiveFiniteNonZeroFloatLiteral() {
 
     IO.println(smallestPositive);
     IO.println(bits(smallestPositive));
+
     IO.println(smallestPositiveHex);
     IO.println(bits(smallestPositiveHex));
+
     IO.println(smallestPositiveHexAlt);
     IO.println(bits(smallestPositiveHexAlt));
 }
@@ -129,6 +141,7 @@ void floatLiterals() {
     IO.println(0xCAFEP23f);
 
 }
+
 
 void doubleLiterals() {
     /* Literales de tipo double Sufijo d D (o ningún sufijo) */

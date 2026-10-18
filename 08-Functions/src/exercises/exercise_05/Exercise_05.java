@@ -1,10 +1,10 @@
 /**
  * En un videojuego, los jugadores lanzan un dado. El jugador que consigue la tirada más alta suma un punto.
  * Después de 10 tiradas, el jugador con más puntos es el ganador.
- * <p>
+ *
  * 1) Escribe una función con nombre random que acepte dos números, que serán el valor más alto y el más bajo que puede
  * generarse de manera aleatoria (los límites inclusivos del intervalo)
- * <p>
+ *
  * 2) Escribe una función con nombre rollDice que devuelve un número aleatorio entre 1 y 6.
  */
 

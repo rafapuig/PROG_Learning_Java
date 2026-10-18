@@ -1,15 +1,17 @@
 /**
+ * VARIABLES
+ * --------------------------------------------------------------------------------------------
  * Una variable
- * es un espacio de memoria
+ * es un espacio de la memoria
  * que se reserva para almacenar un valor de un determinado tipo
  * declarada mediante:
  *
- * - un nombre denominado identificador
+ * - un nombre (denominado identificador)
  * que sirve para poder hacer referencia a dicha variable posteriormente
- * cuando queremos acceder al valor que contiene guardado o queremos
- * reasignar un nuevo valor
- * durante el tipo de vida (lifetime) de la variable
- * Solamente podemos hacer uso de una variable en donde resulta conocida
+ * cuando queremos acceder al valor que contiene guardado
+ * o queremos reasignar un nuevo valor
+ * durante el tipo de vida (lifetime) de la variable.
+ * Solamente podemos hacer uso de una variable en los lugares donde resulta conocida
  * es decir, en su ámbito o alcance (scope en inglés)
  *
  * - un tipo

@@ -48,6 +48,7 @@ void parseUnsignedInt() {
     IO.println("El año que viene cumplirás " + (age + 1) + " años");
 }
 
+
 void parseInt() {
     String input = IO.readln("Dime planta destino (negativa o positiva): ");
 
@@ -64,7 +65,7 @@ void parseInt() {
  * Radix
  *
  * El radix es el número que indica la base utilizada
- * para expresar ,mediante dígitos válidos para esa base, una cantidad numérica.
+ * para expresar, mediante dígitos válidos para esa base, una cantidad numérica.
  *
  * Es un argumento que se puede pasar a la función parseXXX además del texto a analizar
  * Su valor debe estar entre 2 y 36 para ser aceptado

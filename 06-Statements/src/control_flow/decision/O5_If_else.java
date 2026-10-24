@@ -43,6 +43,8 @@
  * }
  *
  * En Java se suelen usar SIEMPRE las llaves, aunque las instrucciónes condicionadas no sean un bloque.
+ *
+ * Podemos combinar if-else de manera escalonada y de forma anidada.
  */
 
 /**

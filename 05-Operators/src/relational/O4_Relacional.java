@@ -35,7 +35,8 @@
 
 
 /**
- * Operador de igualdad == (son dos caracteres para el símbolo del operador, el operador de asignación es =)
+ * Operador de igualdad == (son dos caracteres = para el símbolo del operador, el operador de asignación es =)
+ * ----------------------------------------------------------------------------------------------------------
  *
  * Se usa para comprobar la igualdad de los dos operandos.
  *
@@ -45,7 +46,6 @@
  *
  * 2) Ambos operandos valores de tipos referencia
  *    - Se evalúa como resultado true si ambos operandos hacen referencia al MISMO objeto.
- *
  */
 
 void main() {
@@ -55,12 +55,12 @@ void main() {
     boolean bool = true;
     boolean bool2 = false;
 
-    IO.println(i == x);
+    IO.println(i == x); // true, se convierte primero i a float para comparar dos valores float
     //IO.println(bool == i); // Error, mezcla de boolean e int
 
-    IO.println(bool == bool2);
+    IO.println(bool == bool2); // false
 
-    // Error i == x se evalúa primero con dos operadores int y genera un boolean que no se puede comparar con un int
+    // ERROR: i == x se evalúa primero con dos operadores int y genera un boolean que no se puede comparar con un int
     // bool = (i == x == i);
 
     /**
@@ -79,7 +79,7 @@ void main() {
      */
     IO.println(Double.NaN == 1.5); // false
 
-    /*
+    /**
      * Incluso si comparamos NaN con NaN el resultado es false
      */
     IO.println(Double.NaN == Double.NaN); // false
@@ -91,7 +91,7 @@ void main() {
     number = Double.NaN;
     IO.println(number == Double.NaN); // false
 
-    /* La forma correcta de comparar si el valor es Nan es con la función isNaN de Double (o Float) */
+    /** La forma correcta de comparar si el valor es Nan es con la función isNaN de Double (o Float) */
     IO.println(Double.isNaN(number)); // true
 
     IO.println(isNaN(Float.NaN));
@@ -121,8 +121,9 @@ void main() {
 
 /**
  * El operador de inigualdad !=
+ * -------------------------------------------------------------------------
  *
- * operando1 != operando2
+ * Sintaxis: operando1 != operando2
  *
  * Da como resultado true si el operando1 y operando2 no se consideran iguales, y false en otro caso.
  * Se aplican las mismas reglas que para el operador ==
@@ -151,6 +152,9 @@ void inequality() {
     IO.println(f1 != f1); // true
 }
 
+/**
+ * Version "casera" de la función isNaN de Float
+ */
 boolean isNaN(float number) {
     final int bits = Float.floatToIntBits(number);
     //IO.println(String.format("%32s", Integer.toBinaryString(bits)).replace(' ', '0'));

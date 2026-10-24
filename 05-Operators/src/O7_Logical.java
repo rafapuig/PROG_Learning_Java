@@ -1,11 +1,11 @@
 /**
  * Operadores booleanos / lógicos
- * <p>
+ * ---------------------------------------------------------------------------------------------------------
  * Se aplican solamente a operandos (valores, expresiones) de tipo boolean y dan como resultado otro boolean.
  * (Existen otros operadores que usan los mismos símbolos, pero cuyos operandos son numéricos)
- * <p>
+ *
  * Una expresión de tipo boolean también recibe el nombre de CONDICIÓN.
- * <p>
+ *
  * Operadores:
  * !    NOT (Unario prefijo)
  * &&   AND lógico de cortocircuito
@@ -39,14 +39,14 @@ void not() {
 
 /**
  * Operador AND lógico y de cortocircuito &&
- * <p>
- * operando1 && operando2 (operandos expresiones de tipo boolean, condiciones)
- * <p>
- * Solamente devuelve true si ambas condiciones se evalúan con resultado true
- * <p>
- * Al ser de cortocircuito la condición del segundo operando solamente se evalua si la primera resulta true
+ * ----------------------------------------------------------------------------------------------------
+ * Sintaxis: operando1 && operando2 (operandos expresiones de tipo boolean, condiciones)
+ *
+ * Solamente devuelve true si ambas condiciones se evalúan con resultado true.
+ *
+ * Al ser de cortocircuito la condición del segundo operando solamente se evalúa si la primera resulta true
  * Porque, si el primer operando es false, ya da igual lo que resulte evaluar el segundo,
- * el resultado final ya está determinado a ser false y ningun resultado del segundo operando lo puede cambiar.
+ * el resultado final ya está determinado a ser false y ningún resultado del segundo operando lo puede cambiar.
  * De esta manera nos ahorramos evaluar la segunda condición.
  * A veces, conviene no evaluar la segunda condición si no se cumplen unos requisitos previos.
  */

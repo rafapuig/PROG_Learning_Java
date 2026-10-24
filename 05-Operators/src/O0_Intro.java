@@ -2,21 +2,21 @@
  * https://docs.oracle.com/en/java/javase/26/docs/specs/jls/jls-4.html#jls-4.2.2
  * https://docs.oracle.com/en/java/javase/26/docs/specs/jls/jls-4.html#jls-4.2.4
 
- * Operador
-
+ * OPERADOR
+ * ----------------------------------------------------------------------------
  * Es un tipo de token que realiza una determinada operación
  * a partir de uno, dos o tres operandos.
-
+ *
  * Existen dos criterios para clasificar:
-
- * - Número de operandos:
+ *
+ * 1) Número de operandos:
  * - Unario (1)
  * - Prefijo: ++n
  * - Postfijo: n++
  * - Binario (2) infijo --> o1 op o2
  * - Ternario (3) infijo --> o1 op(parte1) o2 op(parte2) o3
  *
- * - Tipo de operación que realiza:
+ * 2) Tipo de operación que realiza:
  * - Aritmético
  * - Relacional
  * - Lógico
@@ -24,7 +24,7 @@
  *
  * Además, podemos componerlos con la operación de asignación, el operando de la izquierda
  * (que debe ser un almacén de datos)
- * guarda el resultado
+ * guardará el resultado.
  */
 
 

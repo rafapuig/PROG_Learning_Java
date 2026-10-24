@@ -29,9 +29,9 @@
 void integerArithmeticAppliesToInts() {
 
     byte b1 = 1, b2 = 2;
-    //byte bResult = b1 + b2; //ERROR: b1 + b2 es de tipo int
+    //byte bResult = b1 + b2; // ERROR: b1 + b2 es de tipo int
     byte bResult = (byte) (b1 + b2); // Se convierte explícitamente la expresión (b1+ b2) a byte mediante un casting
-    //byte bResult = (byte) b1 + b2; // No es lo mismo, aqui solo se convierte b1, hay que usar los paréntesis
+    //byte bResult = (byte) b1 + b2; // No es lo mismo, aquí solo se convierte b1, hay que usar los paréntesis
 
     short s1 = 1, s2 = 2;
     //short sResult = s1 + s2;
@@ -64,7 +64,7 @@ void promotion() {
     int n = 100;
     double d = 20.0;
 
-    //int sum = n + d; //ERROR: el valor de n se convierte a double y n + d es de tipo double
+    //int sum = n + d; // ERROR: el valor de n se convierte a double y n + d es de tipo double
     double sumd = n + d;
 
     /**
@@ -72,7 +72,7 @@ void promotion() {
      * y el tipo de la expresión será float
      */
     float f = 1.5f;
-    //int sum = n + f; //ERROR: el valor de n se convierte a float
+    //int sum = n + f; // ERROR: el valor de n se convierte a float
     float sumf = n + f;
 
     /**
@@ -80,7 +80,7 @@ void promotion() {
      * y el tipo de la expresión será long
      */
     long l = 120L;
-    //int sum = n + l; //ERROR: el valor de n se convierte a long
+    //int sum = n + l; // ERROR: el valor de n se convierte a long
     long suml = n + l;
 
     /**
@@ -88,15 +88,15 @@ void promotion() {
      * no es int (byte, short, char)
      */
     byte b1 = 1,  b2 = 2;
-    //byte sumb = b1 + b2; //ERROR: el valor de b1 y el de b2 se promocionan (convierte) al tipo int antes de operar
+    //byte sumb = b1 + b2; // ERROR: el valor de b1 y el de b2 se promocionan (convierte) al tipo int antes de operar
     int sumb = b1 + b2;
 
     short s1 = 1, s2 = 2;
-    //short sums = s1 + s2; //ERROR: el valor de s1 y de s2 se promocionan (convierte) al tipo int antes de operar
+    //short sums = s1 + s2; // ERROR: el valor de s1 y de s2 se promocionan (convierte) al tipo int antes de operar
     int sums = s1 + s2;
 
     char c1 = 1, c2 = 2;
-    //char sumc = c1 + c2; //ERROR: el valor de s1 y de s2 se promocionan (convierte) al tipo int antes de operar
+    //char sumc = c1 + c2; // ERROR: el valor de s1 y de s2 se promocionan (convierte) al tipo int antes de operar
     int sumc = c1 + c2;
 }
 
@@ -288,8 +288,8 @@ void unaryMinus() {
     iNum += 5; // equivale a iNum = iNum + 5
 
      short sNum1 = 100, sNum2 = 15;
-     //sNum1 = sNum1 + sNum2; // ERROR, por la promocion a int de los operandos
-     sNum1 = (short) (sNum1 + sNum2); // Solucion aplicando el casting a la expresión de la suma
+     //sNum1 = sNum1 + sNum2; // ERROR, por la promoción a int de los operandos
+     sNum1 = (short) (sNum1 + sNum2); // Solución aplicando el casting a la expresión de la suma
      sNum1 += sNum2;
 
      /**
@@ -302,12 +302,12 @@ void unaryMinus() {
     IO.println(iNum);
 
 
+    iNum = 5;
     /*
     El valor 5 se convierte a double para sumar a 3.4,
     el resultado convierte a int (se elimina la parte decimal) hay una conversión implícita con perdida
     (por eso vemos el warning en amarillo)
      */
-    iNum = 5;
     iNum += 3.4;
     IO.println(iNum);
 

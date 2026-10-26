@@ -1,7 +1,7 @@
 /**
  * Operadores aritméticos
  * -------------------------------------------------------------------------------------------
- * Un operador aritmético toma operadores de tipos numéricos (cualquier primitivo menos boolean)
+ * Un operador aritmético toma operandos de tipos numéricos (cualquier primitivo menos boolean)
  * y realiza una operación aritmética con ellos.
  *
  * Por tanto, solo se aplican a operandos tipos de datos numéricos:
@@ -374,7 +374,7 @@ void increment() {
     j = 10;
     // Se evalúa la i, que tras incrementar vale 51, y la j que vale 10, 51 - 10 = 41 y se asigna a la j
     // la i se incrementa en una unidad
-    j = ++i - j; // j = 50 - 10 = 40 y i = i + 1 = 51
+    j = ++i - j; // j = 51 - 10 = 41 y i = i + 1 = 51
     IO.println("i = " + i); // 51
     IO.println("j = " + j); // 41
 

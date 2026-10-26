@@ -2,17 +2,17 @@
  * Operadores relacionales
  * -------------------------------------------------------------------------------------
  * Comparan los valores de sus operandos y dan como resultado un valor de tipo boolean
- *
+ * <p>
  * igualdad ==
  * inigualdad !=
  * mayor que >
  * menor que <
  * mayor o igual que >=
  * menor o igual que <=
- *
+ * <p>
  * Java soporta 7 operadores de comparación (o relacionales)
  * ( ==, !=, >, >=, <, <= y instanceof )
- *
+ * <p>
  * Todos los operadores relacionales son binarios (e infijos), toman dos operandos
  * Sus operandos son expresiones (rvalue)
  */
@@ -35,10 +35,11 @@
 
 
 /**
- * Operador de igualdad == (son dos caracteres = para el símbolo del operador, el operador de asignación es =)
+ * Operador de igualdad ==
+ * (son dos caracteres = para el símbolo del operador, RECUERDA: el operador de asignación es =)
  * ----------------------------------------------------------------------------------------------------------
  *
- * Se usa para comprobar la igualdad de los dos operandos.
+ * Se usa para comprobar la igualdad (equivalencia) de sus dos operandos.
  *
  * 1) Ambos operandos de tipos primitivos
  *    - Se evalúa con resultado true sin ambos representan el mismo valor, si no, false.
@@ -50,18 +51,22 @@
 
 void main() {
 
-    int i = 10;
-    float x = 10.0f;
+    final int i = 10;
+    final float x = 10.0f;
     boolean bool = true;
     boolean bool2 = false;
 
-    IO.println(i == x); // true, se convierte primero i a float para comparar dos valores float
+    //¿el valor almacenado en la variable i es igual (se considera equivalente) al valor almacenado en la variable x?
+    IO.println(i == x); // true, se convierte primero el valor de i a float para poder comparar dos valores float
+
+    /** Un valor de tipo boolean NO se puede convertir en ninguna otra cosa en Java */
     //IO.println(bool == i); // Error, mezcla de boolean e int
 
-    IO.println(bool == bool2); // false
+    IO.println(bool == bool2); // false, falso no es igual verdadero
 
     // ERROR: i == x se evalúa primero con dos operadores int y genera un boolean que no se puede comparar con un int
     // bool = (i == x == i);
+    //bool = ((i == x) == i); // equivale a la instrucción de la linea anterior
 
     /**
      * El cero negativo -0.0 y el cero positivo 0.0 se consideran iguales
@@ -85,38 +90,42 @@ void main() {
     IO.println(Double.NaN == Double.NaN); // false
 
     double number = 1.45f;
-    /* Para comprobar si number es NaN no podremos usar el operador == porque siempre daría false  */
+    /** Para comprobar si number es NaN NO podemos usar el operador == porque siempre daría false  */
     IO.println(number == Double.NaN); // false
 
     number = Double.NaN;
     IO.println(number == Double.NaN); // false
 
-    /** La forma correcta de comparar si el valor es Nan es con la función isNaN de Double (o Float) */
+    /** La forma correcta de comparar si el valor es NaN es mediante la función isNaN de Double (o Float) */
     IO.println(Double.isNaN(number)); // true
 
-    IO.println(isNaN(Float.NaN));
-    IO.println(Float.isNaN(1.5f));
+    // Aquí usamos una version "casera" de isNaN (ver código más abajo)
+    IO.println(isNaN(Float.NaN)); // true
+    IO.println(Float.isNaN(1.5f)); // false
 
     // Uso de la version "casera" de isNaN
     IO.println(isNaN(Float.NaN));
     IO.println(isNaN(1.6f));
 
 
-    // Valores de tipo de referencia (String en este ejemplo)
-    String s1 = new String("abc"); // Se crea un objeto String y una referencia a este que se guarda en la variable s1
-    String s2 = new String("abc"); // Se crea otro objeto String y una referencia a este que se guarda en la variable s2
+    /** Valores de tipo de referencia (String en este ejemplo) */
+    // Se crea un objeto String y una referencia a este que se guarda en la variable s1
+    String s1 = new String("abc");
 
-    /*
+    // Se crea otro objeto String y una referencia a este que se guarda en la variable s2
+    String s2 = new String("abc");
+
+    /**
     El operador == para referencias compara las referencias
     Ambas referencias s1 y s2 refieren a objetos String iguales (ambos contienen la secuencia abc)
-    pero NO se refieren al mismo objeto String (son dos objetos gemelos, iguales, pero no el mismo)
+    pero NO se refieren al MISMO objeto String (son dos objetos gemelos, iguales, pero no el mismo)
     s1 contiene la referencia al primer String creado
     s2 contiene la referencia al segundo String creado
      */
-    IO.println(s1 == s2);
+    IO.println(s1 == s2); // No son el mismo --> false
 
     /** Para comparar si dos cadenas string (y en general dos objetos) son iguales en Java se usa el método equals */
-    IO.println(s1.equals(s2));
+    IO.println(s1.equals(s2)); // No serán el mismo, pero si son equivalentes (iguales)
 }
 
 /**
@@ -129,9 +138,9 @@ void main() {
  * Se aplican las mismas reglas que para el operador ==
  */
 void inequality() {
-    IO.println(10 != 9);
-    IO.println(true != false);
-    IO.println(false != false);
+    IO.println(10 != 9); // true
+    IO.println(true != false); // true
+    IO.println(false != false); // false
 
     /**
      * Si alguno de los operandos es NaN el resultado es true.

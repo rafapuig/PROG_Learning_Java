@@ -77,7 +77,7 @@ void negateConditionExercises(int a, int b, int x, boolean n) {
     boolean negateCon4OK = !n;
 
     boolean negateCon5a = !(b > 7 && !(x > 4));
-    boolean negateCon5b = b >= 7 || x > 4;
+    boolean negateCon5b = b <= 7 || x > 4;
 
     boolean negateCon6a = !(a == 4 || b != 2);
     boolean negateCon6b = a != 4 && b == 2;
@@ -94,7 +94,7 @@ void negateWithoutNotOperator(int x, int y, int z) {
 
     boolean negCond1 = x != 4 || y == 3;
     boolean negCond2 = x + 4 > 0;
-    boolean negCond3 = x > 4 && z <= 4;
+    boolean negCond3 = x < 4 && z <= 4;
 
 }
 

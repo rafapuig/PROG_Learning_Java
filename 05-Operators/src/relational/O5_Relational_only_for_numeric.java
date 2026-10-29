@@ -19,7 +19,7 @@
 void greaterThan() {
     IO.println(10 > 15.0); // false
     IO.println(100 > 15.0); // true
-    IO.println(-1.5 < 0); // false
+    IO.println(-1.5 < 0); // true
 
     // IO.println(false > true); // ERROR, No se puede utilizar con operandos de tipo boolean
 

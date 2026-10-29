@@ -6,4 +6,6 @@
 void main() {
     int i = 11;
     int j = ++i % 3;
+    IO.println("i = " + i);
+    IO.println("j = " + j);
 }

@@ -21,11 +21,11 @@
  */
 
 void not() {
-    IO.println(!true);
-    IO.println(!false);
+    IO.println(!true); // false
+    IO.println(!false); // true
 
     boolean b = true;
-    b = !b; // Canbiar el valor de true a false, y si fuera false a true
+    b = !b; // Cambiar el valor de true a false, y si fuera false a true
     IO.println(b);
 
     b = 12 > 10; // true

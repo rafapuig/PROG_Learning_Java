@@ -64,7 +64,7 @@ void ejemplo1() {
 void ejemplo2() {
     int edad = 15;
     if (edad >= 18)
-        IO.println("Es menor de edad"); // El ; pertenece a la instrucción de expresión no a la instrucción if-else
+        IO.println("Es mayor de edad"); // El ; pertenece a la instrucción de expresión no a la instrucción if-else
     else
         IO.println("Es menor de edad"); // El ; pertenece a la instrucción de expresión
 

@@ -1,7 +1,7 @@
 /**
  * Escribe un método con nombre sumRecursive que acepte un número entero mediante un parámetro de entrada
  * y devuelva la suma de los números desde el 1 hasta ese número incluido.
- * <p>
+ *
  * Escribe un programa que pida al usuario un numero positivo y haciendo uso del método anterior
  * obtenga la suma desde 1 hasta el numero introducido por el usuario y lo muestre por consola.
  */
@@ -16,6 +16,7 @@ int readPositiveNumber(String prompt) {
         try {
             final String input = IO.readln(prompt);
             final int number = Integer.parseInt(input);
+
             if (number > 0) return number;
 
             throw new RuntimeException();

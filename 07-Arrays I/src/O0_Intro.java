@@ -1,13 +1,13 @@
 /**
  * Ya hemos visto un tipo de almacén de datos: las variables
- * <p>
+ *
  * Hemos visto que son una buena manera de almacenar datos en memoria.
  * Pero tienen una importante limitación:
  * - Solamente pueden almacenar un valor (en un momento dado).
- * <p>
+ *
  * En ocasiones nos interesa guardar una gran cantidad de valores del mismo tipo en memoria.
  * En ese caso necesitamos un tipo de datos almacén que permita almacenar esos valores.
- * <p>
+ *
  * Este almacén que vamos a ver es una estructura de datos
  * y se denomina ARRAY
  */

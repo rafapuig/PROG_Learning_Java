@@ -2,14 +2,13 @@
  * Escribe una función recursiva con nombre factorial que recibe un valor double como argumento
  * y calcula y devuelve su factorial.
  * (El factorial de un número n es el resultado de multiplicar todos los números desde 1 hasta n)
- * <p>
+ *
  * Usando la función factorial, escribe una función recursiva de nombre cosine que calcule y devuelva
  * el valor del coseno usando la serie de Taylor.
- * <p>
- * coseno(x) = 1- x^2/2! + x^4/4! - x^6/6! + ...
- * <p>
- * Pista : x^0/0! = 1
  *
+ * coseno(x) = 1- x^2/2! + x^4/4! - x^6/6! + ...
+ *
+ * Pista : x^0/0! = 1
  */
 
 /**

@@ -8,11 +8,11 @@ Resuelve los siguientes ejercicios utilizando exclusivamente:
 - Bucles `for`.
 - Condicionales `if`, `else if` y `else`.
 - Operadores aritméticos, relacionales y lógicos.
-- Instrucciones `System.out.print()` y `System.out.println()`.
+- Instrucciones `IO.print()` y `IO.println()`.
 
 **No se permite utilizar arrays, matrices, colecciones ni métodos propios.**
 
-En los ejercicios que lo necesiten, puedes solicitar al usuario el tamaño de la figura mediante `Scanner`.
+En los ejercicios que lo necesiten, puedes solicitar al usuario el tamaño de la figura mediante `IO.readln()`.
 
 ---
 

@@ -399,11 +399,11 @@ Con esta colección de ejercicios se pretende que el alumnado practique:
 Para resolver los ejercicios se deben utilizar exclusivamente los contenidos trabajados hasta el momento:
 
 - Variables de tipos primitivos.
-- Entrada de datos mediante `Scanner`.
+- Entrada de datos mediante `IO.readln()`.
 - Bucles `for`.
 - Condicionales `if`, `else if` y `else`.
 - Operadores aritméticos, relacionales y lógicos.
-- Instrucciones `System.out.print()` y `System.out.println()`.
+- Instrucciones `IO.print()` y `IO.println()`.
 
 No se permite utilizar:
 
